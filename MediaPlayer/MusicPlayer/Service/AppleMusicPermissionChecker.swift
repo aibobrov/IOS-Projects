@@ -21,15 +21,10 @@ class AppleMusicPermissionChecker  {
 	}
 
 	static func request(completion: @escaping (Bool) -> Void) {
-		DispatchQueue.main.async {
-			MPMediaLibrary.requestAuthorization { (status) in
-				switch status {
-				case .authorized:
-					completion(true)
-				default:
-					completion(false)
-				}
-
+		guard self.isPermissionRequestAvailable else { return }
+		MPMediaLibrary.requestAuthorization { (status) in
+			DispatchQueue.main.async {
+				completion(status == .authorized)
 			}
 		}
 	}
