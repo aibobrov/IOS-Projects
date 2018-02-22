@@ -20,20 +20,26 @@ extension MainMenuTableViewController: UICollectionViewDelegate, UICollectionVie
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return recentTracks.count
+		return recentTracksData.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMenuTableViewController.RecentMusicCellIdentifier, for: indexPath) as! MediaItemCollectionViewCell
-		cell.item = recentTracks[indexPath.row]
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMenuTableViewController.MediaItemCollectionViewCellIdentifier, for: indexPath) as! MediaItemCollectionViewCell
+		cell.item = recentTracksData[indexPath.row]
 		return cell
 	}
 
-	// collectionview cell clicked
+	// MARK: Recently played collectionView cell is clicked
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		let cell = recentlyPlayedCollectionView.cellForItem(at: indexPath) as! MediaItemCollectionViewCell
-//		guard let item = cell.item else { return }
+		let cell = collectionView.cellForItem(at: indexPath) as! MediaItemCollectionViewCell
+		guard let item = cell.item else { return }
+		playerViewController.currentPlaylist = self.recentTracksData
+		playerViewController.item = item
+		playerViewController.play()
+
 		cell.onClickAnimation()
-		print("clicked")
+		self.tabBarController?.presentPopupBar(withContentViewController: self.playerViewController, animated: true, completion: nil)
+		self.tabBarController?.popupBar.layer.backgroundColor = self.playerViewController.popupItem.image?.averageColor?.bgColor.cgColor
+
 	}
 }

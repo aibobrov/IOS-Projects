@@ -14,7 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
+	lazy var playerViewController: PlayerViewController = {
+		let vc = PlayerViewController(nibName: String(describing: PlayerViewController.self), bundle: nil)
+		return vc
+	}()
+
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+		MPMediaLibrary.default().beginGeneratingLibraryChangeNotifications()
+		AppleMusicPermissionChecker.request()
 		return true
 	}
 

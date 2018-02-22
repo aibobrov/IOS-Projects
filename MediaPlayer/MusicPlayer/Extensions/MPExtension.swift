@@ -14,9 +14,16 @@ extension MPMediaItem {
 		return !self.isCloudItem && self.assetURL != nil
 	}
 
-	var formattedArtistAlbum: String? {
+	var artistAlbumFormatted: String? {
 		guard let artistName = self.artist,
 			let albumName = self.albumArtist else { return nil }
 		return "\(artistName) • \(albumName)"
+	}
+}
+
+
+extension MPMusicPlayerApplicationController {
+	var isPlaying: Bool {
+		return self.playbackState == .playing
 	}
 }

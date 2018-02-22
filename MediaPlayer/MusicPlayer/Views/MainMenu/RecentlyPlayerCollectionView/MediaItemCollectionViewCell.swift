@@ -25,17 +25,14 @@ class MediaItemCollectionViewCell: UICollectionViewCell {
 			if let artwork = item.artwork {
 				albumArtworkImageView.image = artwork.image(at: albumArtworkImageView.frame.size)
 			}
-			if let title = item.title {
-				titleLabel.text = title
-			}
 
-			artistAlbumNameLabel.text = item.formattedArtistAlbum
+			titleLabel.text = item.title ?? ""
+			artistAlbumNameLabel.text = item.artistAlbumFormatted ?? ""
 		}
 	}
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
-
 		self.albumArtworkImageView.layer.masksToBounds = true
 		self.albumArtworkImageView.layer.cornerRadius = imageCornerRadius
 		self.albumArtworkImageView.layer.backgroundColor = UIColor.black.cgColor
@@ -43,18 +40,9 @@ class MediaItemCollectionViewCell: UICollectionViewCell {
 
 	func onClickAnimation() {
 		self.albumArtworkImageView.layer.opacity = 0.5
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
 			self.albumArtworkImageView.layer.opacity = 1
 		}
 	}
-
-
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-	}
-
-
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-	}
 }
+

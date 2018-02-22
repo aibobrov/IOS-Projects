@@ -30,7 +30,7 @@
         <!--Music-->
         <scene sceneID="Ibd-v2-IdO">
             <objects>
-                <navigationController id="8ab-hK-IIb" sceneMemberID="viewController">
+                <navigationController id="8ab-hK-IIb" customClass="NavigationController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Music" image="music" landscapeImage="music" id="oFi-gi-AWQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="uPx-8Q-icz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -50,7 +50,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="rZx-Op-JgJ">
             <objects>
-                <tabBarController id="MXT-GD-Zjd" sceneMemberID="viewController">
+                <tabBarController id="MXT-GD-Zjd" customClass="TabBarController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" itemPositioning="fill" id="zXf-pP-n01">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -93,51 +93,9 @@
                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                         <rect key="frame" x="0.0" y="0.0" width="163.5" height="199"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4z1-27-v02">
-                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="163.5"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Artist • Album name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wce-iy-IjL">
-                                                <rect key="frame" x="0.0" y="185" width="163.5" height="14"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="14" id="6Yb-sI-4jr"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9j-Gd-CWJ">
-                                                <rect key="frame" x="0.0" y="164" width="163.5" height="20.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20.5" id="56E-Dr-BeE"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
                                     </view>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="wce-iy-IjL" secondAttribute="trailing" id="74h-XK-KKO"/>
-                                        <constraint firstAttribute="trailing" secondItem="4z1-27-v02" secondAttribute="trailing" id="Ej6-Bd-dWj"/>
-                                        <constraint firstItem="wce-iy-IjL" firstAttribute="top" secondItem="J9j-Gd-CWJ" secondAttribute="bottom" id="FGY-kS-eGj"/>
-                                        <constraint firstAttribute="trailing" secondItem="J9j-Gd-CWJ" secondAttribute="trailing" id="ICY-Cw-aBO"/>
-                                        <constraint firstItem="J9j-Gd-CWJ" firstAttribute="top" secondItem="4z1-27-v02" secondAttribute="bottom" id="TPU-HX-dj7"/>
-                                        <constraint firstItem="wce-iy-IjL" firstAttribute="leading" secondItem="lJ8-Aj-BcC" secondAttribute="leading" id="TnC-gy-W3a"/>
-                                        <constraint firstItem="J9j-Gd-CWJ" firstAttribute="top" secondItem="4z1-27-v02" secondAttribute="bottom" id="Uz1-zN-VbE"/>
-                                        <constraint firstItem="4z1-27-v02" firstAttribute="top" secondItem="lJ8-Aj-BcC" secondAttribute="top" id="jgO-dn-FIr"/>
-                                        <constraint firstItem="4z1-27-v02" firstAttribute="leading" secondItem="lJ8-Aj-BcC" secondAttribute="leading" id="pC0-45-7qc"/>
-                                        <constraint firstAttribute="bottom" secondItem="wce-iy-IjL" secondAttribute="bottom" id="s6V-SH-9EG"/>
-                                        <constraint firstItem="wce-iy-IjL" firstAttribute="top" secondItem="J9j-Gd-CWJ" secondAttribute="bottom" id="z4L-Iq-ZO4"/>
-                                        <constraint firstItem="J9j-Gd-CWJ" firstAttribute="leading" secondItem="lJ8-Aj-BcC" secondAttribute="leading" id="zQn-5K-jcZ"/>
-                                    </constraints>
                                     <size key="customSize" width="163.5" height="199"/>
-                                    <connections>
-                                        <outlet property="albumArtworkImageView" destination="4z1-27-v02" id="4dd-bc-Bgl"/>
-                                        <outlet property="artistAlbumNameLabel" destination="wce-iy-IjL" id="Wlo-PR-V7P"/>
-                                        <outlet property="titleLabel" destination="J9j-Gd-CWJ" id="aES-gB-X0q"/>
-                                    </connections>
                                 </collectionViewCell>
                             </cells>
                             <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RecentMusicHeaderIdentifier" id="9Tx-3u-5X8">
@@ -153,6 +111,10 @@
                                     </label>
                                 </subviews>
                             </collectionReusableView>
+                            <connections>
+                                <outlet property="dataSource" destination="VJs-NS-uWG" id="IpR-hZ-v7L"/>
+                                <outlet property="delegate" destination="VJs-NS-uWG" id="EQd-66-DPC"/>
+                            </connections>
                         </collectionView>
                         <sections>
                             <tableViewSection id="MaX-Vm-hbm">

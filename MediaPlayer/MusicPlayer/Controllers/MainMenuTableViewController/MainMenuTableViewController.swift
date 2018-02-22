@@ -9,40 +9,64 @@
 import UIKit
 import MediaPlayer
 
-class MainMenuTableViewController: UITableViewController {
+class MainMenuTableViewController: TableViewWithMusicPlayerBarTableViewController {
 	static let RecentMusicHeaderIdentifier = "RecentMusicHeaderIdentifier"
-	static let RecentMusicCellIdentifier = "RecentMusicCellIdentifier"
+	static let MediaItemCollectionViewCellIdentifier = "MediaItemCollectionViewCellIdentifier"
 
 	@IBOutlet weak var recentlyPlayedCollectionView: UICollectionView!
 
-	var recentTracks = [MPMediaItem]()
+	var recentTracksData = [MPMediaItem]()
 
 	// MARK: Lifecycle
 	override func viewDidLoad() {
         super.viewDidLoad()
-		AppleMusicPermissionChecker.request { (hasAccess) in
-			if hasAccess {
-				guard let tracks = MediaModelController.shared.recentSongs(for: 10) else { return }
-				self.recentTracks = tracks
-				self.recentlyPlayedCollectionView.reloadData()
-			}
-		}
+		recentlyPlayedCollectionView.register(UINib(nibName: "MediaItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MainMenuTableViewController.MediaItemCollectionViewCellIdentifier)
 
-		recentlyPlayedCollectionView.dataSource = self
-		recentlyPlayedCollectionView.delegate = self
-
+		self.notificationCenterObserversSetup()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		guard let songList = MediaModelController.shared.recentSongs(for: 10) else { return }
-		self.recentTracks = songList
+		guard AppleMusicPermissionChecker.hasPermission,
+			let tracks = MediaModelController.shared.recentSongs(for: 20) else { return }
+		self.recentTracksData = tracks
 		self.recentlyPlayedCollectionView.reloadData()
+		self.updateViewContentSize()
+	}
+	
+	// MARK: NotificationCenter observers setup
+	private func notificationCenterObserversSetup() {
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMediaLibraryDidChange, object: nil, queue: OperationQueue.current) { (noti) in
+			guard AppleMusicPermissionChecker.hasPermission,
+				let tracks = MediaModelController.shared.recentSongs(for: 20) else { return }
+			self.recentTracksData = tracks
+			self.recentlyPlayedCollectionView.reloadData()
+			self.updateViewContentSize()
+		}
 	}
 
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
+
+	private func updateViewContentSize() {
+		self.recentlyPlayedCollectionView.layoutIfNeeded()
 		self.recentlyPlayedCollectionView.frame = CGRect(origin: self.recentlyPlayedCollectionView.frame.origin, size: CGSize(width: self.recentlyPlayedCollectionView.frame.width, height: self.recentlyPlayedCollectionView.contentSize.height))
 		self.tableView.contentSize.height = self.recentlyPlayedCollectionView.contentSize.height + self.tableView.estimatedRowHeight * 5 + (self.tabBarController?.tabBar.frame.height ?? 0)
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
