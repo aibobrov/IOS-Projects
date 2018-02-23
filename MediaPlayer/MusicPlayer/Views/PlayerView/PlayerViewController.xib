@@ -17,7 +17,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="MusicPlayer" customModuleProvider="target">
             <connections>
+                <outlet property="fastForwardButton" destination="USF-HE-yJ0" id="2jg-oy-Mq2"/>
+                <outlet property="playPauseButton" destination="iEl-tc-pkF" id="OyF-5O-DqZ"/>
                 <outlet property="playlistCollectionView" destination="oeI-uA-RT7" id="PV7-bZ-pWu"/>
+                <outlet property="rewindButton" destination="T2Z-Qj-97i" id="6XU-W9-AOM"/>
                 <outlet property="sliderView" destination="LrE-s1-aB6" id="KPl-CL-qV0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -65,7 +68,6 @@
                             <color key="maximumTrackTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="image" keyPath="normalThumbImage" value="thumb-image"/>
-                                <userDefinedRuntimeAttribute type="image" keyPath="selectedThumbImage" value="settings"/>
                                 <userDefinedRuntimeAttribute type="image" keyPath="highlightedThumbImage" value="large-thumb-image"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
@@ -96,6 +98,35 @@
                         <outlet property="playbackSlider" destination="CPH-VY-nN6" id="ddn-ZH-Zft"/>
                     </connections>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-tc-pkF" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
+                    <rect key="frame" x="112" y="427" width="150" height="150"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="large-play"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="alternativeImage" value="large-pause"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="playPauseButtonClicked:" destination="-1" eventType="touchUpInside" id="oKv-lT-H1e"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USF-HE-yJ0" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
+                    <rect key="frame" x="270" y="462" width="80" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="large-fast-forward"/>
+                    <connections>
+                        <action selector="fastForwardButtonClicked:" destination="-1" eventType="touchUpInside" id="CWs-FS-rXY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2Z-Qj-97i" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
+                    <rect key="frame" x="24" y="462" width="80" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                    <state key="normal" image="large-rewind"/>
+                    <connections>
+                        <action selector="rewindButtonClicked:" destination="-1" eventType="touchUpInside" id="iNt-8q-n1K"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -112,8 +143,11 @@
         </view>
     </objects>
     <resources>
+        <image name="large-fast-forward" width="57" height="41"/>
+        <image name="large-pause" width="34" height="85"/>
+        <image name="large-play" width="63" height="85"/>
+        <image name="large-rewind" width="57" height="41"/>
         <image name="large-thumb-image" width="30" height="30"/>
-        <image name="settings" width="24" height="24"/>
         <image name="thumb-image" width="10" height="10"/>
     </resources>
 </document>

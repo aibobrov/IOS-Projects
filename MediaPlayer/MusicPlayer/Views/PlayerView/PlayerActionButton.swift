@@ -9,6 +9,8 @@
 import UIKit
 
 class PlayerActionButton: UIButton {
+
+	@IBInspectable
 	var alternativeImage: UIImage?
 
 	override func updateConstraints() {
