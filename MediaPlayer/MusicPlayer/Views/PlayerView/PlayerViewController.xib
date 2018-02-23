@@ -22,6 +22,7 @@
                 <outlet property="parentVolumeView" destination="x3X-Bb-zsG" id="y8S-Ad-Ia7"/>
                 <outlet property="playPauseButton" destination="iEl-tc-pkF" id="OyF-5O-DqZ"/>
                 <outlet property="playlistCollectionView" destination="oeI-uA-RT7" id="PV7-bZ-pWu"/>
+                <outlet property="repeatButton" destination="5QN-ls-m27" id="3AM-gG-7vz"/>
                 <outlet property="rewindButton" destination="T2Z-Qj-97i" id="6XU-W9-AOM"/>
                 <outlet property="sliderView" destination="LrE-s1-aB6" id="KPl-CL-qV0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

@@ -15,6 +15,7 @@ class PlayerViewController: UIViewController {
 
 	@IBOutlet weak var parentRouteButtonView: UIView!
 	@IBOutlet weak var parentVolumeView: UIView!
+	@IBOutlet weak var repeatButton: RepeatButton!
 	@IBOutlet weak var rewindButton: PlayerActionButton!
 	@IBOutlet weak var fastForwardButton: PlayerActionButton!
 	@IBOutlet weak var playPauseButton: PlayerActionButton!
@@ -103,6 +104,8 @@ class PlayerViewController: UIViewController {
 	// MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+		player.repeatMode = repeatButton.currentRepeatMode
+
 		parentVolumeView.addSubview(volumeSliderView)
 		parentRouteButtonView.addSubview(routeButtonView)
 
@@ -175,14 +178,15 @@ class PlayerViewController: UIViewController {
 		self.player.nowPlayingItem = cell.item
 		self.play()
 	}
-	@IBAction func repeatButtonClicked(_ sender: RepeatButton) {
-		sender.currentStateIndex += 1
-		self.player.repeatMode = sender.currentRepeatMode
-	}
 }
 
 // MARK: - Player view controller actions
 extension PlayerViewController {
+	@IBAction func repeatButtonClicked(_ sender: RepeatButton) {
+		sender.currentStateIndex += 1
+		self.player.repeatMode = sender.currentRepeatMode
+	}
+
 	@IBAction func playPauseButtonClicked(_ sender: PlayerActionButton) {
 		sender.onClickAnimation()
 		if player.isPlaying {
