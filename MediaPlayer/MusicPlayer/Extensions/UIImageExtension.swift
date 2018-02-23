@@ -60,6 +60,11 @@ extension UIImage {
 
 		guard let cgImage = image?.cgImage else { return nil }
 		self.init(cgImage: cgImage)
-	}  
+	}
+
+
+	var tinted: UIImage {
+		return self.withRenderingMode(.alwaysTemplate)
+	}
 }
 

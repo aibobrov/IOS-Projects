@@ -13,6 +13,8 @@ import UPCarouselFlowLayout
 class PlayerViewController: UIViewController {
 	static let PlaylistCollectionViewCellIdentifier = "MediaItemCollectionViewCellIdentifier"
 
+	@IBOutlet weak var parentRouteButtonView: UIView!
+	@IBOutlet weak var parentVolumeView: UIView!
 	@IBOutlet weak var rewindButton: PlayerActionButton!
 	@IBOutlet weak var fastForwardButton: PlayerActionButton!
 	@IBOutlet weak var playPauseButton: PlayerActionButton!
@@ -36,6 +38,26 @@ class PlayerViewController: UIViewController {
 		player.beginGeneratingPlaybackNotifications()
 		player.shuffleMode = .off
 		return player
+	}()
+
+	lazy var volumeSliderView: MPVolumeView = {
+		let view = MPVolumeView(frame: self.parentVolumeView.bounds)
+		view.showsRouteButton = false
+		view.tintColor = .white
+		view.slider.minimumValueImage = #imageLiteral(resourceName: "volume-off")
+		view.slider.maximumValueImage = #imageLiteral(resourceName: "volume-high")
+		view.slider.setThumbImage(#imageLiteral(resourceName: "thumb-image"), for: .normal)
+		view.slider.setThumbImage(#imageLiteral(resourceName: "large-thumb-image"), for: .highlighted)
+		view.slider.maximumTrackTintColor = .mobsterGray
+		return view
+	}()
+
+	lazy var routeButtonView: MPVolumeView = {
+		let view = MPVolumeView(frame: self.parentRouteButtonView.bounds)
+		view.showsVolumeSlider = false
+		view.tintColor = .white
+		view.setRouteButtonImage(view.routeButton.currentImage?.tinted, for: .normal)
+		return view
 	}()
 
 	lazy var carouselFlowLayout: UPCarouselFlowLayout = {
@@ -81,6 +103,9 @@ class PlayerViewController: UIViewController {
 	// MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+		parentVolumeView.addSubview(volumeSliderView)
+		parentRouteButtonView.addSubview(routeButtonView)
+
 		self.popupItem.leftBarButtonItems = [playPauseBarButtonItem]
 		self.popupItem.rightBarButtonItems = [forwardBarButtonItem]
 
@@ -94,6 +119,7 @@ class PlayerViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		player.prepareToPlay()
+
 		let indexPath = IndexPath(row: player.indexOfNowPlayingItem, section: 0)
 		playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
 	}
@@ -102,6 +128,7 @@ class PlayerViewController: UIViewController {
 		timer.stop()
 		player.stop()
 		player.endGeneratingPlaybackNotifications()
+		NotificationCenter.default.removeObserver(self)
 	}
 
 	// MARK: View updates

@@ -36,3 +36,14 @@ extension MPMusicPlayerApplicationController {
 		return self.playbackState == .playing
 	}
 }
+
+
+extension MPVolumeView {
+	var slider: UISlider {
+		return self.subviews.first(where: {$0 is UISlider})! as! UISlider
+	}
+
+	var routeButton: UIButton {
+		return self.subviews.filter({$0 is UIButton}).last! as! UIButton
+	}
+}
