@@ -8,12 +8,18 @@
 
 import Foundation
 
+typealias MinSec = (Int, Int)
 extension TimeInterval {
 	var time: (Int, Int) {
 		let minutes: Int = Int(self / 60.0)
 		let seconds: Int = Int(self.truncatingRemainder(dividingBy: 60.0))
 
 		return (minutes, seconds)
+	}
+
+	var timeString: String {
+		let time = self.time
+		return "\(time.0.formatted):\(time.1.formatted)"
 	}
 }
 

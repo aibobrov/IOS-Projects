@@ -12,11 +12,19 @@ import UPCarouselFlowLayout
 
 class PlayerViewController: UIViewController {
 	static let PlaylistCollectionViewCellIdentifier = "MediaItemCollectionViewCellIdentifier"
-	@IBOutlet weak var playlistCollectionView: UICollectionView!
 
-	var currentPlaylist = [MPMediaItem]() {
-		didSet {
-			player.setQueue(with: currentPlaylist)
+	@IBOutlet weak var playlistCollectionView: UICollectionView!
+	@IBOutlet weak var sliderView: PlayerSliderView!
+
+	internal var playlist = [MPMediaItem]()
+
+	var currentPlaylist: [MPMediaItem] {
+		set {
+			player.setQueue(with: newValue)
+			playlist = newValue
+		}
+		get {
+			return self.playlist
 		}
 	}
 
@@ -54,13 +62,17 @@ class PlayerViewController: UIViewController {
 		return buttonItem
 	}()
 
-	lazy var timer = ProgressTimer(with: 0.002) { (timer) in
+	lazy var timer = ProgressTimer(with: 0.001) { (timer) in
 		let playbackTime = self.player.currentPlaybackTime
 		if !playbackTime.isNaN {
-			// switch on
+			self.sliderView.playbackSlider.isEnabled = true
+			self.sliderView.currentTime = playbackTime
 		} else {
-			// switch off
+			self.sliderView.currentTime = nil
+			self.sliderView.playbackSlider.value = 0
+			self.sliderView.playbackSlider.isEnabled = false
 		}
+		self.popupItem.progress = self.sliderView.playbackSlider.value
 	}
 
 	// MARK: Lifecycle
@@ -84,6 +96,7 @@ class PlayerViewController: UIViewController {
 	}
 
 	deinit {
+		timer.stop()
 		player.stop()
 		player.endGeneratingPlaybackNotifications()
 	}
@@ -103,25 +116,34 @@ class PlayerViewController: UIViewController {
 		self.popupItem.progress = 0
 	}
 
-	func updateViewData(with item: MPMediaItem?) {
-//		guard let item = item else { return }
-	}
-
 	private func notificationCenterObserversSetup() {
 		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil, queue: OperationQueue.current) { (notification) in
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			switch player.playbackState {
-			case .stopped, .paused, .playing, .interrupted:
+			case .stopped, .paused, .interrupted, .seekingForward, .seekingBackward:
+				self.timer.stop()
 				(self.playPauseBarButtonItem.customView as? PlayerActionButton)?.switchImages()
-			default:
-				break
+			case .playing:
+				self.timer.start()
+				(self.playPauseBarButtonItem.customView as? PlayerActionButton)?.switchImages()
 			}
 		}
 
 		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: OperationQueue.current) { (notification) in
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			self.updatePopupBarData(with: player.nowPlayingItem)
-			self.updateViewData(with: player.nowPlayingItem)
+			self.sliderView.durationTime = player.nowPlayingItem?.playbackDuration
 		}
+	}
+
+	@IBAction func playerSliderTouchDown(_ sender: SeekPlayerSlider) {
+		timer.stop()
+	}
+	@IBAction func playerSliderTouchUpInside(_ sender: SeekPlayerSlider) {
+		self.player.currentPlaybackTime = TimeInterval(sender.value) * (sliderView.durationTime ?? 0)
+		timer.start()
+	}
+	@IBAction func playerSliderValueChanged(_ sender: SeekPlayerSlider) {
+		sliderView.currentTime = TimeInterval(sender.value) * (sliderView.durationTime ?? 0)
 	}
 }

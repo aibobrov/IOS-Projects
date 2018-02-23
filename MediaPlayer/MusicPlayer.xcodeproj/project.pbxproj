@@ -38,6 +38,8 @@
 		A16CD0F8203F7E9000285126 /* PlayerViewControllerTargetActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0F7203F7E9000285126 /* PlayerViewControllerTargetActions.swift */; };
 		A16CD0FA203F81BB00285126 /* PlayerViewControllerPlayerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0F9203F81BB00285126 /* PlayerViewControllerPlayerActions.swift */; };
 		A16CD0FC203F918400285126 /* ProgressTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0FB203F918400285126 /* ProgressTimer.swift */; };
+		A16CD0FE2040468500285126 /* PlayerSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0FD2040468500285126 /* PlayerSliderView.swift */; };
+		A16CD1022040521E00285126 /* SeekPlayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD1012040521E00285126 /* SeekPlayerSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +89,8 @@
 		A16CD0F7203F7E9000285126 /* PlayerViewControllerTargetActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewControllerTargetActions.swift; sourceTree = "<group>"; };
 		A16CD0F9203F81BB00285126 /* PlayerViewControllerPlayerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewControllerPlayerActions.swift; sourceTree = "<group>"; };
 		A16CD0FB203F918400285126 /* ProgressTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTimer.swift; sourceTree = "<group>"; };
+		A16CD0FD2040468500285126 /* PlayerSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSliderView.swift; sourceTree = "<group>"; };
+		A16CD1012040521E00285126 /* SeekPlayerSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekPlayerSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +238,8 @@
 			children = (
 				A16CD0F5203F7D9900285126 /* PlayerActionButton.swift */,
 				A16CD0E0203EDC3B00285126 /* PlayerViewController.xib */,
+				A16CD0FD2040468500285126 /* PlayerSliderView.swift */,
+				A16CD1012040521E00285126 /* SeekPlayerSlider.swift */,
 			);
 			path = PlayerView;
 			sourceTree = "<group>";
@@ -340,9 +346,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A16CD0BB203E019800285126 /* TimeIntervalExtension.swift in Sources */,
+				A16CD1022040521E00285126 /* SeekPlayerSlider.swift in Sources */,
 				A16CD0E1203EDC3B00285126 /* PlayerViewController.swift in Sources */,
 				A16CD0EA203F484C00285126 /* TabBarController.swift in Sources */,
 				A16CD0E8203F484C00285126 /* TableViewWithSmallMusicBarTableViewController.swift in Sources */,
+				A16CD0FE2040468500285126 /* PlayerSliderView.swift in Sources */,
 				A16CD0D5203E0C9A00285126 /* MainMenuTableViewController.swift in Sources */,
 				A16CD0E9203F484C00285126 /* NavigationController.swift in Sources */,
 				A16CD0BE203E019800285126 /* UIImageExtension.swift in Sources */,

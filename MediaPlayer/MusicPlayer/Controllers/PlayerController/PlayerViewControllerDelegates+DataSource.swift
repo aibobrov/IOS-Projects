@@ -10,12 +10,12 @@ import UIKit
 
 extension PlayerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return currentPlaylist.count
+		return playlist.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMenuTableViewController.MediaItemCollectionViewCellIdentifier, for: indexPath) as! MediaItemCollectionViewCell
-		cell.item = currentPlaylist[indexPath.row]
+		cell.item = playlist[indexPath.row]
 		return cell
 	}
 }

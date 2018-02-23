@@ -9,14 +9,6 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-//	override func viewDidLoad() {
-//		NotificationCenter.default.addObserver(forName: NSNotification.Name.AudioPlayerForward, object: nil, queue: OperationQueue.main) { (notification) in
-//			if AudioPlayer.shared.followingTrack == nil {
-//				self.dismissPopupBar(animated: true, completion: nil)
-//			}
-//		}
-//	}
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.popupBar.barStyle = .prominent
