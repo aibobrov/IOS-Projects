@@ -40,6 +40,7 @@
 		A16CD0FE2040468500285126 /* PlayerSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0FD2040468500285126 /* PlayerSliderView.swift */; };
 		A16CD1022040521E00285126 /* SeekPlayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD1012040521E00285126 /* SeekPlayerSlider.swift */; };
 		A16CD1042040804800285126 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD1032040804800285126 /* UICollectionViewExtension.swift */; };
+		A16CD1062040B05500285126 /* RepeatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD1052040B05500285126 /* RepeatButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +92,7 @@
 		A16CD0FD2040468500285126 /* PlayerSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSliderView.swift; sourceTree = "<group>"; };
 		A16CD1012040521E00285126 /* SeekPlayerSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekPlayerSlider.swift; sourceTree = "<group>"; };
 		A16CD1032040804800285126 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		A16CD1052040B05500285126 /* RepeatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				A16CD0E0203EDC3B00285126 /* PlayerViewController.xib */,
 				A16CD0FD2040468500285126 /* PlayerSliderView.swift */,
 				A16CD1012040521E00285126 /* SeekPlayerSlider.swift */,
+				A16CD1052040B05500285126 /* RepeatButton.swift */,
 			);
 			path = PlayerView;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				A16CD0EE203F597300285126 /* PlayerViewControllerDelegates+DataSource.swift in Sources */,
 				A16CD0C9203E029C00285126 /* AppleMusicPermissionChecker.swift in Sources */,
 				A16CD0F6203F7D9900285126 /* PlayerActionButton.swift in Sources */,
+				A16CD1062040B05500285126 /* RepeatButton.swift in Sources */,
 				A16CD0FA203F81BB00285126 /* PlayerViewControllerPlayerActions.swift in Sources */,
 				A16CD0B7203E019800285126 /* CGExtension.swift in Sources */,
 				A16CD09D203E010200285126 /* AppDelegate.swift in Sources */,

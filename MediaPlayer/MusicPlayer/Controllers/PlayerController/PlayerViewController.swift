@@ -128,7 +128,6 @@ class PlayerViewController: UIViewController {
 		timer.stop()
 		player.stop()
 		player.endGeneratingPlaybackNotifications()
-		NotificationCenter.default.removeObserver(self)
 	}
 
 	// MARK: View updates
@@ -148,7 +147,7 @@ class PlayerViewController: UIViewController {
 
 	// MARK: NotifactionCenter observers setup
 	private func notificationCenterObserversSetup() {
-		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil, queue: nil) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil, queue: nil) { [unowned self] (notification) in
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			switch player.playbackState {
 			case .stopped, .paused, .interrupted, .seekingForward, .seekingBackward:
@@ -162,7 +161,7 @@ class PlayerViewController: UIViewController {
 			}
 		}
 
-		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: nil) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: nil) { [unowned self] (notification) in
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			self.updatePopupBarData(with: player.nowPlayingItem)
 			self.sliderView.durationTime = player.nowPlayingItem?.playbackDuration
@@ -175,6 +174,10 @@ class PlayerViewController: UIViewController {
 		guard let cell = playlistCollectionView.centerCell as? MediaItemCollectionViewCell else { return }
 		self.player.nowPlayingItem = cell.item
 		self.play()
+	}
+	@IBAction func repeatButtonClicked(_ sender: RepeatButton) {
+		sender.currentStateIndex += 1
+		self.player.repeatMode = sender.currentRepeatMode
 	}
 }
 

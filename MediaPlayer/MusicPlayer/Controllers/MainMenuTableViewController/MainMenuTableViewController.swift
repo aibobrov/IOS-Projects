@@ -41,7 +41,7 @@ class MainMenuTableViewController: TableViewWithMusicPlayerBarTableViewControlle
 	
 	// MARK: NotificationCenter observers setup
 	private func notificationCenterObserversSetup() {
-		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMediaLibraryDidChange, object: nil, queue: OperationQueue.current) { (noti) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMediaLibraryDidChange, object: nil, queue: nil) { [unowned self] (_) in
 			guard AppleMusicPermissionChecker.hasPermission,
 				let tracks = MediaModelController.shared.recentSongs(for: 20) else { return }
 			self.recentTracksData = tracks
@@ -49,7 +49,7 @@ class MainMenuTableViewController: TableViewWithMusicPlayerBarTableViewControlle
 			self.updateViewContentSize()
 		}
 
-		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: nil) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: nil) { [unowned self] (notification) in
 			guard let player = notification.object as? MPMusicPlayerApplicationController,
 				let track = player.nowPlayingItem else { return }
 			self.tabBarController?.popupBar.layer.backgroundColor = track.artwork?.image(at: self.tabBarController?.popupBar.frame.size ?? CGSize.zero)?.averageColor?.bgColor.cgColor ?? UIColor.clear.cgColor
