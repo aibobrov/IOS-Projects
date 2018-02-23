@@ -14,9 +14,13 @@ extension MPMediaItem {
 		return !self.isCloudItem && self.assetURL != nil
 	}
 
+	var hasLastPlayedDate: Bool {
+		return self.lastPlayedDate != nil
+	}
+
 	var artistAlbumFormatted: String? {
 		guard let artistName = self.artist,
-			let albumName = self.albumArtist else { return nil }
+			let albumName = self.albumTitle else { return nil }
 		return "\(artistName) • \(albumName)"
 	}
 }

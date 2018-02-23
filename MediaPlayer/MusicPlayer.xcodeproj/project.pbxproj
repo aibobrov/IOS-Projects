@@ -14,7 +14,6 @@
 		A16CD0B9203E019800285126 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B1203E019800285126 /* UIColorExtension.swift */; };
 		A16CD0BA203E019800285126 /* LNExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B2203E019800285126 /* LNExtensions.swift */; };
 		A16CD0BB203E019800285126 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B3203E019800285126 /* TimeIntervalExtension.swift */; };
-		A16CD0BC203E019800285126 /* NSNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B4203E019800285126 /* NSNotificationExtension.swift */; };
 		A16CD0BD203E019800285126 /* MPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B5203E019800285126 /* MPExtension.swift */; };
 		A16CD0BE203E019800285126 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B6203E019800285126 /* UIImageExtension.swift */; };
 		A16CD0C1203E01FC00285126 /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CD0BF203E01FC00285126 /* LNPopupController.framework */; };
@@ -66,7 +65,6 @@
 		A16CD0B1203E019800285126 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A16CD0B2203E019800285126 /* LNExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LNExtensions.swift; sourceTree = "<group>"; };
 		A16CD0B3203E019800285126 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
-		A16CD0B4203E019800285126 /* NSNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationExtension.swift; sourceTree = "<group>"; };
 		A16CD0B5203E019800285126 /* MPExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPExtension.swift; sourceTree = "<group>"; };
 		A16CD0B6203E019800285126 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		A16CD0BF203E01FC00285126 /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 				A16CD0B1203E019800285126 /* UIColorExtension.swift */,
 				A16CD0B2203E019800285126 /* LNExtensions.swift */,
 				A16CD0B3203E019800285126 /* TimeIntervalExtension.swift */,
-				A16CD0B4203E019800285126 /* NSNotificationExtension.swift */,
 				A16CD0B5203E019800285126 /* MPExtension.swift */,
 				A16CD0B6203E019800285126 /* UIImageExtension.swift */,
 			);
@@ -360,7 +357,6 @@
 				A16CD0C9203E029C00285126 /* AppleMusicPermissionChecker.swift in Sources */,
 				A16CD0F6203F7D9900285126 /* PlayerActionButton.swift in Sources */,
 				A16CD0FA203F81BB00285126 /* PlayerViewControllerPlayerActions.swift in Sources */,
-				A16CD0BC203E019800285126 /* NSNotificationExtension.swift in Sources */,
 				A16CD0B7203E019800285126 /* CGExtension.swift in Sources */,
 				A16CD09D203E010200285126 /* AppDelegate.swift in Sources */,
 				A16CD0DA203E105900285126 /* MainMenuCollectionViewDelegates+DataSource.swift in Sources */,

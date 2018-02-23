@@ -34,7 +34,7 @@ class MediaModelController {
 	}
 
 	func recentSongs(for maxAmount: Int) -> [MPMediaItem]? {
-		guard let list = songsQuery.items?.filter({$0.lastPlayedDate != nil}) else { return nil }
+		guard let list = songsQuery.items?.filter({$0.hasLastPlayedDate}) else { return nil }
 		return Array(list.sorted { (lhs, rhs) -> Bool in
 			return lhs.lastPlayedDate!.compare(rhs.lastPlayedDate!) == .orderedDescending
 			}.prefix(maxAmount))
