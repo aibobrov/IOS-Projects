@@ -38,6 +38,7 @@
 		A16CD0F6203F7D9900285126 /* PlayerActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0F5203F7D9900285126 /* PlayerActionButton.swift */; };
 		A16CD0F8203F7E9000285126 /* PlayerViewControllerTargetActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0F7203F7E9000285126 /* PlayerViewControllerTargetActions.swift */; };
 		A16CD0FA203F81BB00285126 /* PlayerViewControllerPlayerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0F9203F81BB00285126 /* PlayerViewControllerPlayerActions.swift */; };
+		A16CD0FC203F918400285126 /* ProgressTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0FB203F918400285126 /* ProgressTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +88,7 @@
 		A16CD0F5203F7D9900285126 /* PlayerActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerActionButton.swift; sourceTree = "<group>"; };
 		A16CD0F7203F7E9000285126 /* PlayerViewControllerTargetActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewControllerTargetActions.swift; sourceTree = "<group>"; };
 		A16CD0F9203F81BB00285126 /* PlayerViewControllerPlayerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewControllerPlayerActions.swift; sourceTree = "<group>"; };
+		A16CD0FB203F918400285126 /* ProgressTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				A16CD0C8203E029C00285126 /* AppleMusicPermissionChecker.swift */,
+				A16CD0FB203F918400285126 /* ProgressTimer.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -293,6 +296,11 @@
 					A16CD098203E010200285126 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -344,6 +352,7 @@
 				A16CD0B9203E019800285126 /* UIColorExtension.swift in Sources */,
 				A16CD0D1203E0B2C00285126 /* StaticSelectableTableViewCell.swift in Sources */,
 				A16CD0F3203F609900285126 /* MediaItemCollectionViewCell.swift in Sources */,
+				A16CD0FC203F918400285126 /* ProgressTimer.swift in Sources */,
 				A16CD0BA203E019800285126 /* LNExtensions.swift in Sources */,
 				A16CD0DC203E16B500285126 /* MusicModel.swift in Sources */,
 				A16CD0F8203F7E9000285126 /* PlayerViewControllerTargetActions.swift in Sources */,

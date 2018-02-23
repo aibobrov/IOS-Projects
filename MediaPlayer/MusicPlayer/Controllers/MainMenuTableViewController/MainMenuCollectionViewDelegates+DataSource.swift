@@ -34,10 +34,12 @@ extension MainMenuTableViewController: UICollectionViewDelegate, UICollectionVie
 		let cell = collectionView.cellForItem(at: indexPath) as! MediaItemCollectionViewCell
 		guard let item = cell.item else { return }
 		playerViewController.currentPlaylist = self.recentTracksData
-		playerViewController.item = item
+		playerViewController.player.nowPlayingItem = item
 		playerViewController.play()
-
-		cell.onClickAnimation()
+		
+		DispatchQueue.main.async {
+			cell.onClickAnimation()
+		}
 		self.tabBarController?.presentPopupBar(withContentViewController: self.playerViewController, animated: true, completion: nil)
 		self.tabBarController?.popupBar.layer.backgroundColor = self.playerViewController.popupItem.image?.averageColor?.bgColor.cgColor
 

@@ -33,6 +33,11 @@ class MainMenuTableViewController: TableViewWithMusicPlayerBarTableViewControlle
 		self.recentlyPlayedCollectionView.reloadData()
 		self.updateViewContentSize()
 	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		self.playerViewController.player.prepareToPlay()
+	}
 	
 	// MARK: NotificationCenter observers setup
 	private func notificationCenterObserversSetup() {

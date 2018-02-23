@@ -21,6 +21,11 @@ extension MPMediaItem {
 	}
 }
 
+extension MPMusicPlayerController {
+	func setQueue(with items: [MPMediaItem]) {
+		self.setQueue(with: MPMediaItemCollection(items: items))
+	}
+}
 
 extension MPMusicPlayerApplicationController {
 	var isPlaying: Bool {

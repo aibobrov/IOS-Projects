@@ -11,7 +11,6 @@ import UIKit
 
 
 extension PlayerViewController {
-
 	func play() {
 		self.player.play()
 	}
@@ -22,5 +21,13 @@ extension PlayerViewController {
 
 	func forward() {
 		self.player.skipToNextItem()
+	}
+
+	func rewind() {
+		if self.player.currentPlaybackTime <= 2.0 {
+			self.player.skipToPreviousItem()
+		} else {
+			self.player.skipToBeginning()
+		}
 	}
 }

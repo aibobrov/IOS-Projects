@@ -16,27 +16,16 @@ class PlayerViewController: UIViewController {
 
 	var currentPlaylist = [MPMediaItem]() {
 		didSet {
-			player.setQueue(with: MPMediaItemCollection(items: currentPlaylist))
+			player.setQueue(with: currentPlaylist)
 		}
 	}
 
 	lazy var player: MPMusicPlayerApplicationController = {
 		let player = MPMusicPlayerController.applicationQueuePlayer
 		player.beginGeneratingPlaybackNotifications()
+		player.shuffleMode = .off
 		return player
 	}()
-
-	var item: MPMediaItem? {
-		didSet {
-			guard let item = item else {
-				popupItem.setDefaults()
-				return
-			}
-			player.nowPlayingItem = item
-			updatePopupBarData(with: item)
-			updateViewData(with: item)
-		}
-	}
 
 	lazy var carouselFlowLayout: UPCarouselFlowLayout = {
 		let layout = UPCarouselFlowLayout()
@@ -65,6 +54,14 @@ class PlayerViewController: UIViewController {
 		return buttonItem
 	}()
 
+	lazy var timer = ProgressTimer(with: 0.002) { (timer) in
+		let playbackTime = self.player.currentPlaybackTime
+		if !playbackTime.isNaN {
+			// switch on
+		} else {
+			// switch off
+		}
+	}
 
 	// MARK: Lifecycle
     override func viewDidLoad() {
@@ -82,8 +79,7 @@ class PlayerViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		player.prepareToPlay()
-		guard let item = item else { return }
-		let indexPath = IndexPath(row: currentPlaylist.index(of: item) ?? 0, section: 0)
+		let indexPath = IndexPath(row: player.indexOfNowPlayingItem, section: 0)
 		playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
 	}
 
@@ -93,7 +89,11 @@ class PlayerViewController: UIViewController {
 	}
 
 	// MARK: View updates
-	func updatePopupBarData(with item: MPMediaItem) {
+	func updatePopupBarData(with item: MPMediaItem?) {
+		guard let item = item else {
+			popupItem.setDefaults()
+			return
+		}
 		if let artwork = item.artwork {
 			self.popupItem.image = artwork.image(at: self.popupBar.imageView.frame.size)
 		}
@@ -103,20 +103,25 @@ class PlayerViewController: UIViewController {
 		self.popupItem.progress = 0
 	}
 
-	func updateViewData(with item: MPMediaItem) {
-
+	func updateViewData(with item: MPMediaItem?) {
+//		guard let item = item else { return }
 	}
 
 	private func notificationCenterObserversSetup() {
 		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil, queue: OperationQueue.current) { (notification) in
-
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			switch player.playbackState {
-			case .stopped, .paused, .playing:
+			case .stopped, .paused, .playing, .interrupted:
 				(self.playPauseBarButtonItem.customView as? PlayerActionButton)?.switchImages()
 			default:
 				break
 			}
+		}
+
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: OperationQueue.current) { (notification) in
+			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
+			self.updatePopupBarData(with: player.nowPlayingItem)
+			self.updateViewData(with: player.nowPlayingItem)
 		}
 	}
 }
