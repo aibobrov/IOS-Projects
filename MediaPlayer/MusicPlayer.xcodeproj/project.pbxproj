@@ -22,7 +22,7 @@
 		A16CD0C4203E01FC00285126 /* UPCarouselFlowLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A16CD0C0203E01FC00285126 /* UPCarouselFlowLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A16CD0C9203E029C00285126 /* AppleMusicPermissionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0C8203E029C00285126 /* AppleMusicPermissionChecker.swift */; };
 		A16CD0CD203E030000285126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16CD0CC203E030000285126 /* Assets.xcassets */; };
-		A16CD0D1203E0B2C00285126 /* StaticSelectableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0D0203E0B2C00285126 /* StaticSelectableTableViewCell.swift */; };
+		A16CD0D1203E0B2C00285126 /* SelectedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0D0203E0B2C00285126 /* SelectedTableViewCell.swift */; };
 		A16CD0D5203E0C9A00285126 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0D4203E0C9A00285126 /* MainMenuTableViewController.swift */; };
 		A16CD0DA203E105900285126 /* MainMenuCollectionViewDelegates+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0D9203E105900285126 /* MainMenuCollectionViewDelegates+DataSource.swift */; };
 		A16CD0DC203E16B500285126 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0DB203E16B500285126 /* MusicModel.swift */; };
@@ -41,6 +41,8 @@
 		A16CD1022040521E00285126 /* SeekPlayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD1012040521E00285126 /* SeekPlayerSlider.swift */; };
 		A16CD1042040804800285126 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD1032040804800285126 /* UICollectionViewExtension.swift */; };
 		A16CD1062040B05500285126 /* RepeatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD1052040B05500285126 /* RepeatButton.swift */; };
+		A16CD10B2040BF8000285126 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD10A2040BF8000285126 /* MediaTableViewCell.swift */; };
+		A16CD10D2040C1F600285126 /* SongsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD10C2040C1F600285126 /* SongsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,7 +76,7 @@
 		A16CD0C0203E01FC00285126 /* UPCarouselFlowLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UPCarouselFlowLayout.framework; path = Carthage/Build/iOS/UPCarouselFlowLayout.framework; sourceTree = "<group>"; };
 		A16CD0C8203E029C00285126 /* AppleMusicPermissionChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMusicPermissionChecker.swift; sourceTree = "<group>"; };
 		A16CD0CC203E030000285126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A16CD0D0203E0B2C00285126 /* StaticSelectableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticSelectableTableViewCell.swift; sourceTree = "<group>"; };
+		A16CD0D0203E0B2C00285126 /* SelectedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTableViewCell.swift; sourceTree = "<group>"; };
 		A16CD0D4203E0C9A00285126 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		A16CD0D9203E105900285126 /* MainMenuCollectionViewDelegates+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainMenuCollectionViewDelegates+DataSource.swift"; sourceTree = "<group>"; };
 		A16CD0DB203E16B500285126 /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
@@ -93,6 +95,8 @@
 		A16CD1012040521E00285126 /* SeekPlayerSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekPlayerSlider.swift; sourceTree = "<group>"; };
 		A16CD1032040804800285126 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		A16CD1052040B05500285126 /* RepeatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatButton.swift; sourceTree = "<group>"; };
+		A16CD10A2040BF8000285126 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		A16CD10C2040C1F600285126 /* SongsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				A16CD0DE203EDBE500285126 /* PlayerView */,
-				A16CD0CF203E0AED00285126 /* MainMenu */,
+				A16CD1082040BF3300285126 /* MenuUI */,
 				A16CD0CB203E02F600285126 /* UI */,
 			);
 			path = Views;
@@ -195,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				A16CD0D6203E0EA700285126 /* RecentlyPlayerCollectionView */,
-				A16CD0D0203E0B2C00285126 /* StaticSelectableTableViewCell.swift */,
+				A16CD0D0203E0B2C00285126 /* SelectedTableViewCell.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -205,7 +209,7 @@
 			children = (
 				A16CD0E4203F484B00285126 /* BaseControllers */,
 				A16CD0E3203EE06A00285126 /* PlayerController */,
-				A16CD0D3203E0C5B00285126 /* MainMenuTableViewController */,
+				A16CD1072040BD8D00285126 /* MenuViewControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -266,6 +270,32 @@
 				A16CD0E7203F484B00285126 /* TabBarController.swift */,
 			);
 			path = BaseControllers;
+			sourceTree = "<group>";
+		};
+		A16CD1072040BD8D00285126 /* MenuViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A16CD0D3203E0C5B00285126 /* MainMenuTableViewController */,
+				A16CD10E2040D36B00285126 /* SongsTableView */,
+			);
+			path = MenuViewControllers;
+			sourceTree = "<group>";
+		};
+		A16CD1082040BF3300285126 /* MenuUI */ = {
+			isa = PBXGroup;
+			children = (
+				A16CD0CF203E0AED00285126 /* MainMenu */,
+				A16CD10A2040BF8000285126 /* MediaTableViewCell.swift */,
+			);
+			path = MenuUI;
+			sourceTree = "<group>";
+		};
+		A16CD10E2040D36B00285126 /* SongsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A16CD10C2040C1F600285126 /* SongsTableViewController.swift */,
+			);
+			path = SongsTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +382,7 @@
 				A16CD1022040521E00285126 /* SeekPlayerSlider.swift in Sources */,
 				A16CD0E1203EDC3B00285126 /* PlayerViewController.swift in Sources */,
 				A16CD0EA203F484C00285126 /* TabBarController.swift in Sources */,
+				A16CD10B2040BF8000285126 /* MediaTableViewCell.swift in Sources */,
 				A16CD1042040804800285126 /* UICollectionViewExtension.swift in Sources */,
 				A16CD0E8203F484C00285126 /* TableViewWithSmallMusicBarTableViewController.swift in Sources */,
 				A16CD0FE2040468500285126 /* PlayerSliderView.swift in Sources */,
@@ -359,7 +390,8 @@
 				A16CD0E9203F484C00285126 /* NavigationController.swift in Sources */,
 				A16CD0BE203E019800285126 /* UIImageExtension.swift in Sources */,
 				A16CD0B9203E019800285126 /* UIColorExtension.swift in Sources */,
-				A16CD0D1203E0B2C00285126 /* StaticSelectableTableViewCell.swift in Sources */,
+				A16CD10D2040C1F600285126 /* SongsTableViewController.swift in Sources */,
+				A16CD0D1203E0B2C00285126 /* SelectedTableViewCell.swift in Sources */,
 				A16CD0F3203F609900285126 /* MediaItemCollectionViewCell.swift in Sources */,
 				A16CD0FC203F918400285126 /* ProgressTimer.swift in Sources */,
 				A16CD0BA203E019800285126 /* LNExtensions.swift in Sources */,

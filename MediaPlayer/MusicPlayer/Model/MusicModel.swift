@@ -26,7 +26,7 @@ class MediaModelController {
 		return query
 	}
 
-	private var songsQuery: MPMediaQuery {
+	var songsQuery: MPMediaQuery {
 		let query = MPMediaQuery.songs()
 		query.addFilterPredicate(noCloudPredicate)
 		query.groupingType = .albumArtist
@@ -38,9 +38,5 @@ class MediaModelController {
 		return Array(list.sorted { (lhs, rhs) -> Bool in
 			return lhs.lastPlayedDate!.compare(rhs.lastPlayedDate!) == .orderedDescending
 			}.prefix(maxAmount))
-	}
-
-	var songs: Songlist {
-		return artistsQuery.collections ?? Songlist()
 	}
 }

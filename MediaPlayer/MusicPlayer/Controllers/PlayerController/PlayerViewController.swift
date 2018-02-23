@@ -124,7 +124,7 @@ class PlayerViewController: UIViewController {
 		player.prepareToPlay()
 
 		let indexPath = IndexPath(row: player.indexOfNowPlayingItem, section: 0)
-		playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+		playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: false)
 	}
 
 	deinit {

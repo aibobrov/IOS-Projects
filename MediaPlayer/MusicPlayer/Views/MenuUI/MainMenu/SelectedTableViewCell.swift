@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StaticSelectableTableViewCell: UITableViewCell {
+class SelectedTableViewCell: UITableViewCell {
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setup()
