@@ -34,15 +34,12 @@ extension MainMenuTableViewController: UICollectionViewDelegate, UICollectionVie
 		let cell = collectionView.cellForItem(at: indexPath) as! MediaItemCollectionViewCell
 		guard let item = cell.item else { return }
 		DispatchQueue.main.async {
-			self.playerViewController.currentPlaylist = self.recentTracksData
-			self.playerViewController.player.nowPlayingItem = item
-			self.playerViewController.play()
-		}
-		DispatchQueue.main.async {
 			self.tabBarController?.presentPopupBar(withContentViewController: self.playerViewController, animated: true, completion: nil)
 			cell.onClickAnimation()
-			self.tabBarController?.popupBar.layer.backgroundColor = item.artwork?.image(at: self.tabBarController?.popupBar.frame.size ?? CGSize.zero)?.averageColor?.bgColor.cgColor
 		}
-
+		
+		self.playerViewController.currentPlaylist = self.recentTracksData
+		self.playerViewController.player.nowPlayingItem = item
+		self.playerViewController.play()
 	}
 }

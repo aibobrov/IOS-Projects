@@ -48,6 +48,12 @@ class MainMenuTableViewController: TableViewWithMusicPlayerBarTableViewControlle
 			self.recentlyPlayedCollectionView.reloadData()
 			self.updateViewContentSize()
 		}
+
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: nil) { (notification) in
+			guard let player = notification.object as? MPMusicPlayerApplicationController,
+				let track = player.nowPlayingItem else { return }
+			self.tabBarController?.popupBar.layer.backgroundColor = track.artwork?.image(at: self.tabBarController?.popupBar.frame.size ?? CGSize.zero)?.averageColor?.bgColor.cgColor ?? UIColor.clear.cgColor
+		}
 	}
 
 

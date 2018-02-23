@@ -117,7 +117,7 @@ class PlayerViewController: UIViewController {
 	}
 
 	private func notificationCenterObserversSetup() {
-		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil, queue: OperationQueue.current) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil, queue: nil) { (notification) in
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			switch player.playbackState {
 			case .stopped, .paused, .interrupted, .seekingForward, .seekingBackward:
@@ -129,7 +129,7 @@ class PlayerViewController: UIViewController {
 			}
 		}
 
-		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: OperationQueue.current) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: nil) { (notification) in
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			self.updatePopupBarData(with: player.nowPlayingItem)
 			self.sliderView.durationTime = player.nowPlayingItem?.playbackDuration
