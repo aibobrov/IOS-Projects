@@ -118,6 +118,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A16CD0CE203E06F700285126 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A1F385A2201DE8A70088C535 /* Assets.xcassets */,
+				A12D1063201BBE5B0081B7CC /* LaunchScreen.storyboard */,
+				A12D105B201BBE5B0081B7CC /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		A1AD7E4920261AEB00FB564C /* NSManagedObjectSubclasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,9 +140,7 @@
 		A1F385A8201E1F620088C535 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A1F385A2201DE8A70088C535 /* Assets.xcassets */,
-				A12D1063201BBE5B0081B7CC /* LaunchScreen.storyboard */,
-				A12D105B201BBE5B0081B7CC /* Main.storyboard */,
+				A16CD0CE203E06F700285126 /* UI */,
 				A1573BF9201D242B00C70ADF /* NoteDateBarButton.swift */,
 				A172757D2020C93200464862 /* StyleExtensions.swift */,
 				A172757F2020CC0B00464862 /* NoteTextView.swift */,
