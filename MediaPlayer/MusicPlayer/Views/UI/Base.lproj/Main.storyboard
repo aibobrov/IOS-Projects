@@ -266,18 +266,18 @@
         <scene sceneID="ikl-pS-9gM">
             <objects>
                 <tableViewController id="Nlg-TZ-2Sw" customClass="SongsTableViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="2rU-ha-1nS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="2rU-ha-1nS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="scrollIndicatorInsets" minX="74" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongTableViewCellIdentidier" rowHeight="70" id="B1W-dS-Wpf" customClass="MediaTableViewCell" customModule="MusicPlayer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B1W-dS-Wpf" id="ibE-HK-QZy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dM2-ui-5MI">
@@ -301,6 +301,7 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="albumArtworkImageView" destination="dM2-ui-5MI" id="Nhh-Aw-seb"/>
                                     <outlet property="artistNameLabel" destination="qsw-Ct-oE3" id="h6s-dH-KuC"/>

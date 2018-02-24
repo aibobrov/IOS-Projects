@@ -43,6 +43,7 @@
 		A16CD1062040B05500285126 /* RepeatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD1052040B05500285126 /* RepeatButton.swift */; };
 		A16CD10B2040BF8000285126 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD10A2040BF8000285126 /* MediaTableViewCell.swift */; };
 		A16CD10D2040C1F600285126 /* SongsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD10C2040C1F600285126 /* SongsTableViewController.swift */; };
+		A16CD1102040E36100285126 /* SongsTableViewControllerTableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD10F2040E36100285126 /* SongsTableViewControllerTableViewDelegate+DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,6 +98,7 @@
 		A16CD1052040B05500285126 /* RepeatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatButton.swift; sourceTree = "<group>"; };
 		A16CD10A2040BF8000285126 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		A16CD10C2040C1F600285126 /* SongsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewController.swift; sourceTree = "<group>"; };
+		A16CD10F2040E36100285126 /* SongsTableViewControllerTableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SongsTableViewControllerTableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				A16CD10C2040C1F600285126 /* SongsTableViewController.swift */,
+				A16CD10F2040E36100285126 /* SongsTableViewControllerTableViewDelegate+DataSource.swift */,
 			);
 			path = SongsTableView;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				A16CD0EA203F484C00285126 /* TabBarController.swift in Sources */,
 				A16CD10B2040BF8000285126 /* MediaTableViewCell.swift in Sources */,
 				A16CD1042040804800285126 /* UICollectionViewExtension.swift in Sources */,
+				A16CD1102040E36100285126 /* SongsTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
 				A16CD0E8203F484C00285126 /* TableViewWithSmallMusicBarTableViewController.swift in Sources */,
 				A16CD0FE2040468500285126 /* PlayerSliderView.swift in Sources */,
 				A16CD0D5203E0C9A00285126 /* MainMenuTableViewController.swift in Sources */,
