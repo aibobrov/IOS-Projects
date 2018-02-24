@@ -29,6 +29,7 @@ class AlbumTableViewCell: SelectedTableViewCell {
 			if let title = item.title {
 				titleLabel.text = title
 			}
+			
 			subtitleLabel.text = "\(item.albumTrackNumber)"
 		}
 	}

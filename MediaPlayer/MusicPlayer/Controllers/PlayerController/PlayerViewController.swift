@@ -122,7 +122,10 @@ class PlayerViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		player.prepareToPlay()
+	}
 
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 		let indexPath = IndexPath(row: player.indexOfNowPlayingItem, section: 0)
 		playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: false)
 	}
@@ -150,6 +153,10 @@ class PlayerViewController: UIViewController {
 
 	// MARK: NotifactionCenter observers setup
 	private func notificationCenterObserversSetup() {
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerQueueDidChange, object: nil, queue: nil) { (_) in
+			self.playlistCollectionView.reloadData()
+		}
+
 		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil, queue: nil) { [unowned self] (notification) in
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			switch player.playbackState {

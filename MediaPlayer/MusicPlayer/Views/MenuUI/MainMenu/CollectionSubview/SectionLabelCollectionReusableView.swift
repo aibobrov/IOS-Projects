@@ -9,7 +9,14 @@
 import UIKit
 
 class SectionLabelCollectionReusableView: UICollectionReusableView {
-	var titleLabel: UILabel
+	lazy var titleLabel: UILabel = {
+		let label = UILabel(frame: self.frame)
+		label.textColor = .white
+		label.font = UIFont.boldSystemFont(ofSize: 17)
+		label.frame.size.width -= 16
+		label.frame.origin.x = 16
+		return label
+	}()
 
 	var title: String? {
 		didSet {
@@ -18,25 +25,17 @@ class SectionLabelCollectionReusableView: UICollectionReusableView {
 		}
 	}
 
-
 	override init(frame: CGRect) {
-		titleLabel = UILabel(frame: frame)
 		super.init(frame: frame)
 		setup()
 	}
 
 	required init?(coder aDecoder: NSCoder) {
-		titleLabel = UILabel(coder: aDecoder)!
 		super.init(coder: aDecoder)
 		setup()
 	}
 
 	private func setup() {
-		titleLabel.textColor = .white
-		titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
-		titleLabel.frame.size.width -= 16
-		titleLabel.frame.origin.x = 16
-
 		self.addSubview(titleLabel)
 		self.backgroundColor = UIColor.darkGray.withAlphaComponent(0.05)
 	}
