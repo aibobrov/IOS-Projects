@@ -332,23 +332,6 @@
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AlbumCollectionViewReusableViewIdentifier" id="AMr-sI-R9J" customClass="SectionLabelCollectionReusableView" customModule="MusicPlayer" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCe-NF-T3x">
-                                    <rect key="frame" x="16" y="0.0" width="359" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="mCe-NF-T3x" firstAttribute="top" secondItem="AMr-sI-R9J" secondAttribute="top" id="Ltj-rV-I4w"/>
-                                <constraint firstItem="mCe-NF-T3x" firstAttribute="leading" secondItem="AMr-sI-R9J" secondAttribute="leading" constant="16" id="fRk-62-zAs"/>
-                                <constraint firstAttribute="bottom" secondItem="mCe-NF-T3x" secondAttribute="bottom" id="mn9-uI-FEd"/>
-                                <constraint firstAttribute="trailing" secondItem="mCe-NF-T3x" secondAttribute="trailing" id="wUD-Xk-Qdv"/>
-                            </constraints>
-                            <connections>
-                                <outlet property="titleLabel" destination="mCe-NF-T3x" id="Aeg-Tn-Pfo"/>
-                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="iCs-O0-qk1" id="kEv-iT-zSy"/>

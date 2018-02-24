@@ -17,7 +17,6 @@ extension SongsTableViewController {
 		return query.itemSections?[section].range.length ?? 0
 	}
 
-
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: SongsTableViewController.SongTableViewCellIdentidier, for: indexPath) as! MediaTableViewCell
 		if let range = query.itemSections?[indexPath.section].range {
@@ -34,14 +33,16 @@ extension SongsTableViewController {
 	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let height = self.tableView(tableView, heightForHeaderInSection: section)
 		let rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: height)
-		let view = UIView(frame: rect)
-		view.backgroundColor = UIColor.darkGray.withAlphaComponent(0.05)
-		let label = UILabel(frame: rect)
-		label.text = query.itemSections?[section].title
-		label.textColor = .white
-		label.baselineAdjustment = .alignCenters
-		view.addSubview(label)
-		label.frame.origin.x = 16
+		let view = SectionLabelCollectionReusableView(frame: rect)
+		view.title = query.itemSections?[section].title
+//		let view = UIView(frame: rect)
+//		view.backgroundColor = UIColor.darkGray.withAlphaComponent(0.05)
+//		let label = UILabel(frame: rect)
+//		label.text = query.itemSections?[section].title
+//		label.textColor = .white
+//		label.baselineAdjustment = .alignCenters
+//		view.addSubview(label)
+//		label.frame.origin.x = 16
 		return view
 	}
 
