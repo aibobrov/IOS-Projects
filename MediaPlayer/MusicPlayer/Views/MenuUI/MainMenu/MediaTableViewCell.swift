@@ -9,13 +9,9 @@
 import UIKit
 import MediaPlayer
 
-class MediaTableViewCell: SelectedTableViewCell {
+class MediaTableViewCell: AlbumTableViewCell {
 
 	@IBOutlet weak var albumArtworkImageView: UIImageView!
-	@IBOutlet weak var titleLabel: UILabel!
-	@IBOutlet weak var artistNameLabel: UILabel!
-
-	let imageCornerRadius: CGFloat = 7
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -25,17 +21,17 @@ class MediaTableViewCell: SelectedTableViewCell {
 		self.albumArtworkImageView.layer.backgroundColor = UIColor.black.cgColor
 	}
 
-	weak var item: MPMediaItem? {
+	override weak var item: MPMediaItem? {
 		didSet {
 			guard let item = item else { return }
 			if let artwork = item.artwork {
 				albumArtworkImageView.image = artwork.image(at: albumArtworkImageView.frame.size)
 			}
 			if let title = item.title {
-				titleLabel.text = title
+				self.titleLabel.text = title
 			}
 
-			artistNameLabel.text = item.artist
+			subtitleLabel.text = item.artist
 		}
 	}
 }

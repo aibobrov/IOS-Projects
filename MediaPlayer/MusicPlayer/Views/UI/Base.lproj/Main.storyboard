@@ -326,6 +326,7 @@
                                     <outlet property="artworkImageView" destination="6Xi-uo-JF1" id="Sxy-5S-zGc"/>
                                     <outlet property="subtitleLabel" destination="aY4-Xq-OZt" id="PUw-Ej-d6a"/>
                                     <outlet property="titleLabel" destination="mVK-CY-S4y" id="1EQ-d9-Rsw"/>
+                                    <segue destination="hIC-jp-ZZG" kind="show" id="3tD-Xl-tt8"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -341,7 +342,67 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXs-j9-2pj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2240.8000000000002" y="-589.65517241379314"/>
+            <point key="canvasLocation" x="2366" y="-465"/>
+        </scene>
+        <!--Album Detail Table View Controller-->
+        <scene sceneID="GqL-Oq-LzV">
+            <objects>
+                <tableViewController id="hIC-jp-ZZG" customClass="AlbumDetailTableViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nQa-5L-uyR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumDetailTableViewControllerCellIdentifier" rowHeight="50" id="QrM-Yp-r95" customClass="AlbumTableViewCell" customModule="MusicPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QrM-Yp-r95" id="fmL-hg-KSG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIi-5H-MLP">
+                                            <rect key="frame" x="54" y="5" width="305" height="39"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYL-Ab-Tf5">
+                                            <rect key="frame" x="16" y="5" width="30" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="7cB-mq-GbS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iYL-Ab-Tf5" secondAttribute="bottom" constant="-5" id="4yc-JF-VlN"/>
+                                        <constraint firstItem="iIi-5H-MLP" firstAttribute="leading" secondItem="iYL-Ab-Tf5" secondAttribute="trailing" constant="8" symbolic="YES" id="Jsb-e0-eDb"/>
+                                        <constraint firstItem="iYL-Ab-Tf5" firstAttribute="top" secondItem="iIi-5H-MLP" secondAttribute="top" id="Lba-ka-qdx"/>
+                                        <constraint firstItem="iIi-5H-MLP" firstAttribute="trailing" secondItem="fmL-hg-KSG" secondAttribute="trailingMargin" id="Toq-sv-AF8"/>
+                                        <constraint firstItem="iYL-Ab-Tf5" firstAttribute="leading" secondItem="fmL-hg-KSG" secondAttribute="leadingMargin" id="WRY-Pm-SWT"/>
+                                        <constraint firstItem="iYL-Ab-Tf5" firstAttribute="baseline" secondItem="iIi-5H-MLP" secondAttribute="baseline" id="h6P-ea-Lgx"/>
+                                        <constraint firstItem="iYL-Ab-Tf5" firstAttribute="centerY" secondItem="fmL-hg-KSG" secondAttribute="centerY" id="ykx-V4-R6e"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="subtitleLabel" destination="iYL-Ab-Tf5" id="D7l-uq-i6n"/>
+                                    <outlet property="titleLabel" destination="iIi-5H-MLP" id="GfX-xN-YVt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hIC-jp-ZZG" id="mZJ-qP-2TO"/>
+                            <outlet property="delegate" destination="hIC-jp-ZZG" id="jEB-Qi-L01"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XVr-u9-2KM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3064.8000000000002" y="-466.41679160419795"/>
         </scene>
         <!--Songs Table View Controller-->
         <scene sceneID="ikl-pS-9gM">
@@ -397,7 +458,7 @@
                                 <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="albumArtworkImageView" destination="dM2-ui-5MI" id="Nhh-Aw-seb"/>
-                                    <outlet property="artistNameLabel" destination="qsw-Ct-oE3" id="h6s-dH-KuC"/>
+                                    <outlet property="subtitleLabel" destination="qsw-Ct-oE3" id="h6s-dH-KuC"/>
                                     <outlet property="titleLabel" destination="8PJ-rg-Xzt" id="GI0-SD-zo7"/>
                                 </connections>
                             </tableViewCell>
