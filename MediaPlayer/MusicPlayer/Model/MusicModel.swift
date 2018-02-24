@@ -22,7 +22,6 @@ class MediaModelController {
 	var albumsQuery: MPMediaQuery {
 		let query = MPMediaQuery.albums()
 		query.addFilterPredicate(noCloudPredicate)
-		query.groupingType = .albumArtist
 		return query
 	}
 

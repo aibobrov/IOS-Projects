@@ -35,14 +35,6 @@ extension SongsTableViewController {
 		let rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: height)
 		let view = SectionLabelCollectionReusableView(frame: rect)
 		view.title = query.itemSections?[section].title
-//		let view = UIView(frame: rect)
-//		view.backgroundColor = UIColor.darkGray.withAlphaComponent(0.05)
-//		let label = UILabel(frame: rect)
-//		label.text = query.itemSections?[section].title
-//		label.textColor = .white
-//		label.baselineAdjustment = .alignCenters
-//		view.addSubview(label)
-//		label.frame.origin.x = 16
 		return view
 	}
 

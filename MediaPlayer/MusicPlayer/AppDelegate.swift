@@ -22,18 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		MPMediaLibrary.default().beginGeneratingLibraryChangeNotifications()
 		AppleMusicPermissionChecker.request()
-
-		let query = MediaModelController.shared.albumsQuery
-		query.groupingType = .albumArtist
-
-		for (ind, collection) in query.collections!.enumerated() {
-			print("<< collection # \(ind)")
-			for item in collection.items {
-				print("\(item.title ?? "")")
-			}
-		}
-		print("-----------------collectionSections")
-		query.collectionSections?.forEach({print($0)})
 		return true
 	}
 
