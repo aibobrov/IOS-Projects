@@ -10,19 +10,21 @@ import UIKit
 import MediaPlayer
 
 class RepeatButton: UIButton {
-
-
 	@IBInspectable
 	var currentStateIndex: Int = 0 {
 		didSet {
 			currentStateIndex %= states.count
 			self.setImage(images[currentStateIndex], for: .normal)
-			self.tintColor = currentStateIndex == states.count - 1 ? .red : .white
+			self.tintColor = colors[currentStateIndex]
 		}
 	}
 
 	private var images: [UIImage] {
-		return [#imageLiteral(resourceName: "repeat-off"), #imageLiteral(resourceName: "repeat-on"), #imageLiteral(resourceName: "repeat-on").tinted]
+		return [#imageLiteral(resourceName: "repeat-off"), #imageLiteral(resourceName: "repeat-off"), #imageLiteral(resourceName: "repeat-on")]
+	}
+
+	private var colors: [UIColor] {
+		return [.white, .red, .white]
 	}
 
 	private var states: [MPMusicRepeatMode] {
