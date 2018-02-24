@@ -13,9 +13,9 @@ class MediaItemCollectionViewCell: UICollectionViewCell {
 
 	static let cellTextViewsHeight: CGFloat = 35
 
-	@IBOutlet weak var albumArtworkImageView: UIImageView!
+	@IBOutlet weak var artworkImageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
-	@IBOutlet weak var artistAlbumNameLabel: UILabel!
+	@IBOutlet weak var subtitleLabel: UILabel!
 
 	let imageCornerRadius: CGFloat = 7
 
@@ -23,25 +23,25 @@ class MediaItemCollectionViewCell: UICollectionViewCell {
 		didSet {
 			guard let item = item else { return }
 			if let artwork = item.artwork {
-				albumArtworkImageView.image = artwork.image(at: albumArtworkImageView.frame.size)
+				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
 			}
 
 			titleLabel.text = item.title ?? ""
-			artistAlbumNameLabel.text = item.artistAlbumFormatted ?? ""
+			subtitleLabel.text = item.artistAlbumFormatted ?? ""
 		}
 	}
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		self.albumArtworkImageView.layer.masksToBounds = true
-		self.albumArtworkImageView.layer.cornerRadius = imageCornerRadius
-		self.albumArtworkImageView.layer.backgroundColor = UIColor.black.cgColor
+		self.artworkImageView.layer.masksToBounds = true
+		self.artworkImageView.layer.cornerRadius = imageCornerRadius
+		self.artworkImageView.layer.backgroundColor = UIColor.black.cgColor
 	}
 
 	func onClickAnimation() {
-		self.albumArtworkImageView.layer.opacity = 0.5
+		self.artworkImageView.layer.opacity = 0.5
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-			self.albumArtworkImageView.layer.opacity = 1
+			self.artworkImageView.layer.opacity = 1
 		}
 	}
 }

@@ -59,8 +59,8 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="164" height="199"/>
             <connections>
-                <outlet property="albumArtworkImageView" destination="cA1-Dy-m0a" id="1Gp-hU-lhi"/>
-                <outlet property="artistAlbumNameLabel" destination="oCj-37-99V" id="zze-Qh-mdI"/>
+                <outlet property="artworkImageView" destination="cA1-Dy-m0a" id="1Gp-hU-lhi"/>
+                <outlet property="subtitleLabel" destination="oCj-37-99V" id="zze-Qh-mdI"/>
                 <outlet property="titleLabel" destination="OOV-IO-mzB" id="aPW-b1-Q2W"/>
             </connections>
             <point key="canvasLocation" x="8" y="32.5"/>

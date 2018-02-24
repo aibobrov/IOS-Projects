@@ -7,13 +7,8 @@
 //
 
 import MediaPlayer
-import AVFoundation
 
 extension MPMediaItem {
-	var isPlayable: Bool {
-		return !self.isCloudItem && self.assetURL != nil
-	}
-
 	var hasLastPlayedDate: Bool {
 		return self.lastPlayedDate != nil
 	}
