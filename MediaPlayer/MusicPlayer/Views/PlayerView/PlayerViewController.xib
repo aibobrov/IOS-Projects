@@ -33,14 +33,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oeI-uA-RT7">
-                    <rect key="frame" x="0.0" y="60" width="375" height="267"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oeI-uA-RT7">
+                    <rect key="frame" x="0.0" y="60" width="375" height="300"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="267" id="vQu-AO-RWB"/>
-                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zz7-vb-CnF">
-                        <size key="itemSize" width="50" height="50"/>
+                        <size key="itemSize" width="200" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -50,23 +48,27 @@
                         <outlet property="delegate" destination="-1" id="RQj-et-r8q"/>
                     </connections>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrE-s1-aB6" customClass="PlayerSliderView" customModule="MusicPlayer" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="335" width="375" height="47"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LrE-s1-aB6" customClass="PlayerSliderView" customModule="MusicPlayer" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="368" width="375" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-wC-DNS">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-wC-DNS">
                             <rect key="frame" x="5" y="0.0" width="26" height="47"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnL-xw-Ojf">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnL-xw-Ojf">
                             <rect key="frame" x="344" y="0.0" width="26" height="47"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CPH-VY-nN6" customClass="SeekPlayerSlider" customModule="MusicPlayer" customModuleProvider="target">
+                        <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CPH-VY-nN6" customClass="SeekPlayerSlider" customModule="MusicPlayer" customModuleProvider="target">
                             <rect key="frame" x="32" y="8" width="311" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="maximumTrackTintColor" red="0.36078431372549019" green="0.36862745098039218" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <userDefinedRuntimeAttributes>
@@ -81,37 +83,12 @@
                         </slider>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="GnL-xw-Ojf" secondAttribute="trailing" constant="5" id="0zo-Wb-1cM"/>
-                        <constraint firstAttribute="bottom" secondItem="GnL-xw-Ojf" secondAttribute="bottom" id="2iq-kc-hBG"/>
-                        <constraint firstAttribute="height" constant="47" id="68R-mc-yCB"/>
-                        <constraint firstItem="GnL-xw-Ojf" firstAttribute="top" secondItem="LrE-s1-aB6" secondAttribute="top" id="6kS-8T-9FD"/>
-                        <constraint firstAttribute="bottom" secondItem="CPH-VY-nN6" secondAttribute="bottom" constant="9" id="8n4-ha-qee"/>
-                        <constraint firstItem="GnL-xw-Ojf" firstAttribute="leading" secondItem="CPH-VY-nN6" secondAttribute="trailing" constant="3" id="DWV-xc-ZEB"/>
-                        <constraint firstItem="2hD-wC-DNS" firstAttribute="leading" secondItem="LrE-s1-aB6" secondAttribute="leading" constant="5" id="DWd-Cr-7fc"/>
-                        <constraint firstItem="2hD-wC-DNS" firstAttribute="top" secondItem="LrE-s1-aB6" secondAttribute="top" id="Euc-tk-xcG"/>
-                        <constraint firstItem="GnL-xw-Ojf" firstAttribute="leading" secondItem="CPH-VY-nN6" secondAttribute="trailing" constant="3" id="UYN-ds-mR5"/>
-                        <constraint firstItem="CPH-VY-nN6" firstAttribute="leading" secondItem="2hD-wC-DNS" secondAttribute="trailing" constant="3" id="a0V-uT-jv4"/>
-                        <constraint firstItem="CPH-VY-nN6" firstAttribute="top" secondItem="LrE-s1-aB6" secondAttribute="top" constant="8" id="ndm-iu-xHE"/>
-                        <constraint firstAttribute="bottom" secondItem="2hD-wC-DNS" secondAttribute="bottom" id="qn5-DE-bft"/>
-                    </constraints>
                     <connections>
                         <outlet property="currentPlaybackTimeLabel" destination="2hD-wC-DNS" id="ZKD-cJ-Fz6"/>
                         <outlet property="durationTimeLabel" destination="GnL-xw-Ojf" id="ic2-Sx-Hrj"/>
                         <outlet property="playbackSlider" destination="CPH-VY-nN6" id="ddn-ZH-Zft"/>
                     </connections>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-tc-pkF" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
-                    <rect key="frame" x="112" y="427" width="150" height="150"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="large-play"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="image" keyPath="alternativeImage" value="large-pause"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="playPauseButtonClicked:" destination="-1" eventType="touchUpInside" id="oKv-lT-H1e"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USF-HE-yJ0" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
                     <rect key="frame" x="270" y="462" width="80" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -121,21 +98,10 @@
                         <action selector="fastForwardButtonClicked:" destination="-1" eventType="touchUpInside" id="CWs-FS-rXY"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2Z-Qj-97i" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
-                    <rect key="frame" x="24" y="462" width="80" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
-                    <state key="normal" image="large-rewind"/>
-                    <connections>
-                        <action selector="rewindButtonClicked:" destination="-1" eventType="touchUpInside" id="iNt-8q-n1K"/>
-                    </connections>
-                </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3X-Bb-zsG">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x3X-Bb-zsG">
                     <rect key="frame" x="16" y="589" width="343" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="QQK-fi-RFV"/>
-                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QN-ls-m27" customClass="RepeatButton" customModule="MusicPlayer" customModuleProvider="target">
                     <rect key="frame" x="291" y="412" width="38" height="42"/>
@@ -150,30 +116,32 @@
                         <action selector="repeatButtonClicked:" destination="-1" eventType="touchUpInside" id="2y7-SH-2k1"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-2A-xMy">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-2A-xMy">
                     <rect key="frame" x="167" y="619" width="40" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="V87-DJ-V04"/>
-                        <constraint firstAttribute="height" constant="40" id="dXd-XV-HVb"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-tc-pkF" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
+                    <rect key="frame" x="112" y="427" width="150" height="150"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="large-play"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="alternativeImage" value="large-pause"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="playPauseButtonClicked:" destination="-1" eventType="touchUpInside" id="oKv-lT-H1e"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2Z-Qj-97i" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
+                    <rect key="frame" x="23" y="462" width="80" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                    <state key="normal" image="large-rewind"/>
+                    <connections>
+                        <action selector="rewindButtonClicked:" destination="-1" eventType="touchUpInside" id="iNt-8q-n1K"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="oeI-uA-RT7" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9yx-v4-2ew"/>
-                <constraint firstItem="QyI-2A-xMy" firstAttribute="top" secondItem="x3X-Bb-zsG" secondAttribute="bottom" id="ChQ-5a-T3Z"/>
-                <constraint firstItem="LrE-s1-aB6" firstAttribute="top" secondItem="oeI-uA-RT7" secondAttribute="bottom" constant="8" symbolic="YES" id="ETJ-IM-Zht"/>
-                <constraint firstItem="oeI-uA-RT7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="Ekf-Hl-fuE"/>
-                <constraint firstItem="x3X-Bb-zsG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="K1p-JY-GrS"/>
-                <constraint firstItem="LrE-s1-aB6" firstAttribute="trailing" secondItem="oeI-uA-RT7" secondAttribute="trailing" id="KGn-sX-fLV"/>
-                <constraint firstItem="LrE-s1-aB6" firstAttribute="leading" secondItem="oeI-uA-RT7" secondAttribute="leading" id="W1T-Zv-7CD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QyI-2A-xMy" secondAttribute="bottom" constant="8" id="YDw-BK-6Kq"/>
-                <constraint firstItem="QyI-2A-xMy" firstAttribute="top" secondItem="x3X-Bb-zsG" secondAttribute="bottom" id="lbw-Sn-8Na"/>
-                <constraint firstItem="QyI-2A-xMy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="o4d-b0-SLR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x3X-Bb-zsG" secondAttribute="trailing" constant="16" id="p6c-gj-OGA"/>
-                <constraint firstItem="oeI-uA-RT7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yVD-n5-PwY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LrE-s1-aB6" secondAttribute="bottom" constant="285" id="yzV-Vi-uXu"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="146.5" y="58.5"/>
         </view>
