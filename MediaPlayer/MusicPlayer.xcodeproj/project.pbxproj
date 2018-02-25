@@ -13,13 +13,15 @@
 		A143CA4F20420EF5006E71BB /* AlbumCollectionViewControllerCollectionViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA4E20420EF5006E71BB /* AlbumCollectionViewControllerCollectionViewDelegate+DataSource.swift */; };
 		A143CA5120421AED006E71BB /* AlbumDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA5020421AED006E71BB /* AlbumDetailTableViewController.swift */; };
 		A143CA5320421CD3006E71BB /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA5220421CD3006E71BB /* AlbumTableViewCell.swift */; };
+		A143CA5520422A7E006E71BB /* AlbumInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA5420422A7E006E71BB /* AlbumInfoHeaderView.swift */; };
+		A143CA57204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA56204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift */; };
 		A16CD09D203E010200285126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD09C203E010200285126 /* AppDelegate.swift */; };
 		A16CD0A2203E010200285126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16CD0A0203E010200285126 /* Main.storyboard */; };
 		A16CD0A7203E010200285126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16CD0A5203E010200285126 /* LaunchScreen.storyboard */; };
 		A16CD0B7203E019800285126 /* CGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0AF203E019800285126 /* CGExtension.swift */; };
 		A16CD0B9203E019800285126 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B1203E019800285126 /* UIColorExtension.swift */; };
 		A16CD0BA203E019800285126 /* LNExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B2203E019800285126 /* LNExtensions.swift */; };
-		A16CD0BB203E019800285126 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B3203E019800285126 /* TimeIntervalExtension.swift */; };
+		A16CD0BB203E019800285126 /* TimeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B3203E019800285126 /* TimeExtension.swift */; };
 		A16CD0BD203E019800285126 /* MPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B5203E019800285126 /* MPExtension.swift */; };
 		A16CD0BE203E019800285126 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD0B6203E019800285126 /* UIImageExtension.swift */; };
 		A16CD0C1203E01FC00285126 /* LNPopupController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CD0BF203E01FC00285126 /* LNPopupController.framework */; };
@@ -74,6 +76,8 @@
 		A143CA4E20420EF5006E71BB /* AlbumCollectionViewControllerCollectionViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumCollectionViewControllerCollectionViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		A143CA5020421AED006E71BB /* AlbumDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailTableViewController.swift; sourceTree = "<group>"; };
 		A143CA5220421CD3006E71BB /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		A143CA5420422A7E006E71BB /* AlbumInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoHeaderView.swift; sourceTree = "<group>"; };
+		A143CA56204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		A16CD099203E010200285126 /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16CD09C203E010200285126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A16CD0A1203E010200285126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,7 +86,7 @@
 		A16CD0AF203E019800285126 /* CGExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGExtension.swift; sourceTree = "<group>"; };
 		A16CD0B1203E019800285126 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A16CD0B2203E019800285126 /* LNExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LNExtensions.swift; sourceTree = "<group>"; };
-		A16CD0B3203E019800285126 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
+		A16CD0B3203E019800285126 /* TimeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeExtension.swift; sourceTree = "<group>"; };
 		A16CD0B5203E019800285126 /* MPExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPExtension.swift; sourceTree = "<group>"; };
 		A16CD0B6203E019800285126 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		A16CD0BF203E01FC00285126 /* LNPopupController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LNPopupController.framework; path = Carthage/Build/iOS/LNPopupController.framework; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				A143CA422041EFE9006E71BB /* AlbumCollectionViewController.swift */,
 				A143CA4E20420EF5006E71BB /* AlbumCollectionViewControllerCollectionViewDelegate+DataSource.swift */,
 				A143CA5020421AED006E71BB /* AlbumDetailTableViewController.swift */,
+				A143CA56204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift */,
 			);
 			path = AlbumsCollectionViewController;
 			sourceTree = "<group>";
@@ -173,7 +178,7 @@
 				A16CD0AF203E019800285126 /* CGExtension.swift */,
 				A16CD0B1203E019800285126 /* UIColorExtension.swift */,
 				A16CD0B2203E019800285126 /* LNExtensions.swift */,
-				A16CD0B3203E019800285126 /* TimeIntervalExtension.swift */,
+				A16CD0B3203E019800285126 /* TimeExtension.swift */,
 				A16CD0B5203E019800285126 /* MPExtension.swift */,
 				A16CD0B6203E019800285126 /* UIImageExtension.swift */,
 				A16CD1032040804800285126 /* UICollectionViewExtension.swift */,
@@ -314,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				A16CD0CF203E0AED00285126 /* MainMenu */,
+				A143CA5420422A7E006E71BB /* AlbumInfoHeaderView.swift */,
 			);
 			path = MenuUI;
 			sourceTree = "<group>";
@@ -409,11 +415,12 @@
 			files = (
 				A143CA432041EFE9006E71BB /* AlbumCollectionViewController.swift in Sources */,
 				A143CA5120421AED006E71BB /* AlbumDetailTableViewController.swift in Sources */,
-				A16CD0BB203E019800285126 /* TimeIntervalExtension.swift in Sources */,
+				A16CD0BB203E019800285126 /* TimeExtension.swift in Sources */,
 				A16CD1022040521E00285126 /* SeekPlayerSlider.swift in Sources */,
 				A143CA4F20420EF5006E71BB /* AlbumCollectionViewControllerCollectionViewDelegate+DataSource.swift in Sources */,
 				A16CD0E1203EDC3B00285126 /* PlayerViewController.swift in Sources */,
 				A16CD0EA203F484C00285126 /* TabBarController.swift in Sources */,
+				A143CA5520422A7E006E71BB /* AlbumInfoHeaderView.swift in Sources */,
 				A16CD10B2040BF8000285126 /* MediaTableViewCell.swift in Sources */,
 				A16CD1042040804800285126 /* UICollectionViewExtension.swift in Sources */,
 				A16CD1102040E36100285126 /* SongsTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
@@ -426,6 +433,7 @@
 				A16CD0B9203E019800285126 /* UIColorExtension.swift in Sources */,
 				A16CD10D2040C1F600285126 /* SongsTableViewController.swift in Sources */,
 				A16CD0D1203E0B2C00285126 /* SelectedTableViewCell.swift in Sources */,
+				A143CA57204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
 				A16CD0F3203F609900285126 /* MediaItemCollectionViewCell.swift in Sources */,
 				A16CD0FC203F918400285126 /* ProgressTimer.swift in Sources */,
 				A143CA5320421CD3006E71BB /* AlbumTableViewCell.swift in Sources */,

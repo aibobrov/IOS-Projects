@@ -122,12 +122,7 @@ class PlayerViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		player.prepareToPlay()
-	}
-
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		let indexPath = IndexPath(row: player.indexOfNowPlayingItem, section: 0)
-		playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: false)
+		updatePlaylistCollectionViewPosition()
 	}
 
 	deinit {
@@ -175,8 +170,7 @@ class PlayerViewController: UIViewController {
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			self.updatePopupBarData(with: player.nowPlayingItem)
 			self.sliderView.durationTime = player.nowPlayingItem?.playbackDuration
-			let indexPath = IndexPath(row: player.indexOfNowPlayingItem, section: 0)
-			self.playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+			self.updatePlaylistCollectionViewPosition()
 		}
 	}
 
@@ -184,6 +178,11 @@ class PlayerViewController: UIViewController {
 		guard let cell = playlistCollectionView.centerCell as? MediaItemCollectionViewCell else { return }
 		self.player.nowPlayingItem = cell.item
 		self.play()
+	}
+
+	func updatePlaylistCollectionViewPosition() {
+		let indexPath = IndexPath(row: self.player.indexOfNowPlayingItem, section: 0)
+		self.playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: false)
 	}
 }
 

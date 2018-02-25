@@ -43,9 +43,13 @@ extension SongsTableViewController {
 
 		guard let playlist = query.items else { return }
 
-		self.playerViewController.currentPlaylist = playlist
-		self.playerViewController.player.nowPlayingItem = cell.item
-		self.playerViewController.play()
+		DispatchQueue.main.async {
+			self.playerViewController.currentPlaylist = playlist
+		}
+		DispatchQueue.main.async {
+			self.playerViewController.player.nowPlayingItem = cell.item
+			self.playerViewController.play()
+		}
 
 		DispatchQueue.main.async {
 			self.tabBarController?.presentPopupBar(withContentViewController: self.playerViewController, animated: true, completion: nil)

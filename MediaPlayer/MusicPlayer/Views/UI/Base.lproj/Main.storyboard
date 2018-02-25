@@ -353,9 +353,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="znu-og-yxa" customClass="AlbumInfoHeaderView" customModule="MusicPlayer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GSs-N0-5UH">
+                                    <rect key="frame" x="16" y="7" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="o9O-IV-dZ9"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR7-ZK-CoR">
+                                    <rect key="frame" x="128" y="7" width="239" height="25"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh3-SI-Mco">
+                                    <rect key="frame" x="128" y="31" width="239" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre • Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJ7-CC-8sd">
+                                    <rect key="frame" x="128" y="52" width="239" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="pJ7-CC-8sd" firstAttribute="top" secondItem="Fh3-SI-Mco" secondAttribute="bottom" id="3KP-c6-rw4"/>
+                                <constraint firstItem="Fh3-SI-Mco" firstAttribute="trailing" secondItem="pJ7-CC-8sd" secondAttribute="trailing" id="BsL-XI-jPh"/>
+                                <constraint firstItem="GSs-N0-5UH" firstAttribute="top" secondItem="znu-og-yxa" secondAttribute="top" constant="7" id="Iwk-5V-YY1"/>
+                                <constraint firstAttribute="trailing" secondItem="zR7-ZK-CoR" secondAttribute="trailing" constant="8" id="K95-M4-YjB"/>
+                                <constraint firstItem="GSs-N0-5UH" firstAttribute="top" secondItem="zR7-ZK-CoR" secondAttribute="top" id="Lbd-wD-ohx"/>
+                                <constraint firstItem="Fh3-SI-Mco" firstAttribute="top" secondItem="znu-og-yxa" secondAttribute="top" constant="31" id="Sdb-jI-ef4"/>
+                                <constraint firstItem="zR7-ZK-CoR" firstAttribute="trailing" secondItem="Fh3-SI-Mco" secondAttribute="trailing" id="aDH-g3-BKn"/>
+                                <constraint firstItem="GSs-N0-5UH" firstAttribute="leading" secondItem="znu-og-yxa" secondAttribute="leadingMargin" constant="8" id="aIG-AK-frk"/>
+                                <constraint firstAttribute="bottom" secondItem="GSs-N0-5UH" secondAttribute="bottom" constant="28" id="d0P-nP-euv"/>
+                                <constraint firstItem="zR7-ZK-CoR" firstAttribute="leading" secondItem="GSs-N0-5UH" secondAttribute="trailing" constant="12" id="hwX-tJ-nMh"/>
+                                <constraint firstAttribute="bottom" secondItem="pJ7-CC-8sd" secondAttribute="bottom" constant="62" id="ija-jz-U4n"/>
+                                <constraint firstItem="zR7-ZK-CoR" firstAttribute="leading" secondItem="Fh3-SI-Mco" secondAttribute="leading" id="p5H-2O-gEX"/>
+                                <constraint firstItem="Fh3-SI-Mco" firstAttribute="leading" secondItem="pJ7-CC-8sd" secondAttribute="leading" id="wQT-ab-wEb"/>
+                                <constraint firstItem="pJ7-CC-8sd" firstAttribute="top" secondItem="zR7-ZK-CoR" secondAttribute="bottom" constant="20" id="z4s-h2-JqN"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="albumLabel" destination="zR7-ZK-CoR" id="gya-nA-Jb2"/>
+                                <outlet property="artistLabel" destination="Fh3-SI-Mco" id="635-r4-efI"/>
+                                <outlet property="artworkImageView" destination="GSs-N0-5UH" id="nAz-cP-vaq"/>
+                                <outlet property="genreYearLabel" destination="pJ7-CC-8sd" id="A3X-c0-bZQ"/>
+                            </connections>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumDetailTableViewControllerCellIdentifier" rowHeight="50" id="QrM-Yp-r95" customClass="AlbumTableViewCell" customModule="MusicPlayer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="163" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QrM-Yp-r95" id="fmL-hg-KSG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -399,6 +452,9 @@
                             <outlet property="delegate" destination="hIC-jp-ZZG" id="jEB-Qi-L01"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="headerView" destination="znu-og-yxa" id="CxS-Fy-a7b"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVr-u9-2KM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -457,7 +513,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="albumArtworkImageView" destination="dM2-ui-5MI" id="Nhh-Aw-seb"/>
+                                    <outlet property="artworkImageView" destination="dM2-ui-5MI" id="Nhh-Aw-seb"/>
                                     <outlet property="subtitleLabel" destination="qsw-Ct-oE3" id="h6s-dH-KuC"/>
                                     <outlet property="titleLabel" destination="8PJ-rg-Xzt" id="GI0-SD-zo7"/>
                                 </connections>

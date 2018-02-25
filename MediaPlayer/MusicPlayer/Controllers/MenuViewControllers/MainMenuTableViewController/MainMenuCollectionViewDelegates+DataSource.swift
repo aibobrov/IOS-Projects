@@ -37,9 +37,14 @@ extension MainMenuTableViewController: UICollectionViewDelegate, UICollectionVie
 			self.tabBarController?.presentPopupBar(withContentViewController: self.playerViewController, animated: true, completion: nil)
 			cell.onClickAnimation()
 		}
-		
-		self.playerViewController.currentPlaylist = self.recentTracksData
-		self.playerViewController.player.nowPlayingItem = item
-		self.playerViewController.play()
+		DispatchQueue.main.async {
+			self.playerViewController.currentPlaylist = self.recentTracksData
+		}
+		DispatchQueue.main.async {
+			self.playerViewController.player.nowPlayingItem = item
+			self.playerViewController.play()
+		}
+
+
 	}
 }

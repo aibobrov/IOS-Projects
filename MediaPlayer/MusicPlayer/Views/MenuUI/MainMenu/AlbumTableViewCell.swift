@@ -15,21 +15,11 @@ class AlbumTableViewCell: SelectedTableViewCell {
 	
 	let imageCornerRadius: CGFloat = 7
 
-	override func awakeFromNib() {
-		super.awakeFromNib()
-
-		self.imageView?.layer.masksToBounds = true
-		self.imageView?.layer.cornerRadius = imageCornerRadius
-		self.imageView?.layer.backgroundColor = UIColor.black.cgColor
-	}
-
 	weak var item: MPMediaItem? {
 		didSet {
 			guard let item = item else { return }
-			if let title = item.title {
-				titleLabel.text = title
-			}
 			
+			titleLabel.text = item.title ?? ""
 			subtitleLabel.text = "\(item.albumTrackNumber)"
 		}
 	}

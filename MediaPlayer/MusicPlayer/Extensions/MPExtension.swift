@@ -18,6 +18,11 @@ extension MPMediaItem {
 			let albumName = self.albumTitle else { return nil }
 		return "\(artistName) • \(albumName)"
 	}
+
+	var genreYearFormatted: String? {
+		guard let genre = self.genre, let year = self.releaseDate?.year else { return nil}
+		return "\(genre) • \(year)"
+	}
 }
 
 extension MPMusicPlayerController {

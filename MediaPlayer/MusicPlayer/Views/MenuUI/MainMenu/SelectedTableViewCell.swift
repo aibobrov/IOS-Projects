@@ -9,6 +9,12 @@
 import UIKit
 
 class SelectedTableViewCell: UITableViewCell {
+	private lazy var blackView:  UIView = {
+		let bgView = UIView(frame: self.frame)
+		bgView.backgroundColor = UIColor.black
+		return bgView
+	}()
+
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setup()
@@ -19,10 +25,8 @@ class SelectedTableViewCell: UITableViewCell {
 		setup()
 	}
 
-	private func setup() {
-		let bgView = UIView(frame: self.frame)
-		bgView.backgroundColor = UIColor.black
 
-		self.selectedBackgroundView = bgView
+	private func setup() {
+		self.selectedBackgroundView = blackView
 	}
 }

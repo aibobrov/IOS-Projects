@@ -1,5 +1,5 @@
 //
-//  TimeIntervalExtension.swift
+//  TimeExtension.swift
 //  MusicPlayer
 //
 //  Created by Artem Bobrov on 18.02.2018.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-typealias MinSec = (Int, Int)
 extension TimeInterval {
 	var time: (Int, Int) {
 		let minutes: Int = Int(self / 60.0)
@@ -28,3 +27,11 @@ extension Int {
 		return 0...9 ~= self  ? "0\(self)" : "\(self)"
 	}
 }
+
+extension Date {
+	var year: Int {
+		let calendar = Calendar(identifier: .gregorian)
+		return calendar.component(.year, from: self)
+	}
+}
+
