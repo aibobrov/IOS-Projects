@@ -18,7 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="MusicPlayer" customModuleProvider="target">
             <connections>
                 <outlet property="fastForwardButton" destination="USF-HE-yJ0" id="2jg-oy-Mq2"/>
-                <outlet property="parentRouteButtonView" destination="Z6N-oe-boc" id="S5n-u1-JY2"/>
+                <outlet property="parentRouteView" destination="QyI-2A-xMy" id="LPf-P7-GwN"/>
                 <outlet property="parentVolumeView" destination="x3X-Bb-zsG" id="y8S-Ad-Ia7"/>
                 <outlet property="playPauseButton" destination="iEl-tc-pkF" id="OyF-5O-DqZ"/>
                 <outlet property="playlistCollectionView" destination="oeI-uA-RT7" id="PV7-bZ-pWu"/>
@@ -131,15 +131,9 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x3X-Bb-zsG">
-                    <rect key="frame" x="16" y="585" width="343" height="30"/>
+                    <rect key="frame" x="16" y="589" width="343" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z6N-oe-boc">
-                    <rect key="frame" x="147" y="622" width="81" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QN-ls-m27" customClass="RepeatButton" customModule="MusicPlayer" customModuleProvider="target">
                     <rect key="frame" x="291" y="412" width="38" height="42"/>
@@ -154,6 +148,10 @@
                         <action selector="repeatButtonClicked:" destination="-1" eventType="touchUpInside" id="2y7-SH-2k1"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-2A-xMy">
+                    <rect key="frame" x="167" y="619" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

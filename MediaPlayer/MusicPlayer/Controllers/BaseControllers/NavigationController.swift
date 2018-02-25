@@ -22,5 +22,4 @@ class NavigationController: UINavigationController {
 		self.popupBar.backgroundStyle = .dark
 		self.popupBar.backgroundColor = .clear
 	}
-
 }

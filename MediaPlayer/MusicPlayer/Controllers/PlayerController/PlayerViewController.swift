@@ -6,6 +6,7 @@
 //  Copyright © 2018 Artem Bobrov. All rights reserved.
 //
 
+import AVKit
 import UIKit
 import MediaPlayer
 import UPCarouselFlowLayout
@@ -13,7 +14,7 @@ import UPCarouselFlowLayout
 class PlayerViewController: UIViewController {
 	static let PlaylistCollectionViewCellIdentifier = "MediaItemCollectionViewCellIdentifier"
 
-	@IBOutlet weak var parentRouteButtonView: UIView!
+	@IBOutlet weak var parentRouteView: UIView!
 	@IBOutlet weak var parentVolumeView: UIView!
 	@IBOutlet weak var repeatButton: RepeatButton!
 	@IBOutlet weak var rewindButton: PlayerActionButton!
@@ -44,6 +45,7 @@ class PlayerViewController: UIViewController {
 	lazy var volumeSliderView: MPVolumeView = {
 		let view = MPVolumeView(frame: self.parentVolumeView.bounds)
 		view.showsRouteButton = false
+		view.showsVolumeSlider = true
 		view.tintColor = .white
 		view.slider.minimumValueImage = #imageLiteral(resourceName: "volume-off")
 		view.slider.maximumValueImage = #imageLiteral(resourceName: "volume-high")
@@ -53,12 +55,13 @@ class PlayerViewController: UIViewController {
 		return view
 	}()
 
-	lazy var routeButtonView: MPVolumeView = {
-		let view = MPVolumeView(frame: self.parentRouteButtonView.bounds)
-		view.showsVolumeSlider = false
-		view.tintColor = .white
-		view.setRouteButtonImage(view.routeButton.currentImage?.tinted, for: .normal)
-		return view
+	lazy var routePickerView: AVRoutePickerView = {
+		let picker = AVRoutePickerView()
+		picker.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+		picker.tintColor = .white
+		picker.activeTintColor = .malachiteGreen
+//		picker.translatesAutoresizingMaskIntoConstraints = false
+		return picker
 	}()
 
 	lazy var carouselFlowLayout: UPCarouselFlowLayout = {
@@ -104,10 +107,12 @@ class PlayerViewController: UIViewController {
 	// MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-		player.repeatMode = repeatButton.currentRepeatMode
+
+		parentRouteView.addSubview(routePickerView)
 
 		parentVolumeView.addSubview(volumeSliderView)
-		parentRouteButtonView.addSubview(routeButtonView)
+
+		player.repeatMode = repeatButton.currentRepeatMode
 
 		self.popupItem.leftBarButtonItems = [playPauseBarButtonItem]
 		self.popupItem.rightBarButtonItems = [forwardBarButtonItem]

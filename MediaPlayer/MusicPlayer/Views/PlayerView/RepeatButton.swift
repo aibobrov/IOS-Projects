@@ -24,7 +24,7 @@ class RepeatButton: UIButton {
 	}
 
 	private var colors: [UIColor] {
-		return [.white, .red, .white]
+		return [.white, .malachiteGreen, .white]
 	}
 
 	private var states: [MPMusicRepeatMode] {
