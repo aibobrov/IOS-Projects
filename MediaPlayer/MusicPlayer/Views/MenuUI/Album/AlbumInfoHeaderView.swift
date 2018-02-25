@@ -24,16 +24,21 @@ class AlbumInfoHeaderView: UIView {
 		self.artworkImageView.layer.backgroundColor = UIColor.black.cgColor
 	}
 
+	internal weak var object: MPMediaItem?
+
 	weak var item: MPMediaItem? {
-		didSet {
+		set {
+			self.object = newValue
 			guard let item = item else { return }
 			if let artwork = item.artwork {
 				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
 			}
-
 			genreYearLabel.text = item.genreYearFormatted ?? ""
 			albumLabel.text = item.albumTitle ?? ""
-			artistLabel.text = item.artist ?? ""
+			artistLabel.text = item.albumArtist ?? ""
+		}
+		get {
+			return self.object
 		}
 	}
 

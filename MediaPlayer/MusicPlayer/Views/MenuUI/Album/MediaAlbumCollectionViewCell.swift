@@ -11,14 +11,18 @@ import MediaPlayer
 
 class MediaAlbumCollectionViewCell: MediaItemCollectionViewCell {
 	override weak var item: MPMediaItem? {
-		didSet {
+		set {
+			self.object = newValue
 			guard let item = item else { return }
 			if let artwork = item.artwork {
 				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
 			}
 
 			titleLabel.text = item.albumTitle ?? ""
-			subtitleLabel.text = item.artist ?? ""
+			subtitleLabel.text = item.albumArtist ?? ""
+		}
+		get {
+			return self.object
 		}
 	}
 

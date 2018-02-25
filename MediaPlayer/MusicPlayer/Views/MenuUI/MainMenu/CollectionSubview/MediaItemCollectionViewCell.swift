@@ -19,8 +19,11 @@ class MediaItemCollectionViewCell: UICollectionViewCell {
 
 	let imageCornerRadius: CGFloat = 7
 
+	internal weak var object: MPMediaItem?
+
 	weak var item: MPMediaItem? {
-		didSet {
+		set {
+			self.object = newValue
 			guard let item = item else { return }
 			if let artwork = item.artwork {
 				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
@@ -28,6 +31,9 @@ class MediaItemCollectionViewCell: UICollectionViewCell {
 
 			titleLabel.text = item.title ?? ""
 			subtitleLabel.text = item.artistAlbumFormatted ?? ""
+		}
+		get {
+			return self.object
 		}
 	}
 

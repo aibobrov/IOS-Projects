@@ -12,17 +12,18 @@ import MediaPlayer
 class AlbumTableViewCell: SelectedTableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var subtitleLabel: UILabel!
-	
-	let imageCornerRadius: CGFloat = 7
+
+	internal weak var object: MPMediaItem?
 
 	weak var item: MPMediaItem? {
-		didSet {
+		set {
+			object = newValue
 			guard let item = item else { return }
-			
 			titleLabel.text = item.title ?? ""
 			subtitleLabel.text = "\(item.albumTrackNumber)"
 		}
+		get {
+			return object
+		}
 	}
-
-
 }

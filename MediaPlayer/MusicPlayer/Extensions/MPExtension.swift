@@ -14,7 +14,7 @@ extension MPMediaItem {
 	}
 
 	var artistAlbumFormatted: String? {
-		guard let artistName = self.artist,
+		guard let artistName = self.albumArtist,
 			let albumName = self.albumTitle else { return nil }
 		return "\(artistName) • \(albumName)"
 	}

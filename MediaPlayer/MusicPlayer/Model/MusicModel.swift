@@ -25,10 +25,25 @@ class MediaModelController {
 		return query
 	}
 
+	var artistsQuery: MPMediaQuery {
+		let query = MPMediaQuery.artists()
+		query.addFilterPredicate(noCloudPredicate)
+		return query
+	}
+
 	var songsQuery: MPMediaQuery {
 		let query = MPMediaQuery.songs()
 		query.addFilterPredicate(noCloudPredicate)
 		query.groupingType = .albumArtist
+		return query
+	}
+
+	func albumsQuery(for albumArtistPersistentID:  MPMediaEntityPersistentID) -> MPMediaQuery {
+		let query = self.albumsQuery
+
+		let predicate = MPMediaPropertyPredicate(value: albumArtistPersistentID, forProperty: MPMediaItemPropertyAlbumArtistPersistentID, comparisonType: .equalTo)
+		query.addFilterPredicate(predicate)
+
 		return query
 	}
 

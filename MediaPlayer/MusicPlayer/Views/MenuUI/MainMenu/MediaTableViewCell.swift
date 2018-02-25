@@ -13,23 +13,30 @@ class MediaTableViewCell: AlbumTableViewCell {
 
 	@IBOutlet weak var artworkImageView: UIImageView!
 
+	lazy var imageCornerRadius: CGFloat = 7
+
 	override func awakeFromNib() {
 		super.awakeFromNib()
-
 		self.artworkImageView.layer.masksToBounds = true
 		self.artworkImageView.layer.cornerRadius = imageCornerRadius
 		self.artworkImageView.layer.backgroundColor = UIColor.black.cgColor
 	}
 
 	override weak var item: MPMediaItem? {
-		didSet {
+		set {
+			self.object = newValue
 			guard let item = item else { return }
 			if let artwork = item.artwork {
 				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
 			}
-			self.titleLabel.text = item.title ?? ""
 
-			subtitleLabel.text = item.artist ?? ""
+			self.titleLabel.text = item.title ?? ""
+			subtitleLabel.text = item.albumArtist ?? ""
+		}
+		get {
+			return self.object
 		}
 	}
+
+
 }

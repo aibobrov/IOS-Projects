@@ -18,8 +18,8 @@ class AlbumDetailTableViewController: TableViewWithMusicPlayerBarTableViewContro
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-		if let item = album?.items.first {
-			headerView.item = item
-		}
+		headerView.item = album?.items.first
+
+		self.tableView.tableFooterView = UIView()
     }
 }

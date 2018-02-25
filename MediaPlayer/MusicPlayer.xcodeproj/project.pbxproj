@@ -15,6 +15,9 @@
 		A143CA5320421CD3006E71BB /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA5220421CD3006E71BB /* AlbumTableViewCell.swift */; };
 		A143CA5520422A7E006E71BB /* AlbumInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA5420422A7E006E71BB /* AlbumInfoHeaderView.swift */; };
 		A143CA57204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA56204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift */; };
+		A143CA602042F65D006E71BB /* ArtistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA5F2042F65D006E71BB /* ArtistTableViewController.swift */; };
+		A143CA622042F8D6006E71BB /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA612042F8D6006E71BB /* ArtistTableViewCell.swift */; };
+		A143CA66204312CB006E71BB /* ArtistTableViewControllerTableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA65204312CB006E71BB /* ArtistTableViewControllerTableViewDelegate+DataSource.swift */; };
 		A16CD09D203E010200285126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD09C203E010200285126 /* AppDelegate.swift */; };
 		A16CD0A2203E010200285126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16CD0A0203E010200285126 /* Main.storyboard */; };
 		A16CD0A7203E010200285126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16CD0A5203E010200285126 /* LaunchScreen.storyboard */; };
@@ -78,6 +81,9 @@
 		A143CA5220421CD3006E71BB /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		A143CA5420422A7E006E71BB /* AlbumInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoHeaderView.swift; sourceTree = "<group>"; };
 		A143CA56204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
+		A143CA5F2042F65D006E71BB /* ArtistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewController.swift; sourceTree = "<group>"; };
+		A143CA612042F8D6006E71BB /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		A143CA65204312CB006E71BB /* ArtistTableViewControllerTableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistTableViewControllerTableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		A16CD099203E010200285126 /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16CD09C203E010200285126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A16CD0A1203E010200285126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,6 +145,33 @@
 				A143CA56204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift */,
 			);
 			path = AlbumsCollectionViewController;
+			sourceTree = "<group>";
+		};
+		A143CA5E2042F63D006E71BB /* ArtistTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A143CA5F2042F65D006E71BB /* ArtistTableViewController.swift */,
+				A143CA65204312CB006E71BB /* ArtistTableViewControllerTableViewDelegate+DataSource.swift */,
+			);
+			path = ArtistTableViewController;
+			sourceTree = "<group>";
+		};
+		A143CA632042F94D006E71BB /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				A143CA5420422A7E006E71BB /* AlbumInfoHeaderView.swift */,
+				A143CA3F2041EE40006E71BB /* MediaAlbumCollectionViewCell.swift */,
+				A143CA5220421CD3006E71BB /* AlbumTableViewCell.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		A143CA642042F957006E71BB /* Artist */ = {
+			isa = PBXGroup;
+			children = (
+				A143CA612042F8D6006E71BB /* ArtistTableViewCell.swift */,
+			);
+			path = Artist;
 			sourceTree = "<group>";
 		};
 		A16CD090203E010200285126 = {
@@ -228,7 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				A16CD10A2040BF8000285126 /* MediaTableViewCell.swift */,
-				A143CA5220421CD3006E71BB /* AlbumTableViewCell.swift */,
 				A16CD0D0203E0B2C00285126 /* SelectedTableViewCell.swift */,
 				A16CD0D6203E0EA700285126 /* CollectionSubview */,
 			);
@@ -259,7 +291,6 @@
 			children = (
 				A16CD0F1203F609900285126 /* MediaItemCollectionViewCell.swift */,
 				A16CD0F2203F609900285126 /* MediaItemCollectionViewCell.xib */,
-				A143CA3F2041EE40006E71BB /* MediaAlbumCollectionViewCell.swift */,
 				A143CA442041F6A0006E71BB /* SectionLabelCollectionReusableView.swift */,
 			);
 			path = CollectionSubview;
@@ -308,6 +339,7 @@
 		A16CD1072040BD8D00285126 /* MenuViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A143CA5E2042F63D006E71BB /* ArtistTableViewController */,
 				A143CA412041EFD5006E71BB /* AlbumsCollectionViewController */,
 				A16CD0D3203E0C5B00285126 /* MainMenuTableViewController */,
 				A16CD10E2040D36B00285126 /* SongsTableView */,
@@ -318,8 +350,9 @@
 		A16CD1082040BF3300285126 /* MenuUI */ = {
 			isa = PBXGroup;
 			children = (
+				A143CA632042F94D006E71BB /* Album */,
 				A16CD0CF203E0AED00285126 /* MainMenu */,
-				A143CA5420422A7E006E71BB /* AlbumInfoHeaderView.swift */,
+				A143CA642042F957006E71BB /* Artist */,
 			);
 			path = MenuUI;
 			sourceTree = "<group>";
@@ -366,6 +399,7 @@
 				TargetAttributes = {
 					A16CD098203E010200285126 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -425,6 +459,7 @@
 				A16CD1042040804800285126 /* UICollectionViewExtension.swift in Sources */,
 				A16CD1102040E36100285126 /* SongsTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
 				A16CD0E8203F484C00285126 /* TableViewWithSmallMusicBarTableViewController.swift in Sources */,
+				A143CA622042F8D6006E71BB /* ArtistTableViewCell.swift in Sources */,
 				A16CD0FE2040468500285126 /* PlayerSliderView.swift in Sources */,
 				A16CD0D5203E0C9A00285126 /* MainMenuTableViewController.swift in Sources */,
 				A16CD0E9203F484C00285126 /* NavigationController.swift in Sources */,
@@ -436,6 +471,7 @@
 				A143CA57204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
 				A16CD0F3203F609900285126 /* MediaItemCollectionViewCell.swift in Sources */,
 				A16CD0FC203F918400285126 /* ProgressTimer.swift in Sources */,
+				A143CA66204312CB006E71BB /* ArtistTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
 				A143CA5320421CD3006E71BB /* AlbumTableViewCell.swift in Sources */,
 				A16CD0BA203E019800285126 /* LNExtensions.swift in Sources */,
 				A143CA452041F6A0006E71BB /* SectionLabelCollectionReusableView.swift in Sources */,
@@ -445,6 +481,7 @@
 				A16CD0F6203F7D9900285126 /* PlayerActionButton.swift in Sources */,
 				A16CD1062040B05500285126 /* RepeatButton.swift in Sources */,
 				A16CD0FA203F81BB00285126 /* PlayerViewControllerPlayerActions.swift in Sources */,
+				A143CA602042F65D006E71BB /* ArtistTableViewController.swift in Sources */,
 				A16CD0B7203E019800285126 /* CGExtension.swift in Sources */,
 				A16CD09D203E010200285126 /* AppDelegate.swift in Sources */,
 				A16CD0DA203E105900285126 /* MainMenuCollectionViewDelegates+DataSource.swift in Sources */,
@@ -585,6 +622,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EX9Z9UFRL5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -595,6 +633,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal-works.MusicPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -604,6 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EX9Z9UFRL5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -614,6 +655,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal-works.MusicPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
