@@ -130,10 +130,12 @@
                         <action selector="rewindButtonClicked:" destination="-1" eventType="touchUpInside" id="iNt-8q-n1K"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x3X-Bb-zsG">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3X-Bb-zsG">
                     <rect key="frame" x="16" y="589" width="343" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="QQK-fi-RFV"/>
+                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QN-ls-m27" customClass="RepeatButton" customModule="MusicPlayer" customModuleProvider="target">
                     <rect key="frame" x="291" y="412" width="38" height="42"/>
@@ -148,18 +150,27 @@
                         <action selector="repeatButtonClicked:" destination="-1" eventType="touchUpInside" id="2y7-SH-2k1"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-2A-xMy">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-2A-xMy">
                     <rect key="frame" x="167" y="619" width="40" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="V87-DJ-V04"/>
+                        <constraint firstAttribute="height" constant="40" id="dXd-XV-HVb"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="oeI-uA-RT7" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9yx-v4-2ew"/>
+                <constraint firstItem="QyI-2A-xMy" firstAttribute="top" secondItem="x3X-Bb-zsG" secondAttribute="bottom" id="ChQ-5a-T3Z"/>
                 <constraint firstItem="LrE-s1-aB6" firstAttribute="top" secondItem="oeI-uA-RT7" secondAttribute="bottom" constant="8" symbolic="YES" id="ETJ-IM-Zht"/>
                 <constraint firstItem="oeI-uA-RT7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="Ekf-Hl-fuE"/>
+                <constraint firstItem="x3X-Bb-zsG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="K1p-JY-GrS"/>
                 <constraint firstItem="LrE-s1-aB6" firstAttribute="trailing" secondItem="oeI-uA-RT7" secondAttribute="trailing" id="KGn-sX-fLV"/>
                 <constraint firstItem="LrE-s1-aB6" firstAttribute="leading" secondItem="oeI-uA-RT7" secondAttribute="leading" id="W1T-Zv-7CD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QyI-2A-xMy" secondAttribute="bottom" constant="8" id="YDw-BK-6Kq"/>
+                <constraint firstItem="QyI-2A-xMy" firstAttribute="top" secondItem="x3X-Bb-zsG" secondAttribute="bottom" id="lbw-Sn-8Na"/>
+                <constraint firstItem="QyI-2A-xMy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="o4d-b0-SLR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x3X-Bb-zsG" secondAttribute="trailing" constant="16" id="p6c-gj-OGA"/>
                 <constraint firstItem="oeI-uA-RT7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yVD-n5-PwY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LrE-s1-aB6" secondAttribute="bottom" constant="285" id="yzV-Vi-uXu"/>
             </constraints>
