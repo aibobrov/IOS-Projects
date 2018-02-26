@@ -19,6 +19,12 @@ class MediaModelController {
 		return MPMediaPropertyPredicate(value: false, forProperty: MPMediaItemPropertyIsCloudItem, comparisonType: .equalTo)
 	}
 
+	var playlistQuery: MPMediaQuery {
+		let query = MPMediaQuery.playlists()
+		query.addFilterPredicate(noCloudPredicate)
+		return query
+	}
+
 	var albumsQuery: MPMediaQuery {
 		let query = MPMediaQuery.albums()
 		query.addFilterPredicate(noCloudPredicate)

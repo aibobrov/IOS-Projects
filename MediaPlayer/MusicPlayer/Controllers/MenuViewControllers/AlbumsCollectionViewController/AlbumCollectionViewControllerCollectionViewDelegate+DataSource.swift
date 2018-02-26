@@ -13,7 +13,6 @@ extension AlbumCollectionViewController {
 		return query.collectionSections?.count ?? 0
 	}
 
-
 	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return query.collectionSections?[section].range.length ?? 0
 	}
@@ -22,7 +21,7 @@ extension AlbumCollectionViewController {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCollectionViewController.AlbumCollectionViewCellIdentifier, for: indexPath) as! MediaAlbumCollectionViewCell
 
 		if let range = query.collectionSections?[indexPath.section].range {
-			cell.item = query.collections?[range.location + indexPath.row].items.first
+			cell.item = query.collections?[range.location + indexPath.row].representativeItem
 			cell.album = query.collections?[range.location + indexPath.row]
 		}
 

@@ -13,13 +13,13 @@ class ArtistTableViewController: UITableViewController {
 
 	let query = MediaModelController.shared.artistsQuery
 
+	// MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+		self.tableView.tableFooterView = UIView()
     }
 
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     	if let destinationVC = segue.destination as? AlbumCollectionViewController,
 			let cell = sender as? ArtistTableViewCell, let item = cell.item {

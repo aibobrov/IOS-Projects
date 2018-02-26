@@ -1,33 +1,35 @@
 //
-//  AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift
+//  PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift
 //  MusicPlayer
 //
-//  Created by Artem Bobrov on 25.02.2018.
+//  Created by Artem Bobrov on 26.02.2018.
 //  Copyright © 2018 Artem Bobrov. All rights reserved.
 //
 
 import UIKit
 
-extension AlbumDetailTableViewController {
+extension PlaylistDetailTableViewController {
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return album.count
+		return playlist.collection.items.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: AlbumDetailTableViewController.AlbumDetailTableViewControllerCellIdentifier, for: indexPath) as! AlbumTableViewCell
-		cell.item = album.items[indexPath.row]
+		let cell = tableView.dequeueReusableCell(withIdentifier: SongsTableViewController.SongTableViewCellIdentidier, for: indexPath) as! MediaTableViewCell
+
+		cell.item = playlist.collection.items[indexPath.row]
+
 		return cell
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let cell = tableView.cellForRow(at: indexPath) as! AlbumTableViewCell
+		let cell = tableView.cellForRow(at: indexPath) as! MediaTableViewCell
 
 		DispatchQueue.main.async {
 			self.tabBarController?.presentPopupBar(withContentViewController: self.playerViewController, animated: true, completion: nil)
 			tableView.deselectRow(at: indexPath, animated: false)
 		}
 		DispatchQueue.main.async {
-			self.playerViewController.currentPlaylist = self.album.items
+			self.playerViewController.currentPlaylist = self.playlist.collection.items
 		}
 		DispatchQueue.main.async {
 			self.playerViewController.player.nowPlayingItem = cell.item

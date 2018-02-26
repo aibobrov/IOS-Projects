@@ -14,11 +14,12 @@ class AlbumDetailTableViewController: TableViewWithMusicPlayerBarTableViewContro
 
 	@IBOutlet weak var headerView: AlbumInfoHeaderView!
 
-	weak var album: MPMediaItemCollection?
+	weak var album: MPMediaItemCollection!
 
+	// MARK: - Lifecycle
 	override func viewDidLoad() {
         super.viewDidLoad()
-		headerView.item = album?.items.first
+		headerView.item = album?.representativeItem
 
 		self.tableView.tableFooterView = UIView()
     }

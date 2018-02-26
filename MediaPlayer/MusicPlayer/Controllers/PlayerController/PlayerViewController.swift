@@ -60,7 +60,6 @@ class PlayerViewController: UIViewController {
 		picker.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
 		picker.tintColor = .white
 		picker.activeTintColor = .malachiteGreen
-//		picker.translatesAutoresizingMaskIntoConstraints = false
 		return picker
 	}()
 
@@ -151,6 +150,17 @@ class PlayerViewController: UIViewController {
 		self.popupItem.progress = 0
 	}
 
+	func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+		guard let cell = playlistCollectionView.centerCell as? MediaItemCollectionViewCell else { return }
+		self.player.nowPlayingItem = cell.item
+		self.play()
+	}
+
+	func updatePlaylistCollectionViewPosition() {
+		let indexPath = IndexPath(row: self.player.indexOfNowPlayingItem, section: 0)
+		self.playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+	}
+
 	// MARK: NotifactionCenter observers setup
 	private func notificationCenterObserversSetup() {
 		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerQueueDidChange, object: nil, queue: nil) { (_) in
@@ -177,17 +187,6 @@ class PlayerViewController: UIViewController {
 			self.sliderView.durationTime = player.nowPlayingItem?.playbackDuration
 			self.updatePlaylistCollectionViewPosition()
 		}
-	}
-
-	func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-		guard let cell = playlistCollectionView.centerCell as? MediaItemCollectionViewCell else { return }
-		self.player.nowPlayingItem = cell.item
-		self.play()
-	}
-
-	func updatePlaylistCollectionViewPosition() {
-		let indexPath = IndexPath(row: self.player.indexOfNowPlayingItem, section: 0)
-		self.playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: false)
 	}
 }
 

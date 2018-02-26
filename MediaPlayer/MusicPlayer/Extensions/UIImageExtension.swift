@@ -50,21 +50,42 @@ extension UIImage {
 				data.advanced(by: pos + 3).pointee)
 	}
 
-	public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+	public convenience init(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
 		let rect = CGRect(origin: .zero, size: size)
-		UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+		UIGraphicsBeginImageContextWithOptions(rect.size, true, 0.0)
 		color.setFill()
 		UIRectFill(rect)
 		let image = UIGraphicsGetImageFromCurrentImageContext()
 		UIGraphicsEndImageContext()
 
-		guard let cgImage = image?.cgImage else { return nil }
-		self.init(cgImage: cgImage)
+		self.init(cgImage: image!.cgImage!)
 	}
 
 
 	var tinted: UIImage {
 		return self.withRenderingMode(.alwaysTemplate)
+	}
+
+
+
+	static func collage(from images: [[UIImage]], with imageSize: CGSize) -> UIImage? {
+		guard images.count > 0 else { return nil }
+		let size = (images.count, images.first!.count)
+		UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0)
+		let oneImageWidth = imageSize.width / CGFloat(size.0)
+		let oneImageHeight = imageSize.height / CGFloat(size.1)
+
+		for (i, imageRow) in images.enumerated() {
+			for (j, image) in imageRow.enumerated() {
+				let oneImageOrigin = CGPoint(x: oneImageWidth * CGFloat(j), y: oneImageHeight * CGFloat(i))
+				image.draw(in: CGRect(origin: oneImageOrigin, size: CGSize(width: oneImageWidth, height: oneImageHeight)))
+			}
+		}
+		
+		let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+		return finalImage
+
 	}
 }
 

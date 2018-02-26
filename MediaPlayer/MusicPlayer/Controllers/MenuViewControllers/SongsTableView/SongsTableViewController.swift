@@ -19,8 +19,6 @@ class SongsTableViewController: TableViewWithMusicPlayerBarTableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.tableView.tableFooterView = UIView()
-		let insets = navigationController?.popupBar.frame.size.height ?? 0
-		self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: insets, right: 0)
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)

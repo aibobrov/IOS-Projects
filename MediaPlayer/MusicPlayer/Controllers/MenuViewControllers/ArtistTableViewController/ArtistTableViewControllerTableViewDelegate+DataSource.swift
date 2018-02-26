@@ -21,7 +21,7 @@ extension ArtistTableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ArtistTableViewController.ArtistTableViewCellIdentifier, for: indexPath) as! ArtistTableViewCell
 
 		if let range = query.collectionSections?[indexPath.section].range {
-			cell.item = query.collections?[range.location + indexPath.row].items.first
+			cell.item = query.collections?[range.location + indexPath.row].representativeItem
 		}
 
 		return cell

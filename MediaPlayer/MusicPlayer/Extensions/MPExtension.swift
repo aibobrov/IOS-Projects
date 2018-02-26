@@ -7,6 +7,42 @@
 //
 
 import MediaPlayer
+import UIKit
+
+extension MPMediaItemCollection {
+	var playlistTitle: String? {
+		return self.value(forProperty: MPMediaPlaylistPropertyName) as! String?
+	}
+
+	func playlistCollage(for amount: Int, with size: CGSize) -> UIImage? {
+		let imageSize = CGSize(width: size.width / CGFloat(sqrt(Double(amount))),
+							   height: size.height / CGFloat(sqrt(Double(amount))))
+		guard let images = self
+			.albumArtworks(for: amount)
+			.map({ $0.image(at: imageSize) ?? UIImage(color: .clear, size: imageSize) })
+			.squared else { return nil }
+		return  UIImage.collage(from: images, with: size)
+	}
+
+	func albumArtworks(for amount: Int) -> [MPMediaItemArtwork] {
+		var albumPersistentIDSet = Set<MPMediaEntityPersistentID>()
+		var artworks = [MPMediaItemArtwork]()
+		for item in self.items {
+			guard  let artwork = item.artwork else { continue }
+			let albumPersistentID = item.albumPersistentID
+			if !albumPersistentIDSet.contains(albumPersistentID) {
+				artworks.append(artwork)
+				albumPersistentIDSet.insert(albumPersistentID)
+			}
+
+			if artworks.count == amount {
+				break
+			}
+		}
+		return artworks
+	}
+
+}
 
 extension MPMediaItem {
 	var hasLastPlayedDate: Bool {

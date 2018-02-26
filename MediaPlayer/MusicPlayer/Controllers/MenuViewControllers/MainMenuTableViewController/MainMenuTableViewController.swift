@@ -56,10 +56,10 @@ class MainMenuTableViewController: TableViewWithMusicPlayerBarTableViewControlle
 		}
 	}
 
-
+	// MARK: View updates
 	private func updateViewContentSize() {
 		self.recentlyPlayedCollectionView.layoutIfNeeded()
 		self.recentlyPlayedCollectionView.frame = CGRect(origin: self.recentlyPlayedCollectionView.frame.origin, size: CGSize(width: self.recentlyPlayedCollectionView.frame.width, height: self.recentlyPlayedCollectionView.contentSize.height))
-		self.tableView.contentSize.height = self.recentlyPlayedCollectionView.contentSize.height + self.tableView.estimatedRowHeight * 5 + (self.tabBarController?.tabBar.frame.height ?? 0)
+		self.tableView.contentSize.height = self.recentlyPlayedCollectionView.contentSize.height + self.tableView.estimatedRowHeight * 5
 	}
 }

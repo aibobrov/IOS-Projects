@@ -15,15 +15,12 @@ class AlbumCollectionViewController: UICollectionViewController {
 	
 	var query = MediaModelController.shared.albumsQuery
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
 	// MARK: - Navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let destinationVC = segue.destination as? AlbumDetailTableViewController,
-			let cell = sender as? MediaAlbumCollectionViewCell {
-			destinationVC.album = cell.album
+			let cell = sender as? MediaAlbumCollectionViewCell,
+			let album = cell.album {
+			destinationVC.album = album
 		}
 	}
 }
