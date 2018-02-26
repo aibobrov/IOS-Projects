@@ -14,6 +14,7 @@ class ProgressTimer {
 		self.action = action
 	}
 
+	public private(set) var isActive = false
 	private var timer: Timer? = nil
 
 	var action: ((Timer) -> Void)
@@ -21,10 +22,12 @@ class ProgressTimer {
 
 	func start() {
 		timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true, block: action)
+		isActive = true
 	}
 
 	func stop() {
 		timer?.invalidate()
 		timer = nil
+		isActive = false
 	}
 }

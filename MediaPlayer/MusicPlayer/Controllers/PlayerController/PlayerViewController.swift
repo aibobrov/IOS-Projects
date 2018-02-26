@@ -25,7 +25,11 @@ class PlayerViewController: UIViewController {
 	@IBOutlet weak var playlistCollectionView: UICollectionView!
 	@IBOutlet weak var sliderView: PlayerSliderView!
 
-	internal var playlist = [MPMediaItem]()
+	internal var playlist = [MPMediaItem]() {
+		didSet {
+			self.playlistCollectionView.reloadData()
+		}
+	}
 
 	var currentPlaylist: [MPMediaItem] {
 		set {
@@ -127,7 +131,15 @@ class PlayerViewController: UIViewController {
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		player.prepareToPlay()
+		if player.isPlaying && timer.isActive {
+			timer.start()
+		} else {
+			player.prepareToPlay()
+		}
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 		updatePlaylistCollectionViewPosition()
 	}
 
@@ -160,7 +172,7 @@ class PlayerViewController: UIViewController {
 
 	func updatePlaylistCollectionViewPosition() {
 		let indexPath = IndexPath(row: self.player.indexOfNowPlayingItem, section: 0)
-		self.playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+		self.playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: false)
 	}
 
 	// MARK: NotifactionCenter observers setup

@@ -22,6 +22,7 @@
                 <outlet property="fastForwardButton" destination="USF-HE-yJ0" id="2jg-oy-Mq2"/>
                 <outlet property="parentRouteView" destination="QyI-2A-xMy" id="LPf-P7-GwN"/>
                 <outlet property="parentVolumeView" destination="x3X-Bb-zsG" id="y8S-Ad-Ia7"/>
+                <outlet property="playPauseButton" destination="GFE-ct-OKh" id="vVn-fL-BdU"/>
                 <outlet property="playlistCollectionView" destination="oeI-uA-RT7" id="PV7-bZ-pWu"/>
                 <outlet property="repeatButton" destination="5QN-ls-m27" id="3AM-gG-7vz"/>
                 <outlet property="rewindButton" destination="T2Z-Qj-97i" id="6XU-W9-AOM"/>
@@ -54,7 +55,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrE-s1-aB6" customClass="PlayerSliderView" customModule="MusicPlayer" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="368" width="375" height="37"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-wC-DNS">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-wC-DNS">
                             <rect key="frame" x="25" y="19" width="60" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="uHh-sD-NjD"/>
@@ -80,7 +81,7 @@
                                 <action selector="playerSliderValueChanged:" destination="-1" eventType="valueChanged" id="I7w-B2-v1F"/>
                             </connections>
                         </slider>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnL-xw-Ojf">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnL-xw-Ojf">
                             <rect key="frame" x="290" y="19" width="60" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="FAz-IZ-PNt"/>
@@ -154,6 +155,17 @@
                         <action selector="rewindButtonClicked:" destination="-1" eventType="touchUpInside" id="iNt-8q-n1K"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFE-ct-OKh" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
+                    <rect key="frame" x="112" y="427" width="151" height="151"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="large-play"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="alternativeImage" value="large-pause"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="playPauseButtonClicked:" destination="-1" eventType="touchUpInside" id="mKc-xi-EAu"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -175,6 +187,8 @@
     </objects>
     <resources>
         <image name="large-fast-forward" width="57" height="41"/>
+        <image name="large-pause" width="34" height="85"/>
+        <image name="large-play" width="63" height="85"/>
         <image name="large-rewind" width="57" height="41"/>
         <image name="large-thumb-image" width="30" height="30"/>
         <image name="thumb-image" width="10" height="10"/>

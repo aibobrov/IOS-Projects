@@ -21,7 +21,6 @@ class AlbumCollectionViewController: UICollectionViewController {
 	var data: DataModel!
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		print("AlbumCollectionViewController viewDidLoad")
 		data = DataModel(sections: query.collectionSections, collections: query.collections)
 	}
 
