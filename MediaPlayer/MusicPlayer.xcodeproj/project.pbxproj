@@ -15,6 +15,7 @@
 		A100F017204375F40084187F /* PlaylistDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100F016204375F40084187F /* PlaylistDetailTableViewController.swift */; };
 		A100F019204383940084187F /* PlaylistTableViewControllerTableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100F018204383940084187F /* PlaylistTableViewControllerTableViewDelegate+DataSource.swift */; };
 		A100F01B204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100F01A204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift */; };
+		A131C9F22044894400F538D8 /* PodcastCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131C9F12044894400F538D8 /* PodcastCollectionViewController.swift */; };
 		A143CA402041EE40006E71BB /* MediaAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA3F2041EE40006E71BB /* MediaAlbumCollectionViewCell.swift */; };
 		A143CA432041EFE9006E71BB /* AlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA422041EFE9006E71BB /* AlbumCollectionViewController.swift */; };
 		A143CA452041F6A0006E71BB /* SectionLabelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA442041F6A0006E71BB /* SectionLabelCollectionReusableView.swift */; };
@@ -89,6 +90,7 @@
 		A100F016204375F40084187F /* PlaylistDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailTableViewController.swift; sourceTree = "<group>"; };
 		A100F018204383940084187F /* PlaylistTableViewControllerTableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaylistTableViewControllerTableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		A100F01A204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
+		A131C9F12044894400F538D8 /* PodcastCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCollectionViewController.swift; sourceTree = "<group>"; };
 		A143CA3F2041EE40006E71BB /* MediaAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		A143CA422041EFE9006E71BB /* AlbumCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewController.swift; sourceTree = "<group>"; };
 		A143CA442041F6A0006E71BB /* SectionLabelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionLabelCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -152,7 +154,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A100F00C204344010084187F /* PlaylistTableViewController */ = {
+		A100F00C204344010084187F /* Playlist */ = {
 			isa = PBXGroup;
 			children = (
 				A100F00D2043441E0084187F /* PlaylistTableViewController.swift */,
@@ -160,7 +162,7 @@
 				A100F016204375F40084187F /* PlaylistDetailTableViewController.swift */,
 				A100F01A204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift */,
 			);
-			path = PlaylistTableViewController;
+			path = Playlist;
 			sourceTree = "<group>";
 		};
 		A100F00F2043448C0084187F /* Playlist */ = {
@@ -172,7 +174,15 @@
 			path = Playlist;
 			sourceTree = "<group>";
 		};
-		A143CA412041EFD5006E71BB /* AlbumsCollectionViewController */ = {
+		A131C9F02044890B00F538D8 /* Podcast */ = {
+			isa = PBXGroup;
+			children = (
+				A131C9F12044894400F538D8 /* PodcastCollectionViewController.swift */,
+			);
+			path = Podcast;
+			sourceTree = "<group>";
+		};
+		A143CA412041EFD5006E71BB /* Albums */ = {
 			isa = PBXGroup;
 			children = (
 				A143CA422041EFE9006E71BB /* AlbumCollectionViewController.swift */,
@@ -180,16 +190,16 @@
 				A143CA5020421AED006E71BB /* AlbumDetailTableViewController.swift */,
 				A143CA56204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift */,
 			);
-			path = AlbumsCollectionViewController;
+			path = Albums;
 			sourceTree = "<group>";
 		};
-		A143CA5E2042F63D006E71BB /* ArtistTableViewController */ = {
+		A143CA5E2042F63D006E71BB /* Artist */ = {
 			isa = PBXGroup;
 			children = (
 				A143CA5F2042F65D006E71BB /* ArtistTableViewController.swift */,
 				A143CA65204312CB006E71BB /* ArtistTableViewControllerTableViewDelegate+DataSource.swift */,
 			);
-			path = ArtistTableViewController;
+			path = Artist;
 			sourceTree = "<group>";
 		};
 		A143CA632042F94D006E71BB /* Album */ = {
@@ -314,13 +324,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		A16CD0D3203E0C5B00285126 /* MainMenuTableViewController */ = {
+		A16CD0D3203E0C5B00285126 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
 				A16CD0D4203E0C9A00285126 /* MainMenuTableViewController.swift */,
 				A16CD0D9203E105900285126 /* MainMenuCollectionViewDelegates+DataSource.swift */,
 			);
-			path = MainMenuTableViewController;
+			path = MainMenu;
 			sourceTree = "<group>";
 		};
 		A16CD0D6203E0EA700285126 /* CollectionSubview */ = {
@@ -377,11 +387,12 @@
 		A16CD1072040BD8D00285126 /* MenuViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A100F00C204344010084187F /* PlaylistTableViewController */,
-				A143CA5E2042F63D006E71BB /* ArtistTableViewController */,
-				A143CA412041EFD5006E71BB /* AlbumsCollectionViewController */,
-				A16CD0D3203E0C5B00285126 /* MainMenuTableViewController */,
-				A16CD10E2040D36B00285126 /* SongsTableView */,
+				A131C9F02044890B00F538D8 /* Podcast */,
+				A100F00C204344010084187F /* Playlist */,
+				A143CA5E2042F63D006E71BB /* Artist */,
+				A143CA412041EFD5006E71BB /* Albums */,
+				A16CD0D3203E0C5B00285126 /* MainMenu */,
+				A16CD10E2040D36B00285126 /* Songs */,
 			);
 			path = MenuViewControllers;
 			sourceTree = "<group>";
@@ -397,13 +408,13 @@
 			path = MenuUI;
 			sourceTree = "<group>";
 		};
-		A16CD10E2040D36B00285126 /* SongsTableView */ = {
+		A16CD10E2040D36B00285126 /* Songs */ = {
 			isa = PBXGroup;
 			children = (
 				A16CD10C2040C1F600285126 /* SongsTableViewController.swift */,
 				A16CD10F2040E36100285126 /* SongsTableViewControllerTableViewDelegate+DataSource.swift */,
 			);
-			path = SongsTableView;
+			path = Songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +539,7 @@
 				A16CD0F6203F7D9900285126 /* PlayerActionButton.swift in Sources */,
 				A16CD1062040B05500285126 /* RepeatButton.swift in Sources */,
 				A16CD0FA203F81BB00285126 /* PlayerViewControllerPlayerActions.swift in Sources */,
+				A131C9F22044894400F538D8 /* PodcastCollectionViewController.swift in Sources */,
 				A143CA602042F65D006E71BB /* ArtistTableViewController.swift in Sources */,
 				A16CD0B7203E019800285126 /* CGExtension.swift in Sources */,
 				A16CD09D203E010200285126 /* AppDelegate.swift in Sources */,
