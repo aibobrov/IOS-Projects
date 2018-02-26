@@ -14,11 +14,11 @@ class PlaylistTableViewController: UITableViewController {
 	}
 
 	let query = MediaModelController.shared.playlistQuery
-	var data: DataModel!
+	var data: DataCollectionModel!
 	// MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-		data = DataModel(sections: query.collectionSections, collections: query.collections)
+		data = DataCollectionModel(sections: query.collectionSections, collections: query.collections)
 		self.tableView.tableFooterView = UIView()
     }
 

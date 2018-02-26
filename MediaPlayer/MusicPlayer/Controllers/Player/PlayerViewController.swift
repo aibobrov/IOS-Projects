@@ -27,7 +27,9 @@ class PlayerViewController: UIViewController {
 
 	internal var playlist = [MPMediaItem]() {
 		didSet {
-			self.playlistCollectionView.reloadData()
+			if self.isViewLoaded {
+				self.playlistCollectionView.reloadData()
+			}
 		}
 	}
 
@@ -172,7 +174,7 @@ class PlayerViewController: UIViewController {
 
 	func updatePlaylistCollectionViewPosition() {
 		let indexPath = IndexPath(row: self.player.indexOfNowPlayingItem, section: 0)
-		self.playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: false)
+		self.playlistCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
 	}
 
 	// MARK: NotifactionCenter observers setup

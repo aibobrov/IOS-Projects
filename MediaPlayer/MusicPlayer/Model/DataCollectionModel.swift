@@ -8,11 +8,13 @@
 
 import MediaPlayer
 
-class DataModel {
+class DataCollectionModel {
 	var collections: [MPMediaItemCollection]?
 	var sections: [MPMediaQuerySection]?
+
 	init(sections: [MPMediaQuerySection]?, collections: [MPMediaItemCollection]?) {
 		self.collections = collections
 		self.sections = sections
 	}
 }
+

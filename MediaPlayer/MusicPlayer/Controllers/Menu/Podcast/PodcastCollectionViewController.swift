@@ -16,6 +16,6 @@ class PodcastCollectionViewController: AlbumCollectionViewController {
 
     override func viewDidLoad() {
 		let query = MediaModelController.shared.podcastQuery
-		data = DataModel(sections: query.collectionSections, collections: query.collections)
+		data = DataCollectionModel(sections: query.collectionSections, collections: query.collections)
 	}
 }

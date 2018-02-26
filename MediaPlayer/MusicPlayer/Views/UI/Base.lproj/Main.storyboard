@@ -8,26 +8,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="XaF-Hn-7Ld">
-            <objects>
-                <viewController id="aVE-za-zMa" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TSQ-eD-FIY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="uIm-LH-LIq"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="gsF-Vc-DQs"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUI-jk-8MC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="611" y="343"/>
-        </scene>
         <!--Music-->
         <scene sceneID="Ibd-v2-IdO">
             <objects>
@@ -62,12 +45,92 @@
                     </tabBar>
                     <connections>
                         <segue destination="8ab-hK-IIb" kind="relationship" relationship="viewControllers" id="SXF-73-2xh"/>
-                        <segue destination="aVE-za-zMa" kind="relationship" relationship="viewControllers" id="3G7-KY-Rx1"/>
+                        <segue destination="YLC-zx-Not" kind="relationship" relationship="viewControllers" id="3Nk-bP-xXr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yW7-Nx-FAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-339" y="10"/>
+        </scene>
+        <!--Search Songs Table View Controller-->
+        <scene sceneID="czE-iF-aUF">
+            <objects>
+                <tableViewController id="YLC-zx-Not" customClass="SearchSongsTableViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iMU-D4-JHJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Your Library" id="HzR-D0-lon">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="YLC-zx-Not" id="Rtq-iI-t0k"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongTableViewCellIdentidier" rowHeight="70" id="5DL-BI-Vrt" customClass="MediaTableViewCell" customModule="MusicPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="84" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5DL-BI-Vrt" id="YdT-Kg-4xd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-wf-VlE">
+                                            <rect key="frame" x="16" y="10" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="lHv-wf-VlE" secondAttribute="height" multiplier="1:1" id="3m7-9H-HNu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-gc-qd4">
+                                            <rect key="frame" x="74" y="17" width="281" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvz-VQ-Wol">
+                                            <rect key="frame" x="74" y="38" width="281" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="yib-lh-loV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="TdH-gc-qd4" firstAttribute="leading" secondItem="lHv-wf-VlE" secondAttribute="trailing" constant="8" symbolic="YES" id="4vc-yk-Oi5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Mvz-VQ-Wol" secondAttribute="bottom" constant="7" id="7NP-zl-pSc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TdH-gc-qd4" secondAttribute="trailing" constant="4" id="DKr-Ub-cR5"/>
+                                        <constraint firstItem="TdH-gc-qd4" firstAttribute="trailing" secondItem="Mvz-VQ-Wol" secondAttribute="trailing" id="Exb-wj-9zF"/>
+                                        <constraint firstItem="lHv-wf-VlE" firstAttribute="leading" secondItem="YdT-Kg-4xd" secondAttribute="leadingMargin" id="Gbm-pl-Ckw"/>
+                                        <constraint firstItem="lHv-wf-VlE" firstAttribute="top" secondItem="YdT-Kg-4xd" secondAttribute="topMargin" constant="-1" id="Kyq-gH-q85"/>
+                                        <constraint firstItem="Mvz-VQ-Wol" firstAttribute="top" secondItem="TdH-gc-qd4" secondAttribute="bottom" id="NGX-W0-QJi"/>
+                                        <constraint firstItem="TdH-gc-qd4" firstAttribute="leading" secondItem="Mvz-VQ-Wol" secondAttribute="leading" id="h7y-rp-DeE"/>
+                                        <constraint firstItem="lHv-wf-VlE" firstAttribute="centerY" secondItem="YdT-Kg-4xd" secondAttribute="centerY" id="hgB-mj-PzN"/>
+                                        <constraint firstItem="TdH-gc-qd4" firstAttribute="top" secondItem="YdT-Kg-4xd" secondAttribute="topMargin" constant="6" id="xQa-Cr-dt5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="artworkImageView" destination="lHv-wf-VlE" id="q5G-gb-YGp"/>
+                                    <outlet property="subtitleLabel" destination="Mvz-VQ-Wol" id="vCR-fy-q66"/>
+                                    <outlet property="titleLabel" destination="TdH-gc-qd4" id="uGC-8v-ciu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YLC-zx-Not" id="imA-tp-H46"/>
+                            <outlet property="delegate" destination="YLC-zx-Not" id="BX5-lE-Ji5"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="18p-iD-tGc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WdH-07-LOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="462.8185907046477"/>
         </scene>
         <!--Your Library-->
         <scene sceneID="bsg-05-KGm">
@@ -262,11 +325,7 @@
                             <outlet property="delegate" destination="VJs-NS-uWG" id="jq4-O6-TPl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Library" id="6PA-KS-Zpn">
-                        <barButtonItem key="rightBarButtonItem" image="settings" id="maU-nH-mtq">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Your Library" id="6PA-KS-Zpn"/>
                     <connections>
                         <outlet property="recentlyPlayedCollectionView" destination="xZ5-Xs-pJQ" id="szm-K6-Q1C"/>
                     </connections>
@@ -1153,7 +1212,6 @@
         <image name="music" width="28" height="28"/>
         <image name="playlist" width="20" height="20"/>
         <image name="podcast" width="12" height="20"/>
-        <image name="settings" width="24" height="24"/>
         <image name="song" width="14" height="20"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

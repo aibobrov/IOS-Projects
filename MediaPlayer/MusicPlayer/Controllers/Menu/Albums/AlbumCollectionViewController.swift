@@ -18,10 +18,10 @@ class AlbumCollectionViewController: UICollectionViewController {
 	}
 	
 	var query = MediaModelController.shared.albumsQuery
-	var data: DataModel!
+	var data: DataCollectionModel!
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		data = DataModel(sections: query.collectionSections, collections: query.collections)
+		data = DataCollectionModel(sections: query.collectionSections, collections: query.collections)
 	}
 
 	// MARK: - Navigation

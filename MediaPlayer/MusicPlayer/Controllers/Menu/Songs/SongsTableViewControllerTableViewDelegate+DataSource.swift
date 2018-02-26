@@ -10,18 +10,18 @@ import UIKit
 
 extension SongsTableViewController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return data.sections?.count ?? 0
+		return data?.sections?.count ?? 0
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return data.sections?[section].range.length ?? 0
+		return data?.sections?[section].range.length ?? 0
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: tableViewReusableIdentidier, for: indexPath) as! MediaTableViewCell
-		if let range = data.sections?[indexPath.section].range {
+		if let range = data?.sections?[indexPath.section].range {
 			let index = range.location + indexPath.row
-			cell.item = data.collections?.first?.items[index]
+			cell.item = data?.collections?.first?.items[index]
 		}
 		return cell
 	}
@@ -34,16 +34,17 @@ extension SongsTableViewController {
 		let height = self.tableView(tableView, heightForHeaderInSection: section)
 		let rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: height)
 		let view = SectionLabelCollectionReusableView(frame: rect)
-		view.title = query.itemSections?[section].title
+		view.title = data?.sections?[section].title
 		return view
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let cell = tableView.cellForRow(at: indexPath) as! MediaTableViewCell
 
-		guard let playlist = query.items else { return }
+		guard let playlist = data?.collections?.first?.items else { return }
 
 		DispatchQueue.main.async {
+			print("playlist \(playlist.count)")
 			self.playerViewController.currentPlaylist = playlist
 		}
 		DispatchQueue.main.async {
