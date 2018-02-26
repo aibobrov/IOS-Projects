@@ -28,16 +28,16 @@ extension NoteViewController {
 		let imagePickerController = UIImagePickerController()
 		imagePickerController.delegate = self
 		let alert = UIAlertController()
-		alert.addAction(UIAlertAction(title: "Снять фото или видео", style: .default, handler: { [unowned self] (action) in
+		alert.addAction(UIAlertAction(title: "Take phote or video", style: .default, handler: { [unowned self] (action) in
 			imagePickerController.sourceType = .camera
 			imagePickerController.showsCameraControls = true
 			self.present(imagePickerController, animated: true, completion: nil)
 		}))
-		alert.addAction(UIAlertAction(title: "Медиатека", style: .default, handler: { [unowned self] (action) in
+		alert.addAction(UIAlertAction(title: "Library", style: .default, handler: { [unowned self] (action) in
 			imagePickerController.sourceType = .photoLibrary
 			self.present(imagePickerController, animated: true, completion: nil)
 		}))
-		alert.addAction(UIAlertAction(title: "Отменить", style: .cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 		self.present(alert, animated: true, completion: nil)
 	}
 

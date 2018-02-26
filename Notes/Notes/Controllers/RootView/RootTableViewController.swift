@@ -23,7 +23,7 @@ class RootTableViewController: UITableViewController {
 	lazy var searchController: UISearchController = {
 		let controller = UISearchController(searchResultsController: nil)
 		controller.hidesNavigationBarDuringPresentation = false
-		controller.searchBar.placeholder = "Поиск"
+		controller.searchBar.placeholder = "Search"
 		controller.obscuresBackgroundDuringPresentation = false
 		controller.searchResultsUpdater = self
 		return controller

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 extension NSMutableAttributedString {
-
 	func add(image: UIImage) {
 		let textAttachment = NSTextAttachment()
 		textAttachment.image = image
