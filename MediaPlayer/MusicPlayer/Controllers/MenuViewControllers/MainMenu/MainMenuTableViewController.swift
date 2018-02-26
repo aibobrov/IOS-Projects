@@ -10,8 +10,12 @@ import UIKit
 import MediaPlayer
 
 class MainMenuTableViewController: TableViewWithMusicPlayerBarTableViewController {
-	static let RecentMusicHeaderIdentifier = "RecentMusicHeaderIdentifier"
-	static let MediaItemCollectionViewCellIdentifier = "MediaItemCollectionViewCellIdentifier"
+	var reusableHeaderIdentifier: String {
+		return "RecentMusicHeaderIdentifier"
+	}
+	var collectionViewReusableIdentifier: String {
+		return "MediaItemCollectionViewCellIdentifier"
+	}
 
 	@IBOutlet weak var recentlyPlayedCollectionView: UICollectionView!
 
@@ -20,7 +24,7 @@ class MainMenuTableViewController: TableViewWithMusicPlayerBarTableViewControlle
 	// MARK: Lifecycle
 	override func viewDidLoad() {
         super.viewDidLoad()
-		recentlyPlayedCollectionView.register(UINib(nibName: "MediaItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MainMenuTableViewController.MediaItemCollectionViewCellIdentifier)
+		recentlyPlayedCollectionView.register(UINib(nibName: "MediaItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: collectionViewReusableIdentifier)
 
 		self.notificationCenterObserversSetup()
 	}

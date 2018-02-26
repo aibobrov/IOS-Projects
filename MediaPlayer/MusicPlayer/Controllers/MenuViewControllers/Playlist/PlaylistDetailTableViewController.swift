@@ -9,6 +9,9 @@
 import UIKit
 
 class PlaylistDetailTableViewController: TableViewWithMusicPlayerBarTableViewController {
+	var tableViewReusableIdentidier: String {
+		return "SongTableViewCellIdentidier"
+	}
 
 	@IBOutlet weak var playlistHeaderView: PlaylistInfoHeaderView!
 

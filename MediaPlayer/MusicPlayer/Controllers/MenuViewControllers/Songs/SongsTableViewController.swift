@@ -11,7 +11,9 @@ import MediaPlayer
 
 class SongsTableViewController: TableViewWithMusicPlayerBarTableViewController {
 
-	static let SongTableViewCellIdentidier = "SongTableViewCellIdentidier"
+	var tableViewReusableIdentidier: String {
+		return "SongTableViewCellIdentidier"
+	}
 
 	var query = MediaModelController.shared.songsQuery
 	var data: DataModel!

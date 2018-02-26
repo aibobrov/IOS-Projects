@@ -14,7 +14,7 @@ extension PlayerViewController: UICollectionViewDelegate, UICollectionViewDataSo
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMenuTableViewController.MediaItemCollectionViewCellIdentifier, for: indexPath) as! MediaItemCollectionViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewReusableIdentifier, for: indexPath) as! MediaItemCollectionViewCell
 		cell.item = playlist[indexPath.row]
 		return cell
 	}

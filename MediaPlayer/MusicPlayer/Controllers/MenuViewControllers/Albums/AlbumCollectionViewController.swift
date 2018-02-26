@@ -10,13 +10,18 @@ import UIKit
 import MediaPlayer
 
 class AlbumCollectionViewController: UICollectionViewController {
-	static let AlbumCollectionViewCellIdentifier = "AlbumCollectionViewCellIdentifier"
-	static let AlbumCollectionViewReusableViewIdentifier = "AlbumCollectionViewReusableViewIdentifier"
+	var collectionViewReusabeIdentifier: String {
+		return "AlbumCollectionViewCellIdentifier"
+	}
+	var albumCollectionViewReusableViewIdentifier: String {
+		return "AlbumCollectionViewReusableViewIdentifier"
+	}
 	
 	var query = MediaModelController.shared.albumsQuery
 	var data: DataModel!
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		print("AlbumCollectionViewController viewDidLoad")
 		data = DataModel(sections: query.collectionSections, collections: query.collections)
 	}
 

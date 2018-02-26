@@ -18,7 +18,7 @@ extension SongsTableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: SongsTableViewController.SongTableViewCellIdentidier, for: indexPath) as! MediaTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: tableViewReusableIdentidier, for: indexPath) as! MediaTableViewCell
 		if let range = data.sections?[indexPath.section].range {
 			let index = range.location + indexPath.row
 			cell.item = data.collections?.first?.items[index]

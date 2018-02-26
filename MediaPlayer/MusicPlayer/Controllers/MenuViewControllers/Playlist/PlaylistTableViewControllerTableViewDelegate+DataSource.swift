@@ -13,7 +13,7 @@ extension PlaylistTableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: PlaylistTableViewController.PlaylistTableViewCellIdentifier, for: indexPath) as! PlaylistTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as! PlaylistTableViewCell
 
 		if let collection = data.collections?[indexPath.row] {
 			let imageSize = cell.artworksImageView.frame.size

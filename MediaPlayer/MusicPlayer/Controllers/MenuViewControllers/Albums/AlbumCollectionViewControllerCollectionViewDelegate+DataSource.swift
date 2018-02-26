@@ -10,19 +10,19 @@ import UIKit
 
 extension AlbumCollectionViewController {
 	override func numberOfSections(in collectionView: UICollectionView) -> Int {
-		return query.collectionSections?.count ?? 0
+		return data.sections?.count ?? 0
 	}
 
 	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return query.collectionSections?[section].range.length ?? 0
+		return data.sections?[section].range.length ?? 0
 	}
 
 	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCollectionViewController.AlbumCollectionViewCellIdentifier, for: indexPath) as! MediaAlbumCollectionViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewReusabeIdentifier, for: indexPath) as! MediaAlbumCollectionViewCell
 
-		if let range = query.collectionSections?[indexPath.section].range {
-			cell.item = query.collections?[range.location + indexPath.row].representativeItem
-			cell.album = query.collections?[range.location + indexPath.row]
+		if let range = data.sections?[indexPath.section].range {
+			cell.item = data.collections?[range.location + indexPath.row].representativeItem
+			cell.album = data.collections?[range.location + indexPath.row]
 		}
 
 		return cell
@@ -31,9 +31,9 @@ extension AlbumCollectionViewController {
 	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		switch kind {
 		case UICollectionElementKindSectionHeader:
-			let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumCollectionViewController.AlbumCollectionViewReusableViewIdentifier, for: indexPath) as! SectionLabelCollectionReusableView
+			let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: albumCollectionViewReusableViewIdentifier, for: indexPath) as! SectionLabelCollectionReusableView
 			view.backgroundColor = UIColor.darkGray.withAlphaComponent(0.05)
-			view.title = query.collectionSections?[indexPath.section].title
+			view.title = data.sections?[indexPath.section].title
 			return view
 		default:
 			fatalError("Unexpected element kind")

@@ -13,7 +13,7 @@ extension MainMenuTableViewController: UICollectionViewDelegate, UICollectionVie
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		switch kind {
 		case UICollectionElementKindSectionHeader:
-			return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MainMenuTableViewController.RecentMusicHeaderIdentifier, for: indexPath)
+			return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reusableHeaderIdentifier, for: indexPath)
 		default:
 			fatalError("Unexpected element kind")
 		}
@@ -24,7 +24,7 @@ extension MainMenuTableViewController: UICollectionViewDelegate, UICollectionVie
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMenuTableViewController.MediaItemCollectionViewCellIdentifier, for: indexPath) as! MediaItemCollectionViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewReusableIdentifier, for: indexPath) as! MediaItemCollectionViewCell
 		cell.item = recentTracksData.items[indexPath.row]
 		return cell
 	}

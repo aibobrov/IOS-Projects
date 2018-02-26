@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +22,6 @@
                 <outlet property="fastForwardButton" destination="USF-HE-yJ0" id="2jg-oy-Mq2"/>
                 <outlet property="parentRouteView" destination="QyI-2A-xMy" id="LPf-P7-GwN"/>
                 <outlet property="parentVolumeView" destination="x3X-Bb-zsG" id="y8S-Ad-Ia7"/>
-                <outlet property="playPauseButton" destination="iEl-tc-pkF" id="OyF-5O-DqZ"/>
                 <outlet property="playlistCollectionView" destination="oeI-uA-RT7" id="PV7-bZ-pWu"/>
                 <outlet property="repeatButton" destination="5QN-ls-m27" id="3AM-gG-7vz"/>
                 <outlet property="rewindButton" destination="T2Z-Qj-97i" id="6XU-W9-AOM"/>
@@ -52,22 +52,22 @@
                     </connections>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrE-s1-aB6" customClass="PlayerSliderView" customModule="MusicPlayer" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="368" width="375" height="47"/>
+                    <rect key="frame" x="0.0" y="368" width="375" height="37"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-wC-DNS">
-                            <rect key="frame" x="5" y="15" width="26" height="17"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-wC-DNS">
+                            <rect key="frame" x="25" y="19" width="60" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="uHh-sD-NjD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnL-xw-Ojf">
-                            <rect key="frame" x="344" y="15" width="26" height="17"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CPH-VY-nN6" customClass="SeekPlayerSlider" customModule="MusicPlayer" customModuleProvider="target">
-                            <rect key="frame" x="32" y="8" width="311" height="31"/>
+                            <rect key="frame" x="23" y="8" width="328" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="9" id="OBg-pb-Htx"/>
+                            </constraints>
                             <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="maximumTrackTintColor" red="0.36078431372549019" green="0.36862745098039218" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <userDefinedRuntimeAttributes>
@@ -80,17 +80,28 @@
                                 <action selector="playerSliderValueChanged:" destination="-1" eventType="valueChanged" id="I7w-B2-v1F"/>
                             </connections>
                         </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnL-xw-Ojf">
+                            <rect key="frame" x="290" y="19" width="60" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="FAz-IZ-PNt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="2hD-wC-DNS" firstAttribute="centerY" secondItem="CPH-VY-nN6" secondAttribute="centerY" id="47F-zF-4Jx"/>
-                        <constraint firstItem="CPH-VY-nN6" firstAttribute="centerX" secondItem="LrE-s1-aB6" secondAttribute="centerX" id="N9y-66-okM"/>
-                        <constraint firstItem="GnL-xw-Ojf" firstAttribute="leading" secondItem="CPH-VY-nN6" secondAttribute="trailing" constant="3" id="TaL-LI-mtc"/>
-                        <constraint firstItem="2hD-wC-DNS" firstAttribute="baseline" secondItem="GnL-xw-Ojf" secondAttribute="baseline" id="X8m-08-3R3"/>
-                        <constraint firstAttribute="height" constant="47" id="YJ5-Qm-Gg7"/>
-                        <constraint firstItem="2hD-wC-DNS" firstAttribute="leading" secondItem="LrE-s1-aB6" secondAttribute="leading" constant="5" id="eB8-H4-nHL"/>
-                        <constraint firstItem="CPH-VY-nN6" firstAttribute="leading" secondItem="2hD-wC-DNS" secondAttribute="trailing" constant="3" id="h3T-kf-lqQ"/>
-                        <constraint firstItem="CPH-VY-nN6" firstAttribute="top" secondItem="LrE-s1-aB6" secondAttribute="topMargin" id="tBB-Nc-3Xx"/>
+                        <constraint firstItem="CPH-VY-nN6" firstAttribute="leading" secondItem="2hD-wC-DNS" secondAttribute="leading" id="6q4-fi-Hjf"/>
+                        <constraint firstItem="CPH-VY-nN6" firstAttribute="leading" secondItem="LrE-s1-aB6" secondAttribute="leading" constant="25" id="Fym-Du-gCQ"/>
+                        <constraint firstItem="CPH-VY-nN6" firstAttribute="trailing" secondItem="GnL-xw-Ojf" secondAttribute="trailing" constant="-1" id="N3Q-Rk-5YN"/>
+                        <constraint firstItem="CPH-VY-nN6" firstAttribute="top" secondItem="LrE-s1-aB6" secondAttribute="topMargin" id="QVr-sR-lMt"/>
+                        <constraint firstItem="2hD-wC-DNS" firstAttribute="firstBaseline" secondItem="GnL-xw-Ojf" secondAttribute="firstBaseline" id="SPt-GY-AVL"/>
+                        <constraint firstItem="2hD-wC-DNS" firstAttribute="top" secondItem="CPH-VY-nN6" secondAttribute="bottom" constant="2" id="TIQ-l9-Mj5"/>
+                        <constraint firstAttribute="height" constant="37" id="YJ5-Qm-Gg7"/>
+                        <constraint firstItem="GnL-xw-Ojf" firstAttribute="bottom" secondItem="LrE-s1-aB6" secondAttribute="bottomMargin" constant="6" id="mjU-pI-zMf"/>
+                        <constraint firstAttribute="bottom" secondItem="2hD-wC-DNS" secondAttribute="bottom" constant="2" id="xTQ-gu-nky"/>
+                        <constraint firstItem="CPH-VY-nN6" firstAttribute="centerX" secondItem="LrE-s1-aB6" secondAttribute="centerX" id="zbt-1F-BbK"/>
                     </constraints>
                     <connections>
                         <outlet property="currentPlaybackTimeLabel" destination="2hD-wC-DNS" id="ZKD-cJ-Fz6"/>
@@ -134,17 +145,6 @@
                         <constraint firstAttribute="width" constant="40" id="zKG-rK-aLE"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEl-tc-pkF" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
-                    <rect key="frame" x="112" y="427" width="150" height="150"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="large-play"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="image" keyPath="alternativeImage" value="large-pause"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="playPauseButtonClicked:" destination="-1" eventType="touchUpInside" id="oKv-lT-H1e"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2Z-Qj-97i" customClass="PlayerActionButton" customModule="MusicPlayer" customModuleProvider="target">
                     <rect key="frame" x="23" y="462" width="80" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -175,8 +175,6 @@
     </objects>
     <resources>
         <image name="large-fast-forward" width="57" height="41"/>
-        <image name="large-pause" width="34" height="85"/>
-        <image name="large-play" width="63" height="85"/>
         <image name="large-rewind" width="57" height="41"/>
         <image name="large-thumb-image" width="30" height="30"/>
         <image name="thumb-image" width="10" height="10"/>

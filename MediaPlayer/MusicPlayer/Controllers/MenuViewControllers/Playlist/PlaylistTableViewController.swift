@@ -9,7 +9,9 @@
 import UIKit
 
 class PlaylistTableViewController: UITableViewController {
-	static let PlaylistTableViewCellIdentifier = "PlaylistTableViewCellIdentifier"
+	var tableViewCellIdentifier: String {
+		return "PlaylistTableViewCellIdentifier"
+	}
 
 	let query = MediaModelController.shared.playlistQuery
 	var data: DataModel!

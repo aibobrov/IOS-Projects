@@ -14,7 +14,7 @@ extension AlbumDetailTableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: AlbumDetailTableViewController.AlbumDetailTableViewControllerCellIdentifier, for: indexPath) as! AlbumTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: detailTableViewControllerReusableIdentifier, for: indexPath) as! AlbumTableViewCell
 		cell.item = album.items[indexPath.row]
 		return cell
 	}

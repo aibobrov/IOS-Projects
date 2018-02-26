@@ -250,6 +250,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="yel-kT-GC2" kind="show" id="W5R-1n-O4t"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -329,7 +332,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mpX-0O-Jvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2541.5999999999999" y="-1241.8290854572715"/>
+            <point key="canvasLocation" x="2519" y="-1344"/>
         </scene>
         <!--Artists-->
         <scene sceneID="c6B-Kc-8Qe">
@@ -388,7 +391,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEf-Cd-oTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2546" y="-566"/>
+            <point key="canvasLocation" x="2522" y="-669"/>
         </scene>
         <!--Artist's albums-->
         <scene sceneID="ojW-36-G0N">
@@ -468,7 +471,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Brf-lc-n9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3260" y="-570"/>
+            <point key="canvasLocation" x="3238" y="-673"/>
         </scene>
         <!--Albums-->
         <scene sceneID="1jU-8E-u2w">
@@ -548,7 +551,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXs-j9-2pj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2546" y="105"/>
+            <point key="canvasLocation" x="2522" y="2"/>
         </scene>
         <!--Album Detail Table View Controller-->
         <scene sceneID="GqL-Oq-LzV">
@@ -606,10 +609,10 @@
                                 <constraint firstItem="pJ7-CC-8sd" firstAttribute="top" secondItem="zR7-ZK-CoR" secondAttribute="bottom" constant="20" id="z4s-h2-JqN"/>
                             </constraints>
                             <connections>
-                                <outlet property="albumLabel" destination="zR7-ZK-CoR" id="gya-nA-Jb2"/>
-                                <outlet property="artistLabel" destination="Fh3-SI-Mco" id="635-r4-efI"/>
-                                <outlet property="artworkImageView" destination="GSs-N0-5UH" id="nAz-cP-vaq"/>
-                                <outlet property="genreYearLabel" destination="pJ7-CC-8sd" id="A3X-c0-bZQ"/>
+                                <outlet property="artworkImageView" destination="GSs-N0-5UH" id="V2s-4h-h2t"/>
+                                <outlet property="genreYearLabel" destination="pJ7-CC-8sd" id="DyC-gg-mTu"/>
+                                <outlet property="subtitleLabel" destination="Fh3-SI-Mco" id="9FC-6z-FqP"/>
+                                <outlet property="titleLabel" destination="zR7-ZK-CoR" id="ogx-p5-hIm"/>
                             </connections>
                         </view>
                         <prototypes>
@@ -664,7 +667,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVr-u9-2KM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3358" y="105"/>
+            <point key="canvasLocation" x="3335" y="2"/>
         </scene>
         <!--Songs-->
         <scene sceneID="ikl-pS-9gM">
@@ -736,7 +739,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4e-pg-D1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2546" y="766"/>
+            <point key="canvasLocation" x="2522" y="663"/>
         </scene>
         <!--Album Detail Table View Controller-->
         <scene sceneID="sHh-Dm-VzW">
@@ -852,7 +855,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1R-D7-ChT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3994" y="-570"/>
+            <point key="canvasLocation" x="3970" y="-673"/>
         </scene>
         <!--Playlist Detail Table View Controller-->
         <scene sceneID="4La-jc-baA">
@@ -957,7 +960,191 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be8-4T-c3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3357.5999999999999" y="-1242.7286356821589"/>
+            <point key="canvasLocation" x="3335" y="-1345"/>
+        </scene>
+        <!--Podcasts-->
+        <scene sceneID="O8q-SL-Dkp">
+            <objects>
+                <collectionViewController id="yel-kT-GC2" customClass="PodcastCollectionViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ofv-wF-bva">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eG5-i1-sww">
+                            <size key="itemSize" width="163.5" height="199"/>
+                            <size key="headerReferenceSize" width="50" height="20"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="16" minY="10" maxX="16" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PodcastCollectionViewCellIdentifier" id="oWK-1c-vj2" customClass="MediaPodcastCollectionViewCell" customModule="MusicPlayer" customModuleProvider="target">
+                                <rect key="frame" x="16" y="30" width="163.5" height="199"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="163.5" height="199"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nc4-9u-Dyz">
+                                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="163.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Podcast Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrD-wM-cMG">
+                                            <rect key="frame" x="0.0" y="185" width="163.5" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="Mb1-Yi-hmz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4O-KJ-sbL">
+                                            <rect key="frame" x="0.0" y="164" width="163.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20.5" id="tI6-l2-aGU"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nc4-9u-Dyz" secondAttribute="trailing" id="Ddc-QX-4Og"/>
+                                    <constraint firstItem="n4O-KJ-sbL" firstAttribute="leading" secondItem="oWK-1c-vj2" secondAttribute="leading" id="F5M-xE-Qw0"/>
+                                    <constraint firstItem="OrD-wM-cMG" firstAttribute="leading" secondItem="oWK-1c-vj2" secondAttribute="leading" id="GvD-eO-UgU"/>
+                                    <constraint firstItem="nc4-9u-Dyz" firstAttribute="leading" secondItem="oWK-1c-vj2" secondAttribute="leading" id="L5h-vK-nmf"/>
+                                    <constraint firstAttribute="bottom" secondItem="OrD-wM-cMG" secondAttribute="bottom" id="PNc-qz-nqe"/>
+                                    <constraint firstAttribute="trailing" secondItem="OrD-wM-cMG" secondAttribute="trailing" id="RRz-uK-b91"/>
+                                    <constraint firstItem="n4O-KJ-sbL" firstAttribute="top" secondItem="nc4-9u-Dyz" secondAttribute="bottom" id="VCc-qn-PxN"/>
+                                    <constraint firstItem="nc4-9u-Dyz" firstAttribute="top" secondItem="oWK-1c-vj2" secondAttribute="top" id="b5y-b0-POr"/>
+                                    <constraint firstItem="OrD-wM-cMG" firstAttribute="top" secondItem="n4O-KJ-sbL" secondAttribute="bottom" id="d8y-eu-IYm"/>
+                                    <constraint firstAttribute="trailing" secondItem="n4O-KJ-sbL" secondAttribute="trailing" id="u99-Bh-rTC"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="artworkImageView" destination="nc4-9u-Dyz" id="uTR-Bc-xhC"/>
+                                    <outlet property="subtitleLabel" destination="OrD-wM-cMG" id="ngr-kP-HoR"/>
+                                    <outlet property="titleLabel" destination="n4O-KJ-sbL" id="X0H-3Y-NFD"/>
+                                    <segue destination="SUE-fo-gky" kind="show" id="y3m-NW-HJE"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AlbumCollectionViewReusableViewIdentifier" id="VoZ-Dk-aKb" customClass="SectionLabelCollectionReusableView" customModule="MusicPlayer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="yel-kT-GC2" id="ZZx-i0-Mfl"/>
+                            <outlet property="delegate" destination="yel-kT-GC2" id="e2c-iz-OA9"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Podcasts" id="hIk-3B-eTQ"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lnk-1Z-BX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2518" y="1347"/>
+        </scene>
+        <!--Podcast Detail Table View Controller-->
+        <scene sceneID="Kit-o0-pN7">
+            <objects>
+                <tableViewController id="SUE-fo-gky" customClass="PodcastDetailTableViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eix-CC-Fbb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="XdK-ze-hCz" customClass="PodcastInfoHeaderView" customModule="MusicPlayer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QBJ-6a-XYk">
+                                    <rect key="frame" x="16" y="7" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="l6G-by-Edm"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGH-JW-1uJ">
+                                    <rect key="frame" x="128" y="7" width="239" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3w-dp-ShF">
+                                    <rect key="frame" x="128" y="31" width="239" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="e3w-dp-ShF" firstAttribute="top" secondItem="XdK-ze-hCz" secondAttribute="top" constant="31" id="2sP-eB-7kK"/>
+                                <constraint firstAttribute="bottom" secondItem="QBJ-6a-XYk" secondAttribute="bottom" constant="28" id="4H8-K8-8vY"/>
+                                <constraint firstItem="QBJ-6a-XYk" firstAttribute="top" secondItem="XdK-ze-hCz" secondAttribute="top" constant="7" id="7k3-6R-QX9"/>
+                                <constraint firstAttribute="trailing" secondItem="XGH-JW-1uJ" secondAttribute="trailing" constant="8" id="ERT-Z7-jho"/>
+                                <constraint firstItem="QBJ-6a-XYk" firstAttribute="leading" secondItem="XdK-ze-hCz" secondAttribute="leadingMargin" constant="8" id="FeQ-yJ-XV2"/>
+                                <constraint firstItem="QBJ-6a-XYk" firstAttribute="top" secondItem="XGH-JW-1uJ" secondAttribute="top" id="YfQ-dG-nLP"/>
+                                <constraint firstItem="XGH-JW-1uJ" firstAttribute="leading" secondItem="e3w-dp-ShF" secondAttribute="leading" id="baN-g2-988"/>
+                                <constraint firstItem="XGH-JW-1uJ" firstAttribute="leading" secondItem="QBJ-6a-XYk" secondAttribute="trailing" constant="12" id="hrN-rB-w16"/>
+                                <constraint firstItem="XGH-JW-1uJ" firstAttribute="trailing" secondItem="e3w-dp-ShF" secondAttribute="trailing" id="tXU-5V-lAh"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="artworkImageView" destination="QBJ-6a-XYk" id="kTc-qw-C6T"/>
+                                <outlet property="subtitleLabel" destination="e3w-dp-ShF" id="HJv-1S-hKh"/>
+                                <outlet property="titleLabel" destination="XGH-JW-1uJ" id="Hp6-oT-fqw"/>
+                            </connections>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PodcastDetailTableViewControllerCellIdentifier" rowHeight="55" id="F8c-vd-IUB" customClass="PodcastTableViewCell" customModule="MusicPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="163" width="375" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F8c-vd-IUB" id="P6e-w1-tPT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="864-uV-mf4">
+                                            <rect key="frame" x="16" y="8" width="343" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="oc9-m8-1Dv"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gu-rJ-va7">
+                                            <rect key="frame" x="16" y="25" width="343" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="864-uV-mf4" firstAttribute="trailing" secondItem="P6e-w1-tPT" secondAttribute="trailingMargin" id="8uK-V4-dLf"/>
+                                        <constraint firstItem="864-uV-mf4" firstAttribute="trailing" secondItem="6Gu-rJ-va7" secondAttribute="trailing" id="GhY-HU-6jZ"/>
+                                        <constraint firstItem="864-uV-mf4" firstAttribute="leading" secondItem="6Gu-rJ-va7" secondAttribute="leading" id="e7I-Pa-XnC"/>
+                                        <constraint firstItem="864-uV-mf4" firstAttribute="top" secondItem="P6e-w1-tPT" secondAttribute="topMargin" constant="-3" id="hfT-ir-fjO"/>
+                                        <constraint firstItem="864-uV-mf4" firstAttribute="leading" secondItem="P6e-w1-tPT" secondAttribute="leadingMargin" id="kP5-0y-aO6"/>
+                                        <constraint firstItem="6Gu-rJ-va7" firstAttribute="top" secondItem="864-uV-mf4" secondAttribute="bottom" id="kfu-3g-edg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6Gu-rJ-va7" secondAttribute="bottom" constant="-2" id="x8Y-nd-Dx9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="subtitleLabel" destination="864-uV-mf4" id="DYe-Jf-n3J"/>
+                                    <outlet property="titleLabel" destination="6Gu-rJ-va7" id="JjR-VA-HZS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SUE-fo-gky" id="4kl-6l-LW7"/>
+                            <outlet property="delegate" destination="SUE-fo-gky" id="QOJ-6S-w4o"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="headerView" destination="XdK-ze-hCz" id="huq-Nw-aMa"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2W-HB-wsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3293.5999999999999" y="1345.2773613193403"/>
         </scene>
     </scenes>
     <resources>

@@ -12,7 +12,9 @@ import MediaPlayer
 import UPCarouselFlowLayout
 
 class PlayerViewController: UIViewController {
-	static let PlaylistCollectionViewCellIdentifier = "MediaItemCollectionViewCellIdentifier"
+	var collectionViewReusableIdentifier: String {
+		return "MediaItemCollectionViewCellIdentifier"
+	}
 
 	@IBOutlet weak var parentRouteView: UIView!
 	@IBOutlet weak var parentVolumeView: UIView!
@@ -116,7 +118,7 @@ class PlayerViewController: UIViewController {
 		self.popupItem.leftBarButtonItems = [playPauseBarButtonItem]
 		self.popupItem.rightBarButtonItems = [forwardBarButtonItem]
 
-		playlistCollectionView.register(UINib(nibName: "MediaItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MainMenuTableViewController.MediaItemCollectionViewCellIdentifier)
+		playlistCollectionView.register(UINib(nibName: "MediaItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: collectionViewReusableIdentifier)
 
 		playlistCollectionView.collectionViewLayout = carouselFlowLayout
 

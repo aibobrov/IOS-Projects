@@ -17,6 +17,10 @@
 		A100F01B204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100F01A204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift */; };
 		A131C9F22044894400F538D8 /* PodcastCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131C9F12044894400F538D8 /* PodcastCollectionViewController.swift */; };
 		A131C9F420448B4900F538D8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131C9F320448B4900F538D8 /* DataModel.swift */; };
+		A131C9F720448FA900F538D8 /* MediaPodcastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131C9F620448FA900F538D8 /* MediaPodcastCollectionViewCell.swift */; };
+		A131C9FB2044986000F538D8 /* PodcastInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131C9FA2044986000F538D8 /* PodcastInfoHeaderView.swift */; };
+		A131C9FD20449ADF00F538D8 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131C9FC20449ADF00F538D8 /* PodcastTableViewCell.swift */; };
+		A131C9FF20449B6300F538D8 /* PodcastDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131C9FE20449B6300F538D8 /* PodcastDetailTableViewController.swift */; };
 		A143CA402041EE40006E71BB /* MediaAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA3F2041EE40006E71BB /* MediaAlbumCollectionViewCell.swift */; };
 		A143CA432041EFE9006E71BB /* AlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA422041EFE9006E71BB /* AlbumCollectionViewController.swift */; };
 		A143CA452041F6A0006E71BB /* SectionLabelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA442041F6A0006E71BB /* SectionLabelCollectionReusableView.swift */; };
@@ -93,6 +97,10 @@
 		A100F01A204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		A131C9F12044894400F538D8 /* PodcastCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCollectionViewController.swift; sourceTree = "<group>"; };
 		A131C9F320448B4900F538D8 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		A131C9F620448FA900F538D8 /* MediaPodcastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPodcastCollectionViewCell.swift; sourceTree = "<group>"; };
+		A131C9FA2044986000F538D8 /* PodcastInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastInfoHeaderView.swift; sourceTree = "<group>"; };
+		A131C9FC20449ADF00F538D8 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
+		A131C9FE20449B6300F538D8 /* PodcastDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailTableViewController.swift; sourceTree = "<group>"; };
 		A143CA3F2041EE40006E71BB /* MediaAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		A143CA422041EFE9006E71BB /* AlbumCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewController.swift; sourceTree = "<group>"; };
 		A143CA442041F6A0006E71BB /* SectionLabelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionLabelCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -180,6 +188,17 @@
 			isa = PBXGroup;
 			children = (
 				A131C9F12044894400F538D8 /* PodcastCollectionViewController.swift */,
+				A131C9FE20449B6300F538D8 /* PodcastDetailTableViewController.swift */,
+			);
+			path = Podcast;
+			sourceTree = "<group>";
+		};
+		A131C9F520448F7B00F538D8 /* Podcast */ = {
+			isa = PBXGroup;
+			children = (
+				A131C9F620448FA900F538D8 /* MediaPodcastCollectionViewCell.swift */,
+				A131C9FA2044986000F538D8 /* PodcastInfoHeaderView.swift */,
+				A131C9FC20449ADF00F538D8 /* PodcastTableViewCell.swift */,
 			);
 			path = Podcast;
 			sourceTree = "<group>";
@@ -390,10 +409,10 @@
 		A16CD1072040BD8D00285126 /* MenuViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A143CA412041EFD5006E71BB /* Albums */,
 				A131C9F02044890B00F538D8 /* Podcast */,
 				A100F00C204344010084187F /* Playlist */,
 				A143CA5E2042F63D006E71BB /* Artist */,
-				A143CA412041EFD5006E71BB /* Albums */,
 				A16CD0D3203E0C5B00285126 /* MainMenu */,
 				A16CD10E2040D36B00285126 /* Songs */,
 			);
@@ -403,6 +422,7 @@
 		A16CD1082040BF3300285126 /* MenuUI */ = {
 			isa = PBXGroup;
 			children = (
+				A131C9F520448F7B00F538D8 /* Podcast */,
 				A100F00F2043448C0084187F /* Playlist */,
 				A143CA632042F94D006E71BB /* Album */,
 				A16CD0CF203E0AED00285126 /* MainMenu */,
@@ -503,6 +523,7 @@
 			files = (
 				A143CA432041EFE9006E71BB /* AlbumCollectionViewController.swift in Sources */,
 				A143CA5120421AED006E71BB /* AlbumDetailTableViewController.swift in Sources */,
+				A131C9FB2044986000F538D8 /* PodcastInfoHeaderView.swift in Sources */,
 				A16CD0BB203E019800285126 /* TimeExtension.swift in Sources */,
 				A16CD1022040521E00285126 /* SeekPlayerSlider.swift in Sources */,
 				A143CA4F20420EF5006E71BB /* AlbumCollectionViewControllerCollectionViewDelegate+DataSource.swift in Sources */,
@@ -527,9 +548,11 @@
 				A16CD10D2040C1F600285126 /* SongsTableViewController.swift in Sources */,
 				A16CD0D1203E0B2C00285126 /* SelectedTableViewCell.swift in Sources */,
 				A100F011204344A00084187F /* PlaylistTableViewCell.swift in Sources */,
+				A131C9FF20449B6300F538D8 /* PodcastDetailTableViewController.swift in Sources */,
 				A100F01320436C270084187F /* PlaylistInfoHeaderView.swift in Sources */,
 				A100F01520436CA40084187F /* PlaylistModel.swift in Sources */,
 				A143CA57204232FD006E71BB /* AlbumDetailTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
+				A131C9FD20449ADF00F538D8 /* PodcastTableViewCell.swift in Sources */,
 				A16CD0F3203F609900285126 /* MediaItemCollectionViewCell.swift in Sources */,
 				A100F019204383940084187F /* PlaylistTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
 				A16CD0FC203F918400285126 /* ProgressTimer.swift in Sources */,
@@ -547,6 +570,7 @@
 				A143CA602042F65D006E71BB /* ArtistTableViewController.swift in Sources */,
 				A16CD0B7203E019800285126 /* CGExtension.swift in Sources */,
 				A16CD09D203E010200285126 /* AppDelegate.swift in Sources */,
+				A131C9F720448FA900F538D8 /* MediaPodcastCollectionViewCell.swift in Sources */,
 				A100F01B204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
 				A16CD0DA203E105900285126 /* MainMenuCollectionViewDelegates+DataSource.swift in Sources */,
 				A16CD0BD203E019800285126 /* MPExtension.swift in Sources */,

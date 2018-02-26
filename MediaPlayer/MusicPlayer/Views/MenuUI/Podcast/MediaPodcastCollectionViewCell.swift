@@ -1,17 +1,15 @@
 //
-//  AlbumInfoHeaderView.swift
+//  MediaPodcastCollectionViewCell.swift
 //  MusicPlayer
 //
-//  Created by Artem Bobrov on 25.02.2018.
+//  Created by Artem Bobrov on 26.02.2018.
 //  Copyright © 2018 Artem Bobrov. All rights reserved.
 //
 
 import UIKit
 import MediaPlayer
 
-class AlbumInfoHeaderView: PodcastInfoHeaderView {
-	@IBOutlet weak var genreYearLabel: UILabel!
-
+class MediaPodcastCollectionViewCell: MediaAlbumCollectionViewCell {
 	override weak var item: MPMediaItem? {
 		set {
 			self.object = newValue
@@ -19,13 +17,12 @@ class AlbumInfoHeaderView: PodcastInfoHeaderView {
 			if let artwork = item.artwork {
 				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
 			}
-			genreYearLabel.text = item.genreYearFormatted ?? ""
-			titleLabel.text = item.albumTitle ?? ""
-			subtitleLabel.text = item.albumArtist ?? ""
+
+			titleLabel.text = item.podcastTitle ?? ""
+			subtitleLabel.text = item.artist ?? ""
 		}
 		get {
 			return self.object
 		}
 	}
-
 }

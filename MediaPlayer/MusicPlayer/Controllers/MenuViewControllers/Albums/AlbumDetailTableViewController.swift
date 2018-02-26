@@ -10,9 +10,11 @@ import UIKit
 import MediaPlayer
 
 class AlbumDetailTableViewController: TableViewWithMusicPlayerBarTableViewController {
-	static let AlbumDetailTableViewControllerCellIdentifier = "AlbumDetailTableViewControllerCellIdentifier"
+	var detailTableViewControllerReusableIdentifier: String {
+		return "AlbumDetailTableViewControllerCellIdentifier"
+	}
 
-	@IBOutlet weak var headerView: AlbumInfoHeaderView!
+	@IBOutlet weak var headerView: PodcastInfoHeaderView!
 
 	weak var album: MPMediaItemCollection!
 

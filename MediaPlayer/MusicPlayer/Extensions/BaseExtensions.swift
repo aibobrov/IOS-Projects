@@ -8,6 +8,16 @@
 
 import UIKit
 
+extension Date {
+	var formatted: String {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "d.MM.YYYY"
+//		formatter.locale = Locale(identifier: "ru_RU")
+
+		return formatter.string(from: self)
+	}
+}
+
 extension Array {
 	public mutating func resize(_ size: Int, fillWith value: Iterator.Element) {
 		let c = count
