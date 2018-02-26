@@ -13,9 +13,11 @@ class ArtistTableViewController: UITableViewController {
 
 	let query = MediaModelController.shared.artistsQuery
 
+	var data: DataModel!
 	// MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+		data = DataModel(sections: query.collectionSections, collections: query.collections)
 		self.tableView.tableFooterView = UIView()
     }
 

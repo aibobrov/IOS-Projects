@@ -9,13 +9,13 @@
 import UIKit
 extension PlaylistTableViewController {
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return query.collections?.count ?? 0
+		return data.collections?.count ?? 0
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: PlaylistTableViewController.PlaylistTableViewCellIdentifier, for: indexPath) as! PlaylistTableViewCell
 
-		if let collection = query.collections?[indexPath.row] {
+		if let collection = data.collections?[indexPath.row] {
 			let imageSize = cell.artworksImageView.frame.size
 			var playlist = PlaylistModel(title: collection.playlistTitle, collection: collection)
 

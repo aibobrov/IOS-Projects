@@ -10,18 +10,18 @@ import UIKit
 
 extension SongsTableViewController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return query.itemSections?.count ?? 0
+		return data.sections?.count ?? 0
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return query.itemSections?[section].range.length ?? 0
+		return data.sections?[section].range.length ?? 0
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: SongsTableViewController.SongTableViewCellIdentidier, for: indexPath) as! MediaTableViewCell
-		if let range = query.itemSections?[indexPath.section].range {
+		if let range = data.sections?[indexPath.section].range {
 			let index = range.location + indexPath.row
-			cell.item = query.items?[index]
+			cell.item = data.collections?.first?.items[index]
 		}
 		return cell
 	}

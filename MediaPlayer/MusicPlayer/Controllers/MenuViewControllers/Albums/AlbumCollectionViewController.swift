@@ -14,6 +14,11 @@ class AlbumCollectionViewController: UICollectionViewController {
 	static let AlbumCollectionViewReusableViewIdentifier = "AlbumCollectionViewReusableViewIdentifier"
 	
 	var query = MediaModelController.shared.albumsQuery
+	var data: DataModel!
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		data = DataModel(sections: query.collectionSections, collections: query.collections)
+	}
 
 	// MARK: - Navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

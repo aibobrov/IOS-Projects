@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class SongsTableViewController: TableViewWithMusicPlayerBarTableViewController {
 
 	static let SongTableViewCellIdentidier = "SongTableViewCellIdentidier"
 
-	lazy var query = MediaModelController.shared.songsQuery
-
+	var query = MediaModelController.shared.songsQuery
+	var data: DataModel!
 
 	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		data = DataModel(sections: query.itemSections, collections: [MPMediaItemCollection(items: query.items ?? [])])
 		self.tableView.tableFooterView = UIView()
 	}
 	override func viewWillAppear(_ animated: Bool) {

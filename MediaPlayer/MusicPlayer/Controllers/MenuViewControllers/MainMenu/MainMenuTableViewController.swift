@@ -15,7 +15,7 @@ class MainMenuTableViewController: TableViewWithMusicPlayerBarTableViewControlle
 
 	@IBOutlet weak var recentlyPlayedCollectionView: UICollectionView!
 
-	var recentTracksData = [MPMediaItem]()
+	var recentTracksData = MPMediaItemCollection(items: [])
 
 	// MARK: Lifecycle
 	override func viewDidLoad() {

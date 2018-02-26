@@ -12,12 +12,12 @@ class PlaylistTableViewController: UITableViewController {
 	static let PlaylistTableViewCellIdentifier = "PlaylistTableViewCellIdentifier"
 
 	let query = MediaModelController.shared.playlistQuery
-
+	var data: DataModel!
 	// MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+		data = DataModel(sections: query.collectionSections, collections: query.collections)
 		self.tableView.tableFooterView = UIView()
-		
     }
 
     // MARK: - Navigation

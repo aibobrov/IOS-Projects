@@ -25,7 +25,7 @@ extension MainMenuTableViewController: UICollectionViewDelegate, UICollectionVie
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainMenuTableViewController.MediaItemCollectionViewCellIdentifier, for: indexPath) as! MediaItemCollectionViewCell
-		cell.item = recentTracksData[indexPath.row]
+		cell.item = recentTracksData.items[indexPath.row]
 		return cell
 	}
 
@@ -38,7 +38,7 @@ extension MainMenuTableViewController: UICollectionViewDelegate, UICollectionVie
 			cell.onClickAnimation()
 		}
 		DispatchQueue.main.async {
-			self.playerViewController.currentPlaylist = self.recentTracksData
+			self.playerViewController.currentPlaylist = self.recentTracksData.items
 		}
 		DispatchQueue.main.async {
 			self.playerViewController.player.nowPlayingItem = item

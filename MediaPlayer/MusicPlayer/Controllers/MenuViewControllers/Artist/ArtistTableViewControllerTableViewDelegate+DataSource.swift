@@ -10,18 +10,18 @@ import UIKit
 
 extension ArtistTableViewController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return query.collectionSections?.count ?? 0
+		return data.sections?.count ?? 0
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return query.collectionSections?[section].range.length ?? 0
+		return data.sections?[section].range.length ?? 0
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ArtistTableViewController.ArtistTableViewCellIdentifier, for: indexPath) as! ArtistTableViewCell
 
-		if let range = query.collectionSections?[indexPath.section].range {
-			cell.item = query.collections?[range.location + indexPath.row].representativeItem
+		if let range = data.sections?[indexPath.section].range {
+			cell.item = data.collections?[range.location + indexPath.row].representativeItem
 		}
 
 		return cell
@@ -35,7 +35,7 @@ extension ArtistTableViewController {
 		let height = self.tableView(tableView, heightForHeaderInSection: section)
 		let rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: height)
 		let view = SectionLabelCollectionReusableView(frame: rect)
-		view.title = query.itemSections?[section].title
+		view.title = data.sections?[section].title
 		return view
 	}
 }

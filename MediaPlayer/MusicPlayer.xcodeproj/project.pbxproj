@@ -16,6 +16,7 @@
 		A100F019204383940084187F /* PlaylistTableViewControllerTableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100F018204383940084187F /* PlaylistTableViewControllerTableViewDelegate+DataSource.swift */; };
 		A100F01B204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100F01A204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift */; };
 		A131C9F22044894400F538D8 /* PodcastCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131C9F12044894400F538D8 /* PodcastCollectionViewController.swift */; };
+		A131C9F420448B4900F538D8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131C9F320448B4900F538D8 /* DataModel.swift */; };
 		A143CA402041EE40006E71BB /* MediaAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA3F2041EE40006E71BB /* MediaAlbumCollectionViewCell.swift */; };
 		A143CA432041EFE9006E71BB /* AlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA422041EFE9006E71BB /* AlbumCollectionViewController.swift */; };
 		A143CA452041F6A0006E71BB /* SectionLabelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143CA442041F6A0006E71BB /* SectionLabelCollectionReusableView.swift */; };
@@ -91,6 +92,7 @@
 		A100F018204383940084187F /* PlaylistTableViewControllerTableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaylistTableViewControllerTableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		A100F01A204383CE0084187F /* PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaylistDetailTableViewControllerTableViewDelegate+DataSource.swift"; sourceTree = "<group>"; };
 		A131C9F12044894400F538D8 /* PodcastCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCollectionViewController.swift; sourceTree = "<group>"; };
+		A131C9F320448B4900F538D8 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		A143CA3F2041EE40006E71BB /* MediaAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		A143CA422041EFE9006E71BB /* AlbumCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewController.swift; sourceTree = "<group>"; };
 		A143CA442041F6A0006E71BB /* SectionLabelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionLabelCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			children = (
 				A16CD0DB203E16B500285126 /* MusicModel.swift */,
 				A100F01420436CA40084187F /* PlaylistModel.swift */,
+				A131C9F320448B4900F538D8 /* DataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				A16CD1042040804800285126 /* UICollectionViewExtension.swift in Sources */,
 				A100F00B20433E0E0084187F /* BaseExtensions.swift in Sources */,
 				A16CD1102040E36100285126 /* SongsTableViewControllerTableViewDelegate+DataSource.swift in Sources */,
+				A131C9F420448B4900F538D8 /* DataModel.swift in Sources */,
 				A16CD0E8203F484C00285126 /* TableViewWithSmallMusicBarTableViewController.swift in Sources */,
 				A143CA622042F8D6006E71BB /* ArtistTableViewCell.swift in Sources */,
 				A16CD0FE2040468500285126 /* PlayerSliderView.swift in Sources */,
