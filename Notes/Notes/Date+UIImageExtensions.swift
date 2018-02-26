@@ -24,15 +24,15 @@ extension UIImage {
 }
 enum NoteDateState: String {
 	case normal = ""
-	case created = "Создано: "
-	case changed = "Изменено: "
+	case created = "Created: "
+	case changed = "Changed: "
 }
 extension NSDate {
 
 	var shortString: String {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "d.MM.YYYY"
-		formatter.locale = Locale(identifier: "ru_RU")
+		formatter.locale = Locale(identifier: "en_EN")
 
 		return formatter.string(from: self as Date)
 	}
@@ -40,7 +40,7 @@ extension NSDate {
 	func string(with state: NoteDateState) -> String {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "dd MMMM YYYY г., HH:mm"
-		formatter.locale = Locale(identifier: "ru_RU")
+		formatter.locale = Locale(identifier: "en_EN")
 
 		return "\(state.rawValue)\(formatter.string(from: self as Date))"
 	}
