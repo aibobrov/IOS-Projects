@@ -14,7 +14,7 @@ Simple notes with image saving, search by notes and Core Data.
 
 ### MusicPlayer
 
-Music Player is created with MediaPlayer and some third-party frameworks: [LNPopupController](https://github.com/LeoNatan/LNPopupController) and [UPCarouselFlowLayout](https://github.com/ink-spot/UPCarouselFlowLayout)
+Music Player is created with MediaPlayer and some third-party frameworks: [LNPopupController](https://github.com/LeoNatan/LNPopupController) and [UPCarouselFlowLayout](https://github.com/ink-spot/UPCarouselFlowLayout). Music is in your local storage.
 
 Features:
 
