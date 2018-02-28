@@ -513,7 +513,7 @@
                                     <outlet property="artworkImageView" destination="O9Z-eS-iNz" id="AwT-NB-KQu"/>
                                     <outlet property="subtitleLabel" destination="8pL-ZQ-2gE" id="oZg-Bg-hg4"/>
                                     <outlet property="titleLabel" destination="r0e-q3-Coe" id="oQS-ql-RMG"/>
-                                    <segue destination="ve2-3F-IZl" kind="show" id="zTr-q5-IrK"/>
+                                    <segue destination="ve2-3F-IZl" kind="show" id="Q1b-Og-TEF"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -856,10 +856,10 @@
                                 <constraint firstItem="XxQ-4I-M6G" firstAttribute="top" secondItem="OfM-jM-gcu" secondAttribute="top" id="zas-zG-iNe"/>
                             </constraints>
                             <connections>
-                                <outlet property="albumLabel" destination="OfM-jM-gcu" id="uCP-X8-PC8"/>
-                                <outlet property="artistLabel" destination="nwV-93-VLZ" id="h0Q-B8-dUG"/>
-                                <outlet property="artworkImageView" destination="XxQ-4I-M6G" id="P2b-gm-eNX"/>
-                                <outlet property="genreYearLabel" destination="xSe-Wr-BRn" id="Rm6-H6-VPt"/>
+                                <outlet property="artworkImageView" destination="XxQ-4I-M6G" id="ysR-P1-t9E"/>
+                                <outlet property="genreYearLabel" destination="xSe-Wr-BRn" id="ZuY-9L-Aw4"/>
+                                <outlet property="subtitleLabel" destination="nwV-93-VLZ" id="Bjh-IS-K7o"/>
+                                <outlet property="titleLabel" destination="OfM-jM-gcu" id="ENO-ZN-ham"/>
                             </connections>
                         </view>
                         <prototypes>
