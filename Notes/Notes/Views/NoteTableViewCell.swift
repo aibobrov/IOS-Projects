@@ -14,18 +14,16 @@ class NoteTableViewCell: UITableViewCell {
 	@IBOutlet weak var noteImageView: UIImageView!
 
 
-	weak var note: Note? {
-		didSet {
-			guard let note = note else { return }
-			dateNoteLabel.text = note.createdDate?.shortString
+	func setInfo(with note: Note?) {
+		guard let note = note else { return }
+		dateNoteLabel.text = note.createdDate?.shortString
 
-			noteTitleLabel.text = note.attributedText?.string
-			if let textImage = note.images.first {
-				noteImageView.isHidden = false
-				noteImageView.layer.cornerRadius = 4
-				noteImageView.image = textImage
-			} else { noteImageView.isHidden = true }
-		}
+		noteTitleLabel.text = note.attributedText?.string
+		if let textImage = note.images.first {
+			noteImageView.isHidden = false
+			noteImageView.layer.cornerRadius = 4
+			noteImageView.image = textImage
+		} else { noteImageView.isHidden = true }
 	}
 
 	override func awakeFromNib() {

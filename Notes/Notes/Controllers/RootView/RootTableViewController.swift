@@ -71,7 +71,7 @@ class RootTableViewController: UITableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: RootTableViewController.NoteCellIdentifier, for: indexPath) as! NoteTableViewCell
 		
 		let note = searchController.isFiltering ? filteredNotes[indexPath.row] : notes[indexPath.row]
-		cell.note = note
+		cell.setInfo(with: note)
         return cell
     }
 	
