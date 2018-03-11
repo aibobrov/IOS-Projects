@@ -21,13 +21,15 @@ class ProgressTimer {
 	var interval: TimeInterval
 
 	func start() {
+		guard timer == nil else { return }
 		timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true, block: action)
-		isActive = true
+		isActive = timer?.isValid ?? false
 	}
 
 	func stop() {
-		timer?.invalidate()
-		timer = nil
-		isActive = false
+		guard let timer = timer else { return }
+		timer.invalidate()
+		isActive = !timer.isValid
+		self.timer = nil
 	}
 }

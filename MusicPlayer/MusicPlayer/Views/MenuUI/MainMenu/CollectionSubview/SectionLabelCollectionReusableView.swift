@@ -18,11 +18,9 @@ class SectionLabelCollectionReusableView: UICollectionReusableView {
 		return label
 	}()
 
-	var title: String? {
-		didSet {
-			guard let title = title else { return }
-			titleLabel.text = title
-		}
+	func setInfo(with title: String?) {
+		guard let title = title else { return }
+		titleLabel.text = title
 	}
 
 	override init(frame: CGRect) {

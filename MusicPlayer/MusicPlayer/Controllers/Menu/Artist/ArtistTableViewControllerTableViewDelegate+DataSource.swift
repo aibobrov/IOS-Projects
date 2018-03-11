@@ -19,10 +19,8 @@ extension ArtistTableViewController {
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ArtistTableViewController.ArtistTableViewCellIdentifier, for: indexPath) as! ArtistTableViewCell
-
-		if let range = data.sections?[indexPath.section].range {
-			cell.item = data.collections?[range.location + indexPath.row].representativeItem
-		}
+		
+		cell.setInfo(with: data.collection(for: indexPath)?.representativeItem)
 
 		return cell
 	}
@@ -35,7 +33,7 @@ extension ArtistTableViewController {
 		let height = self.tableView(tableView, heightForHeaderInSection: section)
 		let rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: height)
 		let view = SectionLabelCollectionReusableView(frame: rect)
-		view.title = data.sections?[section].title
+		view.setInfo(with: data.sections?[section].title)
 		return view
 	}
 }

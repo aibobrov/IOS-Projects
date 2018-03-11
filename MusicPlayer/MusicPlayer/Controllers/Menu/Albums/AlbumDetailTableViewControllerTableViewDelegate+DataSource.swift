@@ -15,13 +15,11 @@ extension AlbumDetailTableViewController {
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: detailTableViewControllerReusableIdentifier, for: indexPath) as! AlbumTableViewCell
-		cell.item = album.items[indexPath.row]
+		cell.setInfo(with: album.items[indexPath.row])
 		return cell
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let cell = tableView.cellForRow(at: indexPath) as! AlbumTableViewCell
-
 		DispatchQueue.main.async {
 			self.tabBarController?.presentPopupBar(withContentViewController: self.playerViewController, animated: true, completion: nil)
 			tableView.deselectRow(at: indexPath, animated: false)
@@ -30,7 +28,8 @@ extension AlbumDetailTableViewController {
 			self.playerViewController.currentPlaylist = self.album.items
 		}
 		DispatchQueue.main.async {
-			self.playerViewController.player.nowPlayingItem = cell.item
+
+			self.playerViewController.player.nowPlayingItem = self.album.items[indexPath.row]
 			self.playerViewController.play()
 		}
 	}

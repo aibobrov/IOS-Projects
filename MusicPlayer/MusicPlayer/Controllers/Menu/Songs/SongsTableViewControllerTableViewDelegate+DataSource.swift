@@ -19,10 +19,8 @@ extension SongsTableViewController {
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: tableViewReusableIdentidier, for: indexPath) as! MediaTableViewCell
-		if let range = data?.sections?[indexPath.section].range {
-			let index = range.location + indexPath.row
-			cell.item = data?.collections?.first?.items[index]
-		}
+		cell.setInfo(with: data?.item(for: indexPath))
+
 		return cell
 	}
 
@@ -34,20 +32,18 @@ extension SongsTableViewController {
 		let height = self.tableView(tableView, heightForHeaderInSection: section)
 		let rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: height)
 		let view = SectionLabelCollectionReusableView(frame: rect)
-		view.title = data?.sections?[section].title
+		view.setInfo(with: data?.sections?[section].title)
 		return view
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let cell = tableView.cellForRow(at: indexPath) as! MediaTableViewCell
-
 		guard let playlist = data?.collections?.first?.items else { return }
 
 		DispatchQueue.main.async {
 			self.playerViewController.currentPlaylist = playlist
 		}
 		DispatchQueue.main.async {
-			self.playerViewController.player.nowPlayingItem = cell.item
+			self.playerViewController.player.nowPlayingItem = self.data?.item(for: indexPath)
 			self.playerViewController.play()
 		}
 

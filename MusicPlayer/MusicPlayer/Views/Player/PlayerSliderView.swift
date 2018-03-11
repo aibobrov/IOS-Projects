@@ -13,35 +13,22 @@ class PlayerSliderView: UIView {
 	@IBOutlet weak var durationTimeLabel: UILabel!
 	@IBOutlet weak var playbackSlider: SeekPlayerSlider!
 
-	private var current: TimeInterval?
-	private var duration: TimeInterval?
+	func setCurrent(_ time: TimeInterval?) {
+		currentPlaybackTimeLabel.text = time?.timeString ?? "--:--"
+	}
 
-	var currentTime: TimeInterval? {
+	var progress: Float {
 		set {
-			current = newValue
-			currentPlaybackTimeLabel.text = current?.timeString ?? "--:--"
-			if let duration = duration, let current = current, duration != 0 {
-				let progress = current / duration
-				playbackSlider.value = Float(progress)
-			}
+			playbackSlider.value = newValue
 		}
 		get {
-			return self.current
+			return playbackSlider.value
 		}
 	}
 
-	var durationTime: TimeInterval? {
-		set {
-			duration = newValue
-			durationTimeLabel.text = duration?.timeString ?? "--:--"
-		}
-		get {
-			return self.duration
-		}
+	func setDuration(_ time: TimeInterval?) {
+		durationTimeLabel.text = time?.timeString ?? "--:--"
 	}
-
-
-
 
 	
 }

@@ -13,17 +13,9 @@ class AlbumTableViewCell: SelectedTableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var subtitleLabel: UILabel!
 
-	internal weak var object: MPMediaItem?
-
-	weak var item: MPMediaItem? {
-		set {
-			object = newValue
-			guard let item = item else { return }
-			titleLabel.text = item.title ?? ""
-			subtitleLabel.text = "\(item.albumTrackNumber)"
-		}
-		get {
-			return object
-		}
+	func setInfo(with item: MPMediaItem?) {
+		guard let item = item else { return }
+		titleLabel.text = item.title ?? ""
+		subtitleLabel.text = "\(item.albumTrackNumber)"
 	}
 }

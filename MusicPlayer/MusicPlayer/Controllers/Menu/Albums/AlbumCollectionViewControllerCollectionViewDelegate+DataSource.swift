@@ -20,10 +20,7 @@ extension AlbumCollectionViewController {
 	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewReusabeIdentifier, for: indexPath) as! MediaAlbumCollectionViewCell
 
-		if let range = data.sections?[indexPath.section].range {
-			cell.item = data.collections?[range.location + indexPath.row].representativeItem
-			cell.album = data.collections?[range.location + indexPath.row]
-		}
+		cell.setInfo(with: data.collection(for: indexPath)?.representativeItem)
 
 		return cell
 	}
@@ -33,7 +30,7 @@ extension AlbumCollectionViewController {
 		case UICollectionElementKindSectionHeader:
 			let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: albumCollectionViewReusableViewIdentifier, for: indexPath) as! SectionLabelCollectionReusableView
 			view.backgroundColor = UIColor.darkGray.withAlphaComponent(0.05)
-			view.title = data.sections?[indexPath.section].title
+			view.setInfo(with: data.sections?[indexPath.section].title)
 			return view
 		default:
 			fatalError("Unexpected element kind")

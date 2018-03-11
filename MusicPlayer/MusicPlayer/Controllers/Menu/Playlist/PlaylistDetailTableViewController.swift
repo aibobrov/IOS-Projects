@@ -21,7 +21,7 @@ class PlaylistDetailTableViewController: TableViewWithMusicPlayerBarTableViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.tableView.tableFooterView = UIView()
-		self.playlistHeaderView.artworkImageView.image = playlist.image
+		self.playlistHeaderView.artworkImageView.image = playlist.image(with: self.playlistHeaderView.artworkImageView.frame.size)
 		self.playlistHeaderView.titleLabel.text = playlist.title ?? ""
     }
 }

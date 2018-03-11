@@ -28,7 +28,8 @@ class AlbumCollectionViewController: UICollectionViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let destinationVC = segue.destination as? AlbumDetailTableViewController,
 			let cell = sender as? MediaAlbumCollectionViewCell,
-			let album = cell.album {
+			let indexPath = collectionView?.indexPath(for: cell),
+			let album = data.collection(for: indexPath) {
 			destinationVC.album = album
 		}
 	}

@@ -12,19 +12,11 @@ import MediaPlayer
 class PlaylistInfoHeaderView: UIView {
 	@IBOutlet weak var artworkImageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
-	
-	internal var object: PlaylistModel?
 
-	var item: PlaylistModel? {
-		set {
-			self.object = newValue
-			guard let item = item else { return }
-			self.artworkImageView.image = item.image
-			self.titleLabel.text = item.title ?? ""
-		}
-		get {
-			return self.object
-		}
+	func setInfo(with item: PlaylistModel?) {
+		guard let item = item else { return }
+		self.artworkImageView.image = item.image(with: self.artworkImageView.frame.size)
+		self.titleLabel.text = item.title ?? ""
 	}
 
 	let imageCornerRadius: CGFloat = 3

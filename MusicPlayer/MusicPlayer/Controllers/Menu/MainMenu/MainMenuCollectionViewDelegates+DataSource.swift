@@ -25,14 +25,14 @@ extension MainMenuTableViewController: UICollectionViewDelegate, UICollectionVie
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewReusableIdentifier, for: indexPath) as! MediaItemCollectionViewCell
-		cell.item = recentTracksData.items[indexPath.row]
+		cell.setInfo(with: recentTracksData.items[indexPath.row])
 		return cell
 	}
 
 	// MARK: Recently played collectionView cell is clicked
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let cell = collectionView.cellForItem(at: indexPath) as! MediaItemCollectionViewCell
-		guard let item = cell.item else { return }
+		let item = recentTracksData.items[indexPath.row]
 		DispatchQueue.main.async {
 			self.tabBarController?.presentPopupBar(withContentViewController: self.playerViewController, animated: true, completion: nil)
 			cell.onClickAnimation()

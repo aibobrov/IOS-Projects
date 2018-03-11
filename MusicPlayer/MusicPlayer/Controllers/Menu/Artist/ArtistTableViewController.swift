@@ -24,7 +24,9 @@ class ArtistTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     	if let destinationVC = segue.destination as? AlbumCollectionViewController,
-			let cell = sender as? ArtistTableViewCell, let item = cell.item {
+			let cell = sender as? ArtistTableViewCell,
+			let indexPath = tableView.indexPath(for: cell),
+			let item = data.item(for: indexPath) {
 			destinationVC.query = MediaModelController.shared.albumsQuery(for: item.albumArtistPersistentID)
 		}
     }

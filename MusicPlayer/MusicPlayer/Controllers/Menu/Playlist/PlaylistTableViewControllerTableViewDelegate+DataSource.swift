@@ -16,19 +16,7 @@ extension PlaylistTableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as! PlaylistTableViewCell
 
 		if let collection = data.collections?[indexPath.row] {
-			let imageSize = cell.artworksImageView.frame.size
-			var playlist = PlaylistModel(title: collection.playlistTitle, collection: collection)
-
-			if let collage = collection.playlistCollage(for: 4, with: imageSize) {
-				playlist.image = collage
-			} else if collection.count > 0,
-				let artwork = collection.representativeItem?.artwork?.image(at: imageSize) {
-				playlist.image = artwork
-			} else {
-				playlist.image = UIImage(color: .clear, size: imageSize)
-			}
-
-			cell.item = playlist
+			cell.setInfo(with: PlaylistModel(title: collection.playlistTitle, collection: collection))
 		}
 		return cell
 	}

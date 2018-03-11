@@ -12,20 +12,13 @@ import MediaPlayer
 class AlbumInfoHeaderView: PodcastInfoHeaderView {
 	@IBOutlet weak var genreYearLabel: UILabel!
 
-	override weak var item: MPMediaItem? {
-		set {
-			self.object = newValue
-			guard let item = item else { return }
-			if let artwork = item.artwork {
-				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
-			}
-			genreYearLabel.text = item.genreYearFormatted ?? ""
-			titleLabel.text = item.albumTitle ?? ""
-			subtitleLabel.text = item.albumArtist ?? ""
+	override func setInfo(with item: MPMediaItem?) {
+		guard let item = item else { return }
+		if let artwork = item.artwork {
+			artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
 		}
-		get {
-			return self.object
-		}
+		genreYearLabel.text = item.genreYearFormatted ?? ""
+		titleLabel.text = item.albumTitle ?? ""
+		subtitleLabel.text = item.albumArtist ?? ""
 	}
-
 }

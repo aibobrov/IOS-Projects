@@ -49,7 +49,7 @@ class SearchSongsTableViewController: SongsTableViewController, UISearchBarDeleg
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: tableViewReusableIdentidier, for: indexPath) as! MediaTableViewCell
-		cell.item = data?.collections?.first?.items[indexPath.row]
+		cell.setInfo(with: data?.collections?.first?.items[indexPath.row])
 		return cell
 	}
 	

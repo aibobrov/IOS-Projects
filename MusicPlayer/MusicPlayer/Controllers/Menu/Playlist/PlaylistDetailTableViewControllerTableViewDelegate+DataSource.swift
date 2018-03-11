@@ -16,14 +16,12 @@ extension PlaylistDetailTableViewController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: tableViewReusableIdentidier, for: indexPath) as! MediaTableViewCell
 
-		cell.item = playlist.collection.items[indexPath.row]
+		cell.setInfo(with: playlist.collection.items[indexPath.row])
 
 		return cell
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let cell = tableView.cellForRow(at: indexPath) as! MediaTableViewCell
-
 		DispatchQueue.main.async {
 			self.tabBarController?.presentPopupBar(withContentViewController: self.playerViewController, animated: true, completion: nil)
 			tableView.deselectRow(at: indexPath, animated: false)
@@ -32,7 +30,7 @@ extension PlaylistDetailTableViewController {
 			self.playerViewController.currentPlaylist = self.playlist.collection.items
 		}
 		DispatchQueue.main.async {
-			self.playerViewController.player.nowPlayingItem = cell.item
+			self.playerViewController.player.nowPlayingItem = self.playlist.collection.items[indexPath.row]
 			self.playerViewController.play()
 		}
 	}

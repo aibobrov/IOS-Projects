@@ -23,20 +23,12 @@ class PodcastInfoHeaderView: UIView {
 		self.artworkImageView.layer.backgroundColor = UIColor.black.cgColor
 	}
 
-	internal weak var object: MPMediaItem?
-
-	weak var item: MPMediaItem? {
-		set {
-			self.object = newValue
-			guard let item = item else { return }
-			if let artwork = item.artwork {
-				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
-			}
-			titleLabel.text = item.podcastTitle ?? ""
-			subtitleLabel.text = item.artist ?? ""
+	func setInfo(with item: MPMediaItem?) {
+		guard let item = item else { return }
+		if let artwork = item.artwork {
+			artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
 		}
-		get {
-			return self.object
-		}
+		titleLabel.text = item.podcastTitle ?? ""
+		subtitleLabel.text = item.artist ?? ""
 	}
 }

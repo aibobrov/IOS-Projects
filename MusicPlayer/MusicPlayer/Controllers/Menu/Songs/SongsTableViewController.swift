@@ -22,7 +22,7 @@ class SongsTableViewController: TableViewWithMusicPlayerBarTableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		data = DataCollectionModel(sections: query.itemSections, collections: [MPMediaItemCollection(items: query.items ?? [])])
+		data = DataCollectionSongsModel(sections: query.itemSections, collections: [MPMediaItemCollection(items: query.items ?? [])])
 		self.tableView.tableFooterView = UIView()
 	}
 	override func viewWillAppear(_ animated: Bool) {

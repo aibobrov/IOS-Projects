@@ -10,15 +10,9 @@ import UIKit
 import MediaPlayer
 
 class PodcastTableViewCell: AlbumTableViewCell {
-	override var item: MPMediaItem? {
-		set {
-			object = newValue
-			guard let item = item else { return }
-			titleLabel.text = item.title ?? ""
-			subtitleLabel.text = item.releaseDate?.formatted
-		}
-		get {
-			return object
-		}
+	override func setInfo(with item: MPMediaItem?) {
+		guard let item = item else { return }
+		titleLabel.text = item.title ?? ""
+		subtitleLabel.text = item.releaseDate?.formatted
 	}
 }

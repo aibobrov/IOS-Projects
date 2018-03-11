@@ -21,7 +21,7 @@ class AlbumDetailTableViewController: TableViewWithMusicPlayerBarTableViewContro
 	// MARK: - Lifecycle
 	override func viewDidLoad() {
         super.viewDidLoad()
-		headerView.item = album?.representativeItem
+		headerView.setInfo(with: album?.representativeItem)
 
 		self.tableView.tableFooterView = UIView()
     }

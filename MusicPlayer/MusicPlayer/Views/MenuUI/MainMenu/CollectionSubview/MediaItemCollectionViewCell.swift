@@ -19,22 +19,14 @@ class MediaItemCollectionViewCell: UICollectionViewCell {
 
 	let imageCornerRadius: CGFloat = 7
 
-	internal weak var object: MPMediaItem?
-
-	weak var item: MPMediaItem? {
-		set {
-			self.object = newValue
-			guard let item = item else { return }
-			if let artwork = item.artwork {
-				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
-			}
-
-			titleLabel.text = item.title ?? ""
-			subtitleLabel.text = item.artistAlbumFormatted ?? ""
+	func setInfo(with item: MPMediaItem?) {
+		guard let item = item else { return }
+		if let artwork = item.artwork {
+			artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
 		}
-		get {
-			return self.object
-		}
+
+		titleLabel.text = item.title ?? ""
+		subtitleLabel.text = item.artistAlbumFormatted ?? ""
 	}
 
 	override func awakeFromNib() {

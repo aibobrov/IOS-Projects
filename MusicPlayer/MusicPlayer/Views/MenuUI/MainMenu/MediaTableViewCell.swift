@@ -22,21 +22,13 @@ class MediaTableViewCell: AlbumTableViewCell {
 		self.artworkImageView.layer.backgroundColor = UIColor.black.cgColor
 	}
 
-	override weak var item: MPMediaItem? {
-		set {
-			self.object = newValue
-			guard let item = item else { return }
-			if let artwork = item.artwork {
-				artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
-			}
+	override func setInfo(with item: MPMediaItem?) {
+		guard let item = item else { return }
+		if let artwork = item.artwork {
+			artworkImageView.image = artwork.image(at: artworkImageView.frame.size)
+		}
 
-			self.titleLabel.text = item.title ?? ""
-			subtitleLabel.text = item.albumArtist ?? ""
-		}
-		get {
-			return self.object
-		}
+		self.titleLabel.text = item.title ?? ""
+		subtitleLabel.text = item.albumArtist ?? ""
 	}
-
-
 }

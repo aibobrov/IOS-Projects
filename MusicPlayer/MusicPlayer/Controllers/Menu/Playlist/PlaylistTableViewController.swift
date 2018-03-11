@@ -26,8 +26,9 @@ class PlaylistTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let destinationVC = segue.destination as? PlaylistDetailTableViewController,
 			let cell = sender as? PlaylistTableViewCell,
-			let playlist = cell.item {
-			destinationVC.playlist = playlist
+			let indexPath = tableView.indexPath(for: cell),
+			let collection = data.collections?[indexPath.row] {
+			destinationVC.playlist = PlaylistModel(title: collection.playlistTitle, collection: collection)
 		}
     }
 }

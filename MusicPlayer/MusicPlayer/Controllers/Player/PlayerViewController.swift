@@ -98,14 +98,17 @@ class PlayerViewController: UIViewController {
 		return buttonItem
 	}()
 
-	lazy var timer = ProgressTimer(with: 0.001) { (timer) in
+	lazy var timer = ProgressTimer(with: 0.001) { (_) in
 		let playbackTime = self.player.currentPlaybackTime
 		if !playbackTime.isNaN {
 			self.sliderView.playbackSlider.isEnabled = true
-			self.sliderView.currentTime = playbackTime
+			self.sliderView.setCurrent(playbackTime)
+			if let nowPlayingItem = self.player.nowPlayingItem, nowPlayingItem.playbackDuration != 0 {
+				self.sliderView.progress = Float(self.player.currentPlaybackTime / nowPlayingItem.playbackDuration)
+			} else { self.sliderView.progress = 0 }
 		} else {
-			self.sliderView.currentTime = nil
-			self.sliderView.playbackSlider.value = 0
+			self.sliderView.setCurrent(nil)
+			self.sliderView.progress = 0
 			self.sliderView.playbackSlider.isEnabled = false
 		}
 		self.popupItem.progress = self.sliderView.playbackSlider.value
@@ -116,7 +119,6 @@ class PlayerViewController: UIViewController {
         super.viewDidLoad()
 
 		parentRouteView.addSubview(routePickerView)
-
 		parentVolumeView.addSubview(volumeSliderView)
 
 		player.repeatMode = repeatButton.currentRepeatMode
@@ -167,8 +169,9 @@ class PlayerViewController: UIViewController {
 	}
 
 	func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-		guard let cell = playlistCollectionView.centerCell as? MediaItemCollectionViewCell else { return }
-		self.player.nowPlayingItem = cell.item
+		guard let cell = playlistCollectionView.centerCell as? MediaItemCollectionViewCell,
+			let indexPath = self.playlistCollectionView.indexPath(for: cell) else { return }
+		self.player.nowPlayingItem = playlist[indexPath.row]
 		self.play()
 	}
 
@@ -200,7 +203,10 @@ class PlayerViewController: UIViewController {
 		NotificationCenter.default.addObserver(forName: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil, queue: nil) { [unowned self] (notification) in
 			guard let player = notification.object as? MPMusicPlayerApplicationController else { return }
 			self.updatePopupBarData(with: player.nowPlayingItem)
-			self.sliderView.durationTime = player.nowPlayingItem?.playbackDuration
+			self.sliderView.setDuration(player.nowPlayingItem?.playbackDuration)
+			if let nowPlayingItem = self.player.nowPlayingItem, nowPlayingItem.playbackDuration != 0 {
+				self.sliderView.progress = Float(self.player.currentPlaybackTime / nowPlayingItem.playbackDuration)
+			} else { self.sliderView.progress = 0 }
 			self.updatePlaylistCollectionViewPosition()
 		}
 	}
@@ -236,10 +242,10 @@ extension PlayerViewController {
 		timer.stop()
 	}
 	@IBAction func playerSliderTouchUpInside(_ sender: SeekPlayerSlider) {
-		self.player.currentPlaybackTime = TimeInterval(sender.value) * (sliderView.durationTime ?? 0)
+		self.player.currentPlaybackTime = TimeInterval(sender.value) * (player.nowPlayingItem?.playbackDuration ?? 0)
 		timer.start()
 	}
 	@IBAction func playerSliderValueChanged(_ sender: SeekPlayerSlider) {
-		sliderView.currentTime = TimeInterval(sender.value) * (sliderView.durationTime ?? 0)
+		sliderView.setCurrent(TimeInterval(sender.value) * (player.nowPlayingItem?.playbackDuration ?? 0))
 	}
 }

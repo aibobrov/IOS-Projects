@@ -14,17 +14,11 @@ class PlaylistTableViewCell: SelectedTableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var artworksImageView: UIImageView!
 
-	internal var object: PlaylistModel?
-
-	var item: PlaylistModel? {
-		set {
-			object = newValue
-			guard let item = item else { return }
-			titleLabel.text = item.title
-			artworksImageView.image = item.image
-		}
-		get {
-			return object
+	func setInfo(with item: PlaylistModel?) {
+		guard let item = item else { return }
+		DispatchQueue.main.async {
+			self.titleLabel.text = item.title
+			self.artworksImageView.image = item.image(with: self.artworksImageView.frame.size)
 		}
 	}
 
