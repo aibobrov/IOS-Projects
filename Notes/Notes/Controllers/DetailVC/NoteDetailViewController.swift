@@ -26,6 +26,7 @@ class NoteDetailViewController: UIViewController {
 	// MARK: - Lifecycle
 	override func viewDidLoad() {
         super.viewDidLoad()
+		
 		NotificationCenter.default.addObserver( self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
 
@@ -40,9 +41,7 @@ class NoteDetailViewController: UIViewController {
 
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-		DispatchQueue.main.async {
-			self.saveNoteIfNeeded()
-		}
+		self.saveNoteIfNeeded()
 	}
 
 	override func viewDidDisappear(_ animated: Bool) {
@@ -51,25 +50,26 @@ class NoteDetailViewController: UIViewController {
 		NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
 	}
 
-	func saveNoteIfNeeded() {
-		guard let attributedString = self.noteTextView.attributedText else { return }
+	@objc func saveNoteIfNeeded() {
+		DispatchQueue.main.async {
+			guard let attributedString = self.noteTextView.attributedText else { return }
 
-		if let note = self.note {
-			if !attributedString.string.isEmpty {
-				note.attributedData = attributedString
-			} else {
-				self.managedContext.delete(note)
-				try? self.managedContext.save()
+			if let note = self.note {
+				if !attributedString.string.isEmpty {
+					note.attributedData = attributedString
+				} else {
+					self.managedContext.delete(note)
+				}
+			} else if !attributedString.string.isEmpty {
+				self.note = Note(context: self.managedContext)
+				self.note!.attributedData = attributedString
+				self.note!.creationDate = Date()
 			}
-		} else if !attributedString.string.isEmpty {
-			let note = Note(context: self.managedContext)
-			note.attributedData = attributedString
-			note.creationDate = Date()
-		}
-		do {
-			try self.managedContext.save()
-		} catch {
-			print("Failed to change managedContext: \(error) ")
+			do {
+				try self.managedContext.save()
+			} catch {
+				print("Failed to change managedContext: \(error) ")
+			}
 		}
 	}
 

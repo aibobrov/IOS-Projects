@@ -113,7 +113,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.93333333330000001" green="0.70196078429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Новая заметка">
+                                    <fragment content="New note">
                                         <attributes>
                                             <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="AvenirNext-Regular"/>
@@ -167,7 +167,7 @@
                             <constraint firstItem="Qda-Dj-yl6" firstAttribute="top" secondItem="rtz-JF-Ilx" secondAttribute="bottom" id="8D1-yr-KNh"/>
                             <constraint firstItem="rtz-JF-Ilx" firstAttribute="leading" secondItem="05A-wE-htH" secondAttribute="leading" id="BYG-3p-PHY"/>
                             <constraint firstItem="rtz-JF-Ilx" firstAttribute="top" secondItem="05A-wE-htH" secondAttribute="top" id="Gg4-Ra-hlv"/>
-                            <constraint firstItem="Qda-Dj-yl6" firstAttribute="bottom" secondItem="05A-wE-htH" secondAttribute="bottom" id="VRs-UQ-eyQ"/>
+                            <constraint firstItem="Qda-Dj-yl6" firstAttribute="bottom" secondItem="RKt-xL-ZBJ" secondAttribute="bottom" id="VRs-UQ-eyQ"/>
                             <constraint firstItem="Qda-Dj-yl6" firstAttribute="trailing" secondItem="05A-wE-htH" secondAttribute="trailing" id="mN9-yF-rkC"/>
                             <constraint firstItem="rtz-JF-Ilx" firstAttribute="trailing" secondItem="05A-wE-htH" secondAttribute="trailing" id="ndO-vO-UMQ"/>
                             <constraint firstItem="Qda-Dj-yl6" firstAttribute="leading" secondItem="05A-wE-htH" secondAttribute="leading" id="tvu-Wb-fmb"/>
@@ -189,7 +189,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ABN-eR-Bgv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NSB-uX-Thm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController toolbarHidden="NO" id="lih-ud-w4f" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="iFA-d6-XMb">
@@ -210,6 +209,7 @@
                         <segue destination="aE0-lz-Etz" kind="relationship" relationship="rootViewController" id="rLX-CR-14L"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSB-uX-Thm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="54" y="106"/>
         </scene>
