@@ -18,17 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designed for education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GR-qM-el9">
-                                <rect key="frame" x="98.5" y="283" width="178.5" height="101"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designed for education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U06-24-ilP">
+                                <rect key="frame" x="98" y="283" width="178.5" height="101"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="101" id="Zux-iS-hh2"/>
+                                    <constraint firstAttribute="height" constant="101" id="nQ6-xv-iEr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBW-lY-Xki">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzY-rm-MzC">
                                 <rect key="frame" x="168" y="626" width="39" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="p7B-Ye-58s"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,10 +39,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RBW-lY-Xki" secondAttribute="bottom" constant="20" id="MZZ-mJ-Rk4"/>
-                            <constraint firstItem="1GR-qM-el9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aZz-hX-6N1"/>
-                            <constraint firstItem="1GR-qM-el9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="d3M-u1-9xd"/>
-                            <constraint firstItem="RBW-lY-Xki" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sP2-bM-UXT"/>
+                            <constraint firstItem="hzY-rm-MzC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8Xf-7v-KNd"/>
+                            <constraint firstItem="U06-24-ilP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="E48-H1-Ksp"/>
+                            <constraint firstItem="U06-24-ilP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="c9Z-LY-7dx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hzY-rm-MzC" secondAttribute="bottom" constant="20" id="ekI-AY-ATX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
