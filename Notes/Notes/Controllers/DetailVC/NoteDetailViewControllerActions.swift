@@ -57,12 +57,10 @@ extension NoteDetailViewController {
 	}
 
 	@IBAction func newNoteButtonClicked(_ sender: Any) {
-		DispatchQueue.main.async {
-			self.saveNoteIfNeeded()
-			self.noteTextView.attributedText = NSAttributedString()
+		self.saveNoteIfNeeded()
+		self.noteTextView.attributedText = NSAttributedString()
 
-			self.note = Note(context: self.managedContext)
-			self.note?.creationDate = Date()
-		}
+		self.note = Note(context: self.managedContext)
+		self.note?.creationDate = Date()
 	}
 }

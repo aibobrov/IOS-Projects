@@ -51,25 +51,23 @@ class NoteDetailViewController: UIViewController {
 	}
 
 	@objc func saveNoteIfNeeded() {
-		DispatchQueue.main.async {
-			guard let attributedString = self.noteTextView.attributedText else { return }
-
+		guard let attributedString = self.noteTextView.attributedText else { return }
+		if attributedString.string.isEmpty {
 			if let note = self.note {
-				if !attributedString.string.isEmpty {
-					note.attributedData = attributedString
-				} else {
-					self.managedContext.delete(note)
-				}
-			} else if !attributedString.string.isEmpty {
+				self.managedContext.delete(note)
+			}
+		} else {
+			if self.note == nil {
 				self.note = Note(context: self.managedContext)
-				self.note!.attributedData = attributedString
 				self.note!.creationDate = Date()
 			}
-			do {
-				try self.managedContext.save()
-			} catch {
-				print("Failed to change managedContext: \(error) ")
-			}
+			self.note!.attributedData = attributedString
+		}
+
+		do {
+			try self.managedContext.save()
+		} catch {
+			print("Failed to change managedContext: \(error) ")
 		}
 	}
 

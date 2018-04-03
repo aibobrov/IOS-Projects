@@ -16,11 +16,9 @@ extension NoteDetailViewController: UIImagePickerControllerDelegate, UINavigatio
 			picker.dismiss(animated: true, completion: nil)
 			return
 		}
-		DispatchQueue.main.async {
-			self.noteTextView.textStorage.add(image: image)
+		self.noteTextView.textStorage.add(image: image)
 
-			picker.dismiss(animated: true, completion: nil)
-		}
+		picker.dismiss(animated: true, completion: nil)
 	}
 
 	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
